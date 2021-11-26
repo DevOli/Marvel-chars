@@ -16,22 +16,30 @@ class SearchViewModel {
     }
   }
   
+  init() {
+    apiCaller.delegate = self
+  }
+  
   func count() -> Int {
     return searchedItems.count
+  }
+  
+  func get(byIndex index: Int) -> CharacterModel {
+    return searchedItems[index]
   }
   
   func getAllcharacters() {
     apiCaller.fetchData()
   }
   
-  func get(index: Int) -> CharacterModel {
-    return searchedItems[index]
-  }
-  
-  func filter(byName name:String) {
-    searchedItems = searchedItems.filter { (character: CharacterModel) -> Bool in
-          return (character.name.lowercased().contains(name.lowercased()))
+  func getCharacters(byName name:String) {
+    if !name.isEmpty {
+      searchedItems = searchedItems.filter { (character: CharacterModel) -> Bool in
+            return (character.name.lowercased().contains(name.lowercased()))
       }
+    } else {
+      apiCaller.fetchData()
+    }
   }
   
 }

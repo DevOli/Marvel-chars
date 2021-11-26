@@ -23,7 +23,7 @@ class SearchTableViewController: UITableViewController {
       searchController.searchResultsUpdater = self
       searchController.obscuresBackgroundDuringPresentation = false
       searchController.searchBar.placeholder = "Search Characters"
-      navigationItem.searchController = searchController
+      tableView.tableHeaderView = searchController.searchBar
       definesPresentationContext = true
       // Search VM configurations
       searchVm.getAllcharacters()
@@ -46,7 +46,7 @@ class SearchTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "nameCell", for: indexPath)
-        let character = searchVm.get(index: indexPath.row)
+        let character = searchVm.get(byIndex: indexPath.row)
         cell.textLabel?.text = character.name
         return cell
     }
@@ -66,8 +66,7 @@ class SearchTableViewController: UITableViewController {
 extension SearchTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text {
-            searchVm.filter(byName: searchText)
-            tableView.reloadData()
+          searchVm.getCharacters(byName: searchText)
         }
     }
 }
