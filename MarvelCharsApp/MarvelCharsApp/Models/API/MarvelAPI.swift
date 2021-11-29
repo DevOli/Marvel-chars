@@ -11,7 +11,7 @@ protocol MarvelAPIDelegate {
     func didFetchData(heroes: CategoryModel, villains: CategoryModel,
                       antiHeroes: CategoryModel, aliens: CategoryModel, humans: CategoryModel)
 }
-
+ 
 class MarvelAPI {
     
     private let baseURL = "https://619d463f131c600017088e71.mockapi.io/api/v1/characters"

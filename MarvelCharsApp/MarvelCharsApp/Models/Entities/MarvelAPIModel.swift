@@ -11,7 +11,7 @@
 //   let marvel = try? newJSONDecoder().decode(Marvel.self, from: jsonData)
 
 import Foundation
-
+ 
 // MARK: - MarvelElement
 struct MarvelElement: Codable {
     let heroes, villains, antiHeroes, aliens: [Alien]
