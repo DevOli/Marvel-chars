@@ -17,14 +17,11 @@ class HomeViewController: UIViewController {
         self.manager.delegate = self
         self.manager.fetchData()
     }
-
 }
 
 extension HomeViewController: MarvelAPIDelegate {
-    func didFetchData(heroes: CategoryModel, villains: CategoryModel, antiHeroes: CategoryModel, aliens: CategoryModel, humans: CategoryModel) {
-        let hero = heroes.getCharacter(at: heroes.charactersCount - 1)
-        print(hero)
+    func didFetchData(categories: [CategoryModel]) {
+        print (categories)
     }
-    
 }
 
