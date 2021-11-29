@@ -8,8 +8,8 @@
 import Foundation
 
 protocol MarvelAPIDelegate {
-    func didFetchData(heroes: CategoryModel, villains: CategoryModel,
-                      antiHeroes: CategoryModel, aliens: CategoryModel, humans: CategoryModel)
+    func didFetchData(categories: [CategoryModel])
+
 }
 
 class MarvelAPI {
@@ -31,32 +31,25 @@ class MarvelAPI {
             guard let safeData = data else {
                 return
             }
-            let marvelAPI = try? decoder.decode(Marvel.self, from: safeData)
-            guard let results = marvelAPI?[0] else {
+            let marvelAPI = try? decoder.decode(Category.self, from: safeData)
+            guard let results = marvelAPI else {
                 return
             }
-            let heroes = self?.getCharactersFrom(category: results.heroes)
-            let villains = self?.getCharactersFrom(category: results.villains)
-            let antiHeroes = self?.getCharactersFrom(category: results.antiHeroes)
-            let aliens = self?.getCharactersFrom(category: results.aliens)
-            let humans = self?.getCharactersFrom(category: results.humans)
             
-            self?.delegate?.didFetchData(heroes: CategoryModel(category: "heroes", characters: heroes!),
-                                         villains: CategoryModel(category: "villains", characters: villains!),
-                                         antiHeroes: CategoryModel(category: "antiHeroes", characters: antiHeroes!),
-                                         aliens: CategoryModel(category: "aliens", characters: aliens!),
-                                         humans: CategoryModel(category: "humans", characters: humans!))
-             
+            let categories: [CategoryModel] = results.map { CategoryElement in
+                let chars = self?.getCharactersFrom(category: CategoryElement.characterList)
+                return CategoryModel(category: CategoryElement.name, characters: chars ?? [])
+            }
+            self?.delegate?.didFetchData(categories: categories)
         }
         task.resume()
     }
     
-    func getCharactersFrom(category: [Alien]) -> [CharacterModel]{
+    func getCharactersFrom(category: [CharacterList]) -> [CharacterModel]{
         var characters: [CharacterModel] = []
         for character in category {
             characters.append(CharacterModel(character: character))
         }
         return characters
     }
-    
 }
