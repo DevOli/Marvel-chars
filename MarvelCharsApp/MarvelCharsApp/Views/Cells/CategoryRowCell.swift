@@ -13,10 +13,12 @@ class CategoryRowCell: UITableViewCell {
   @IBOutlet weak var charactersCollectionView: UICollectionView!
   
   var viewModel: HomeViewModel?
-  var characters: [CharacterModel]?
   
-  func configure(characters: [CharacterModel]?){
-    self.characters = characters
+  var category: String?
+  
+  func configure(category: String){
+    self.category = category
+    self.categoryNameLabel.text = category
     refresh()
   }
   
@@ -25,11 +27,6 @@ class CategoryRowCell: UITableViewCell {
     charactersCollectionView.register(UINib(nibName: "CharacterPortraitCell", bundle: nil), forCellWithReuseIdentifier: "CharacterPortraitID")
     charactersCollectionView.dataSource = self
     charactersCollectionView.delegate = self
-    
-    // Do any additional setup after loading the view.
-    //viewModel = HomeViewModel()
-    //viewModel?.setDelegate(delegate: self)
-    //viewModel?.fetchData()
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
@@ -49,23 +46,20 @@ class CategoryRowCell: UITableViewCell {
 
 extension CategoryRowCell: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    /*if let count = characters?.count {
+    if let count = viewModel?.getCategoryWith(name: self.category ?? "")?.characters.count {
       return count
-    }*/
-    return 6
+    }
+    return 0
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = charactersCollectionView.dequeueReusableCell(withReuseIdentifier: "CharacterPortraitID", for: indexPath) as! CharacterPortraitCell
-    /*if let hero = characters?[indexPath.row] {
-      let image = UIImage(named: hero.imagePath)
+    if let character = viewModel?.getCategoryWith(name: self.category ?? "")?.getCharacter(at: indexPath.row) {
+      let image = UIImage(named: character.imagePath)
       cell.characterImage.image = image?.roundedImage
-      cell.characterNameLabel.text = hero.name
-      cell.characterAlterEgoLabel.text = hero.alterEgo
-    }*/
-    let image = UIImage(named: "spider-man")
-    cell.characterImage.image = image?.roundedImage
-    //let cell = UICollectionViewCell()
+      cell.characterNameLabel.text = character.name
+      cell.characterAlterEgoLabel.text = character.alterEgo
+    }
     return cell
   }
   
@@ -75,15 +69,4 @@ extension CategoryRowCell: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     return
   }
-}
-
-extension CategoryRowCell: HomeViewModelDelegate {
-  func onFetchDataSuccessfully(categories: [CategoryModel]) {
-    return
-  }
-  
-  func onFetchHeroes(heroes: CategoryModel) {
-    refresh()
-  }
-  
 }

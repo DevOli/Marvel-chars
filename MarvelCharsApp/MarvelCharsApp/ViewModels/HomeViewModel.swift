@@ -16,6 +16,8 @@ class HomeViewModel {
   
   let manager = MarvelAPI()
   var delegate: HomeViewModelDelegate?
+  var categories: [CategoryModel] = []
+  var categoriesNames: [String] = []
   var heroes: [CharacterModel] = []
   var villains: [CharacterModel] = []
   var antiHeroes: [CharacterModel] = []
@@ -34,18 +36,23 @@ class HomeViewModel {
     self.delegate = delegate
   }
   
+  func getCategoryWith(name: String) -> CategoryModel? {
+    return self.categories.first(where: {(category) in category.category == name})
+  }
+  
 }
 
 extension HomeViewModel: MarvelAPIDelegate {
   
-  func didFetchData(heroes: CategoryModel, villains: CategoryModel, antiHeroes: CategoryModel, aliens: CategoryModel, humans: CategoryModel) {
-    /*self.heroes = heroes.characters
-    self.heroes.append(contentsOf: heroes.characters)
-    self.villains = villains.characters
-    self.antiHeroes = antiHeroes.characters
-    self.aliens = aliens.characters
-    self.humans = humans.characters
-    self.delegate?.onFetchHeroes(heroes: heroes)*/
+  func didFetchData(categories: [CategoryModel]) {
+    self.heroes = categories[0].characters
+    self.villains = categories[1].characters
+    self.antiHeroes = categories[2].characters
+    self.aliens = categories[3].characters
+    self.humans = categories[4].characters
+    self.categories = categories
+    self.categoriesNames = self.categories.map{ category in category.category}
+    self.delegate?.onFetchDataSuccessfully(categories: categories)
   }
   
 }

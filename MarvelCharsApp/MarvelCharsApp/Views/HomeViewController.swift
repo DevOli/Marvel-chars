@@ -9,11 +9,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
   
-  
-  
   @IBOutlet weak var tableView: UITableView!
   var viewModel: HomeViewModel?
-  
+  var categoryIndex = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -37,15 +35,18 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    /*if let count = viewModel?.heroes.count {
+    if let count = viewModel?.categories.count {
+      self.categoryIndex = 0
       return count
-    }*/
-    return 5
+    }
+    return 0
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = self.tableView.dequeueReusableCell(withIdentifier: "CategoryRowID", for: indexPath) as! CategoryRowCell
-    cell.configure(characters: viewModel?.heroes)
+    cell.configure(category: cell.category ?? viewModel?.categoriesNames[categoryIndex] ?? "")
+    cell.viewModel = self.viewModel
+    self.categoryIndex += 1
     return cell
   }
   
@@ -64,6 +65,7 @@ extension HomeViewController: UITableViewDelegate {
 
 extension HomeViewController: HomeViewModelDelegate {
   func onFetchDataSuccessfully(categories: [CategoryModel]) {
+    refresh()
     return
   }
   
