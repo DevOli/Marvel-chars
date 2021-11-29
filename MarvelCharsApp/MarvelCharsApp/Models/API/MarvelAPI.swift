@@ -45,7 +45,7 @@ class MarvelAPI {
         task.resume()
     }
     
-    func getCharactersFrom(category: [CharacterList]) -> [CharacterModel]{
+    func getCharactersFrom(category: [Character]) -> [CharacterModel]{
         var characters: [CharacterModel] = []
         for character in category {
             characters.append(CharacterModel(character: character))

@@ -25,7 +25,7 @@ struct CharacterModel {
     let velocity: Int
     let movies: [String]
     
-    init(character: CharacterList){
+    init(character: Character){
         self.init(name: character.name, alterEgo: character.alterEgo, imagePath: character.imagePath,
                   biography: character.biography, birth: character.caracteristics.birth, weight: character.caracteristics.weight.value,
                   weightUnit: character.caracteristics.weight.unity.rawValue, height: character.caracteristics.height.value,

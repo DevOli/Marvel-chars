@@ -15,11 +15,11 @@ import Foundation
 // MARK: - CategoryElement
 struct CategoryElement: Codable {
     let name, key: String
-    let characterList: [CharacterList]
+    let characterList: [Character]
 }
 
 // MARK: - CharacterList
-struct CharacterList: Codable {
+struct Character: Codable {
     let name, alterEgo, imagePath, biography: String
     let caracteristics: Caracteristics
     let abilities: Abilities
