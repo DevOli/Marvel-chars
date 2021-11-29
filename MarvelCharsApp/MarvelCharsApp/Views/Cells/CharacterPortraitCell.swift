@@ -9,7 +9,6 @@ import UIKit
 
 class CharacterPortraitCell: UICollectionViewCell {
   
-  
   @IBOutlet weak var characterImage: UIImageView!
   @IBOutlet weak var characterNameLabel: UILabel!
   @IBOutlet weak var characterAlterEgoLabel: UILabel!

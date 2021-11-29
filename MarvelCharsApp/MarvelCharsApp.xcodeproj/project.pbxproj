@@ -17,7 +17,8 @@
 		846B9982274FC1DE0055F2A6 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B9980274FC1DE0055F2A6 /* CategoryModel.swift */; };
 		846B998627503A740055F2A6 /* CharacterPortraitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B998427503A740055F2A6 /* CharacterPortraitCell.swift */; };
 		846B998727503A740055F2A6 /* CharacterPortraitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846B998527503A740055F2A6 /* CharacterPortraitCell.xib */; };
-		846B9989275139500055F2A6 /* CategoryStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B9988275139500055F2A6 /* CategoryStackViewController.swift */; };
+		846B998C27517D5E0055F2A6 /* CategoryRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B998A27517D5E0055F2A6 /* CategoryRowCell.swift */; };
+		846B998D27517D5E0055F2A6 /* CategoryRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846B998B27517D5E0055F2A6 /* CategoryRowCell.xib */; };
 		848A2795274D5077000CDBCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A2794274D5077000CDBCE /* AppDelegate.swift */; };
 		848A2797274D5077000CDBCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A2796274D5077000CDBCE /* SceneDelegate.swift */; };
 		848A2799274D5077000CDBCE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A2798274D5077000CDBCE /* HomeViewController.swift */; };
@@ -63,7 +64,8 @@
 		846B9980274FC1DE0055F2A6 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		846B998427503A740055F2A6 /* CharacterPortraitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPortraitCell.swift; sourceTree = "<group>"; };
 		846B998527503A740055F2A6 /* CharacterPortraitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterPortraitCell.xib; sourceTree = "<group>"; };
-		846B9988275139500055F2A6 /* CategoryStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStackViewController.swift; sourceTree = "<group>"; };
+		846B998A27517D5E0055F2A6 /* CategoryRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRowCell.swift; sourceTree = "<group>"; };
+		846B998B27517D5E0055F2A6 /* CategoryRowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryRowCell.xib; sourceTree = "<group>"; };
 		848A2791274D5077000CDBCE /* MarvelCharsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelCharsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848A2794274D5077000CDBCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848A2796274D5077000CDBCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,8 @@
 			children = (
 				846B998427503A740055F2A6 /* CharacterPortraitCell.swift */,
 				846B998527503A740055F2A6 /* CharacterPortraitCell.xib */,
+				846B998A27517D5E0055F2A6 /* CategoryRowCell.swift */,
+				846B998B27517D5E0055F2A6 /* CategoryRowCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -184,7 +188,6 @@
 				848A27C7274D62D4000CDBCE /* Storyboards */,
 				848A2798274D5077000CDBCE /* HomeViewController.swift */,
 				848A27C9274D8BBC000CDBCE /* DetailsViewController.swift */,
-				846B9988275139500055F2A6 /* CategoryStackViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				846B998727503A740055F2A6 /* CharacterPortraitCell.xib in Resources */,
 				848A27A1274D5079000CDBCE /* LaunchScreen.storyboard in Resources */,
 				848A279E274D5079000CDBCE /* Assets.xcassets in Resources */,
+				846B998D27517D5E0055F2A6 /* CategoryRowCell.xib in Resources */,
 				848A279C274D5077000CDBCE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,8 +385,8 @@
 				848A27CE274D8C86000CDBCE /* HomeViewModel.swift in Sources */,
 				84645F81274E9E53001A997A /* MarvelAPIModel.swift in Sources */,
 				84645F7E274E9E1B001A997A /* MarvelAPI.swift in Sources */,
+				846B998C27517D5E0055F2A6 /* CategoryRowCell.swift in Sources */,
 				848A27CA274D8BBC000CDBCE /* DetailsViewController.swift in Sources */,
-				846B9989275139500055F2A6 /* CategoryStackViewController.swift in Sources */,
 				846B998627503A740055F2A6 /* CharacterPortraitCell.swift in Sources */,
 				84645F84274EC15A001A997A /* CharacterModel.swift in Sources */,
 				848A27D2274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */,

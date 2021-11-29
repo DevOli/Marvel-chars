@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryRowID" id="KGk-i7-Jjw" customClass="CategoryRowCell" customModule="MarvelCharsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heroes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDn-Dw-BcX">
+                        <rect key="frame" x="24" y="0.0" width="61.5" height="21"/>
+                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                        <color key="textColor" systemColor="systemRedColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnR-pY-jaz">
+                        <rect key="frame" x="227" y="0.0" width="69" height="31"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="See All">
+                            <fontDescription key="titleFontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                            <color key="baseForegroundColor" name="SeeAllButtonLabelColor"/>
+                        </buttonConfiguration>
+                    </button>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="P2W-e2-t3Q">
+                        <rect key="frame" x="0.0" y="47" width="320" height="270"/>
+                        <color key="backgroundColor" red="0.89000000000000001" green="0.77589743590000004" blue="0.87693545110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="270" id="BcP-Z6-GFa"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jzo-sG-3SV">
+                            <size key="itemSize" width="140" height="230"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="aDn-Dw-BcX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="NV9-5f-4az"/>
+                    <constraint firstItem="aDn-Dw-BcX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="R2x-xX-jNO"/>
+                    <constraint firstAttribute="trailing" secondItem="UnR-pY-jaz" secondAttribute="trailing" constant="24" id="TBT-Wf-6az"/>
+                    <constraint firstItem="UnR-pY-jaz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="V7I-Xc-5Hn"/>
+                    <constraint firstAttribute="trailing" secondItem="P2W-e2-t3Q" secondAttribute="trailing" id="d5h-TR-3Xc"/>
+                    <constraint firstItem="P2W-e2-t3Q" firstAttribute="top" secondItem="UnR-pY-jaz" secondAttribute="bottom" constant="16" id="ryq-aJ-FpK"/>
+                    <constraint firstItem="P2W-e2-t3Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zH0-JH-VsQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="categoryNameLabel" destination="aDn-Dw-BcX" id="c98-N5-hew"/>
+                <outlet property="charactersCollectionView" destination="P2W-e2-t3Q" id="r5B-pa-mFK"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="81"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="SeeAllButtonLabelColor">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
