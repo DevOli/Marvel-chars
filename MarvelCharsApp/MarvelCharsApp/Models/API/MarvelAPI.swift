@@ -11,7 +11,7 @@ protocol MarvelAPIDelegate {
     func didFetchData(categories: [CategoryModel])
 
 }
-
+ 
 class MarvelAPI {
     
     private let baseURL = "https://619d463f131c600017088e71.mockapi.io/api/v1/characters"
