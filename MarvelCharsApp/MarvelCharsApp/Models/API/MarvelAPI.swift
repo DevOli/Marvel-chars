@@ -6,17 +6,21 @@
 //
 
 import Foundation
-
+/*
 protocol MarvelAPIDelegate {
     func didFetchData(categories: [CategoryModel])
 
 }
- 
-class MarvelAPI {
+*/
+class MarvelAPI : MarvelRepository {
+    
+    func setDelegate(delegate: MarvelRepositoryDelegate) {
+        self.delegate = delegate
+    }
     
     private let baseURL = "https://619d463f131c600017088e71.mockapi.io/api/v1/characters"
-    var delegate: MarvelAPIDelegate?
-    
+    var delegate: MarvelRepositoryDelegate?
+
     func fetchData() {
         let urlString = baseURL
         let url = URL(string: urlString)
