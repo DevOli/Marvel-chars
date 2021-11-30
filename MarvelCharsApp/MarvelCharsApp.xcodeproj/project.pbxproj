@@ -80,11 +80,11 @@
 		848A27CD274D8C86000CDBCE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		848A27D1274D8CA3000CDBCE /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		848A27D9274E91AD000CDBCE /* EmptyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyRepository.swift; sourceTree = "<group>"; };
-		C017B7A52755A3FF002A8E3F /* gilroy-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gilroy-bold.ttf"; sourceTree = "<group>"; };
-		C017B7A62755A3FF002A8E3F /* gilroy-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gilroy-medium.ttf"; sourceTree = "<group>"; };
-		C017B7A72755A3FF002A8E3F /* gilroy-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gilroy-semibold.ttf"; sourceTree = "<group>"; };
-		C017B7A82755A3FF002A8E3F /* gilroy-heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gilroy-heavy.ttf"; sourceTree = "<group>"; };
-		C017B7A92755A3FF002A8E3F /* gilroy-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gilroy-regular.ttf"; sourceTree = "<group>"; };
+		C017B7A52755A3FF002A8E3F /* gilroy-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "gilroy-bold.ttf"; path = "MarvelCharsApp/Fonts/gilroy-bold.ttf"; sourceTree = SOURCE_ROOT; };
+		C017B7A62755A3FF002A8E3F /* gilroy-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "gilroy-medium.ttf"; path = "MarvelCharsApp/Fonts/gilroy-medium.ttf"; sourceTree = SOURCE_ROOT; };
+		C017B7A72755A3FF002A8E3F /* gilroy-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "gilroy-semibold.ttf"; path = "MarvelCharsApp/Fonts/gilroy-semibold.ttf"; sourceTree = SOURCE_ROOT; };
+		C017B7A82755A3FF002A8E3F /* gilroy-heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "gilroy-heavy.ttf"; path = "MarvelCharsApp/Fonts/gilroy-heavy.ttf"; sourceTree = SOURCE_ROOT; };
+		C017B7A92755A3FF002A8E3F /* gilroy-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "gilroy-regular.ttf"; path = "MarvelCharsApp/Fonts/gilroy-regular.ttf"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
