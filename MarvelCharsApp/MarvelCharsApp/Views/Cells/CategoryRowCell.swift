@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CategoryRowCellDelegate {
-  func onTappedCharacter(category: String, index: Int)
+  func onTappedCharacter(character: CharacterModel)
 }
 
 class CategoryRowCell: UITableViewCell {
@@ -16,14 +16,12 @@ class CategoryRowCell: UITableViewCell {
   @IBOutlet weak var categoryNameLabel: UILabel!
   @IBOutlet weak var charactersCollectionView: UICollectionView!
   
-  var viewModel: HomeViewModel?
   var delegate: CategoryRowCellDelegate?
+  var category: CategoryModel?
   
-  var category: String?
-  
-  func configure(category: String){
+  func configure(category: CategoryModel?){
     self.category = category
-    self.categoryNameLabel.text = category
+    self.categoryNameLabel.text = category?.category
     refresh()
   }
   
@@ -51,15 +49,12 @@ class CategoryRowCell: UITableViewCell {
 
 extension CategoryRowCell: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    if let count = viewModel?.getCategoryWith(name: self.category ?? "")?.characters.count {
-      return count
-    }
-    return 0
+    return self.category?.charactersCount ?? 0
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = charactersCollectionView.dequeueReusableCell(withReuseIdentifier: "CharacterPortraitID", for: indexPath) as! CharacterPortraitCell
-    if let character = viewModel?.getCategoryWith(name: self.category ?? "")?.getCharacter(at: indexPath.row) {
+    if let character = self.category?.getCharacter(at: indexPath.row) {
       let image = UIImage(named: character.imagePath)
       cell.characterImage.image = image?.roundedImage
       cell.characterNameLabel.text = character.name
@@ -72,6 +67,8 @@ extension CategoryRowCell: UICollectionViewDataSource {
 
 extension CategoryRowCell: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    self.delegate?.onTappedCharacter(category: self.category ?? "", index: indexPath.row)
+    if let category = self.category {
+      self.delegate?.onTappedCharacter(character: category.getCharacter(at: indexPath.row))
+    }
   }
 }
