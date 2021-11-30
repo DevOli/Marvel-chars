@@ -7,12 +7,17 @@
 
 import UIKit
 
+protocol CategoryRowCellDelegate {
+  func onTappedCharacter(category: String, index: Int)
+}
+
 class CategoryRowCell: UITableViewCell {
   
   @IBOutlet weak var categoryNameLabel: UILabel!
   @IBOutlet weak var charactersCollectionView: UICollectionView!
   
   var viewModel: HomeViewModel?
+  var delegate: CategoryRowCellDelegate?
   
   var category: String?
   
@@ -67,6 +72,6 @@ extension CategoryRowCell: UICollectionViewDataSource {
 
 extension CategoryRowCell: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    return
+    self.delegate?.onTappedCharacter(category: self.category ?? "", index: indexPath.row)
   }
 }

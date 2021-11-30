@@ -44,8 +44,12 @@ extension HomeViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = self.tableView.dequeueReusableCell(withIdentifier: "CategoryRowID", for: indexPath) as! CategoryRowCell
-    cell.configure(category: cell.category ?? viewModel?.categoriesNames[categoryIndex] ?? "")
+    if cell.category != nil {
+      return cell
+    }
+    cell.configure(category: viewModel?.categoriesNames[categoryIndex] ?? "")
     cell.viewModel = self.viewModel
+    cell.delegate = self
     self.categoryIndex += 1
     return cell
   }
@@ -54,8 +58,7 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewControllerID") as! DetailsViewController
-    self.present(vc, animated: true, completion: nil)
+    return
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -69,9 +72,14 @@ extension HomeViewController: HomeViewModelDelegate {
     return
   }
   
-  func onFetchHeroes(heroes: CategoryModel) {
-    refresh()
-  }
-  
 }
 
+extension HomeViewController: CategoryRowCellDelegate {
+  func onTappedCharacter(category: String, index: Int) {
+    let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewControllerID") as! DetailsViewController
+    vc.character = self.viewModel?.getCategoryWith(name: category)?.getCharacter(at: index)
+    self.present(vc, animated: true, completion: nil)
+  }
+  
+  
+}
