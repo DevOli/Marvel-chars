@@ -76,38 +76,3 @@ class CategoryModelTest: XCTestCase {
   }
 
 }
-
-extension Character {
-  init(_ name: String, _ alterEgo: String, _ imagePath: String, _ biography: String, _ caracteristics: Caracteristics, _ abilities: Abilities, _ movies: [String]) {
-    self.name = name
-    self.alterEgo = alterEgo
-    self.imagePath = imagePath
-    self.biography = biography
-    self.caracteristics = caracteristics
-    self.abilities = abilities
-    self.movies = movies
-  }
-}
-extension Caracteristics {
-  init(_ birth: String, _ weight: Eight, _ height: Eight, _ universe: Universe){
-    self.birth = birth
-    self.weight = weight
-    self.height = height
-    self.universe = universe
-  }
-}
-extension Eight {
-  init(_ value: Double, _ unity: Unity) {
-    self.value = value
-    self.unity = unity
-  }
-}
-extension Abilities {
-  init(_ force: Int, _ intelligence: Int, _ agility: Int, _ endurance: Int, _ velocity: Int){
-    self.force = force
-    self.intelligence = intelligence
-    self.agility = agility
-    self.endurance = endurance
-    self.velocity = velocity
-  }
-}

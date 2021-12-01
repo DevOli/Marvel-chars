@@ -28,6 +28,8 @@ class CategoryRowCell: UITableViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
+    self.selectionStyle = .none
+    
     charactersCollectionView.register(UINib(nibName: "CharacterPortraitCell", bundle: nil), forCellWithReuseIdentifier: "CharacterPortraitID")
     charactersCollectionView.dataSource = self
     charactersCollectionView.delegate = self
@@ -36,10 +38,10 @@ class CategoryRowCell: UITableViewCell {
     seeAllButton.titleLabel?.textColor = UIColor.primary_grey
   }
   
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
+  override func layoutSubviews() {
+    super.layoutSubviews()
     
-    // Configure the view for the selected state
+    contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0))
   }
   
   private func refresh() {

@@ -23,7 +23,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heroes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDn-Dw-BcX">
-                        <rect key="frame" x="24" y="0.0" width="58" height="18"/>
+                        <rect key="frame" x="24" y="0.0" width="58" height="28"/>
                         <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -41,11 +41,11 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="270" id="BcP-Z6-GFa"/>
                         </constraints>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jzo-sG-3SV">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="16" minimumInteritemSpacing="24" id="Jzo-sG-3SV">
                             <size key="itemSize" width="140" height="230"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="24" minY="0.0" maxX="0.0" maxY="40"/>
                         </collectionViewFlowLayout>
                         <cells/>
                     </collectionView>
@@ -56,6 +56,7 @@
                     <constraint firstAttribute="trailing" secondItem="UnR-pY-jaz" secondAttribute="trailing" constant="24" id="TBT-Wf-6az"/>
                     <constraint firstItem="UnR-pY-jaz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="V7I-Xc-5Hn"/>
                     <constraint firstAttribute="trailing" secondItem="P2W-e2-t3Q" secondAttribute="trailing" id="d5h-TR-3Xc"/>
+                    <constraint firstItem="UnR-pY-jaz" firstAttribute="bottom" secondItem="aDn-Dw-BcX" secondAttribute="bottom" id="gLJ-D5-8ph"/>
                     <constraint firstItem="P2W-e2-t3Q" firstAttribute="top" secondItem="UnR-pY-jaz" secondAttribute="bottom" constant="16" id="ryq-aJ-FpK"/>
                     <constraint firstItem="P2W-e2-t3Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zH0-JH-VsQ"/>
                 </constraints>
