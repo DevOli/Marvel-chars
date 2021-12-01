@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -62,6 +63,18 @@
                         <outlet property="tableView" destination="Eb2-Xz-H2k" id="vj6-gE-0Bn"/>
                         <segue destination="cxa-20-54X" kind="show" identifier="HomeToDetailsSegueID" id="Ack-8o-iRW"/>
                     </connections>
+                  </navigationItem>
+                    <navigationItem key="navigationItem" id="cR9-5v-xTH">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="gR3-As-qja">
+                            <color key="tintColor" name="primary-dark"/>
+                            <connections>
+                                <action selector="didTapMenu" destination="BYZ-38-t0r" id="t3G-OW-fiF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="search" id="Fhe-qE-w8m">
+                            <color key="tintColor" name="primary-dark"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,6 +98,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="menu" width="24" height="24"/>
+        <image name="search" width="24" height="24"/>
+        <namedColor name="primary-dark">
+            <color red="0.19215686274509805" green="0.19215686274509805" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
