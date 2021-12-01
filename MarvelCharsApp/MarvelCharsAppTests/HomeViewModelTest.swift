@@ -19,26 +19,40 @@ class HomeViewModelTest: XCTestCase {
 
   func testGetCategoryWithName() throws {
     let viewModel = HomeViewModel()
-    viewModel.categories.append(CategoryModel(category: "Heroes"))
-    viewModel.categories.append(CategoryModel(category: "AntiHeroes"))
-    viewModel.categories.append(CategoryModel(category: "Humans"))
+    let mockedManager = MockedMarvelAPI()
+    viewModel.setManager(manager: mockedManager)
+    viewModel.fetchData()
     let category = viewModel.getCategoryWith(name: "AntiHeroes")
     XCTAssertEqual(category?.category, "AntiHeroes")
   }
   
   func testReturnNilWhenGetCategoryWithWrongName() throws {
     let viewModel = HomeViewModel()
-    viewModel.categories.append(CategoryModel(category: "Heroes"))
-    viewModel.categories.append(CategoryModel(category: "AntiHeroes"))
-    viewModel.categories.append(CategoryModel(category: "Humans"))
+    let mockedManager = MockedMarvelAPI()
+    viewModel.setManager(manager: mockedManager)
+    viewModel.fetchData()
     let category = viewModel.getCategoryWith(name: "Antiheroes")
     XCTAssertNil(category)
   }
   
-  func testReturnNilWhenGetCategoryWithNameAndCategoriesIsEmpty() throws {
+  func testReturnNilWhenGetCategoryWithNameAndDidntFetchData() throws {
     let viewModel = HomeViewModel()
+    let mockedManager = MockedMarvelAPI()
+    viewModel.setManager(manager: mockedManager)
     let category = viewModel.getCategoryWith(name: "")
     XCTAssertNil(category)
   }
 
+}
+
+class MockedMarvelAPI: MarvelAPI {
+  
+  override func fetchData() {
+    var categories: [CategoryModel] = []
+    categories.append(CategoryModel(category: "Heroes"))
+    categories.append(CategoryModel(category: "AntiHeroes"))
+    categories.append(CategoryModel(category: "Humans"))
+    self.delegate?.didFetchData(categories: categories)
+  }
+  
 }

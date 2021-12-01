@@ -10,14 +10,18 @@ import UIKit
 class HomeViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
+  
+  private let cellReuseIdentifier = "CategoryRowID"
+  private let tableViewCellNibName = "CategoryRowCell"
+  private let homeToDetailsSegueIdentifier = "HomeToDetailsSegueID"
+  
   var viewModel: HomeViewModel?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     self.tableView.dataSource = self
     self.tableView.delegate = self
-    self.tableView.register(UINib(nibName: "CategoryRowCell", bundle: nil), forCellReuseIdentifier: "CategoryRowID")
-    // Do any additional setup after loading the view.
+    self.tableView.register(UINib(nibName: self.tableViewCellNibName, bundle: nil), forCellReuseIdentifier: self.cellReuseIdentifier)
     viewModel = HomeViewModel()
     viewModel?.setDelegate(delegate: self)
     viewModel?.fetchData()
@@ -38,7 +42,9 @@ extension HomeViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = self.tableView.dequeueReusableCell(withIdentifier: "CategoryRowID", for: indexPath) as! CategoryRowCell
+    guard let cell = self.tableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifier, for: indexPath) as? CategoryRowCell else {
+      return UITableViewCell()
+    }
     cell.configure(category: viewModel?.categories[indexPath.row])
     cell.delegate = self
     return cell
@@ -55,18 +61,17 @@ extension HomeViewController: UITableViewDelegate {
 extension HomeViewController: HomeViewModelDelegate {
   func onFetchDataSuccessfully(categories: [CategoryModel]) {
     refresh()
-    return
   }
   
 }
 
 extension HomeViewController: CategoryRowCellDelegate {
   func onTappedCharacter(character: CharacterModel) {
-    self.performSegue(withIdentifier: "HomeToDetailsSegueID", sender: character)
+    self.performSegue(withIdentifier: self.homeToDetailsSegueIdentifier, sender: character)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "HomeToDetailsSegueID", let destination = segue.destination as? DetailsViewController, let character = sender as? CharacterModel {
+    if segue.identifier == self.homeToDetailsSegueIdentifier, let destination = segue.destination as? DetailsViewController, let character = sender as? CharacterModel {
       destination.character = character
     }
     
