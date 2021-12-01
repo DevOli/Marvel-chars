@@ -65,6 +65,13 @@ extension HomeViewController: CategoryRowCellDelegate {
     self.performSegue(withIdentifier: "HomeToDetailsSegueID", sender: character)
   }
   
+  func showCategoryView(category: CategoryModel) {
+    let vc = CharactersCollectionViewController(nibName: "CharactersCollectionViewController", bundle: nil)
+    vc.configure(category: category)
+    vc.delegate = self
+    self.present(vc, animated: true, completion: nil)
+  }
+  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "HomeToDetailsSegueID", let destination = segue.destination as? DetailsViewController, let character = sender as? CharacterModel {
       destination.character = character

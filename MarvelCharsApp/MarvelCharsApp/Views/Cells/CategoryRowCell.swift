@@ -9,6 +9,7 @@ import UIKit
 
 protocol CategoryRowCellDelegate {
   func onTappedCharacter(character: CharacterModel)
+  func showCategoryView(category: CategoryModel)
 }
 
 class CategoryRowCell: UITableViewCell {
@@ -36,12 +37,19 @@ class CategoryRowCell: UITableViewCell {
     
     categoryNameLabel.textColor = UIColor.primary_red
     seeAllButton.titleLabel?.textColor = UIColor.primary_grey
+    seeAllButton.titleLabel?.tintColor = UIColor.primary_grey
   }
   
   override func layoutSubviews() {
     super.layoutSubviews()
     
     contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0))
+  }
+  
+  @IBAction func onSeeAllButtonTapped(_ sender: UIButton) {
+    if let category = self.category {
+      self.delegate?.showCategoryView(category: category)
+    }
   }
   
   private func refresh() {
