@@ -6,12 +6,7 @@
 //
 
 import Foundation
-/*
-protocol MarvelAPIDelegate {
-    func didFetchData(categories: [CategoryModel])
 
-}
-*/
 class MarvelAPI : MarvelRepository {
     
     func setDelegate(delegate: MarvelRepositoryDelegate) {
