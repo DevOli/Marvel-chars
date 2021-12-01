@@ -51,7 +51,7 @@ enum Unity: String, Codable {
 }
 
 enum Universe: String, Codable {
-    case terra616 = "Terra 616"
+    case earth616 = "Earth 616"
 }
 
 typealias Category = [CategoryElement]

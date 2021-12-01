@@ -20,7 +20,10 @@ struct CategoryModel {
     var charactersCount: Int {
         return self.characters.count
     }
-    func getCharacter(at index: Int) -> CharacterModel {
-        return self.characters[index]
+    func getCharacter(at index: Int) -> CharacterModel? {
+      if index<0 || index>=charactersCount || characters.isEmpty {
+        return nil
+      }
+      return self.characters[index]
     }
 }

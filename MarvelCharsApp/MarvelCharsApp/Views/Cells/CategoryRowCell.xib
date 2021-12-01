@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="gilroy-bold.ttf">
+            <string>Gilroy-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -18,21 +23,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heroes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDn-Dw-BcX">
-                        <rect key="frame" x="24" y="0.0" width="61.5" height="21"/>
-                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                        <color key="textColor" systemColor="systemRedColor"/>
+                        <rect key="frame" x="24" y="0.0" width="58" height="18"/>
+                        <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="18"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnR-pY-jaz">
-                        <rect key="frame" x="227" y="0.0" width="69" height="31"/>
+                        <rect key="frame" x="228.5" y="0.0" width="67.5" height="28"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="See All">
-                            <fontDescription key="titleFontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
-                            <color key="baseForegroundColor" name="SeeAllButtonLabelColor"/>
+                            <fontDescription key="titleFontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="14"/>
                         </buttonConfiguration>
                     </button>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="P2W-e2-t3Q">
-                        <rect key="frame" x="0.0" y="47" width="320" height="270"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="270"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="270" id="BcP-Z6-GFa"/>
@@ -60,19 +64,14 @@
             <connections>
                 <outlet property="categoryNameLabel" destination="aDn-Dw-BcX" id="c98-N5-hew"/>
                 <outlet property="charactersCollectionView" destination="P2W-e2-t3Q" id="r5B-pa-mFK"/>
+                <outlet property="seeAllButton" destination="UnR-pY-jaz" id="N93-aD-Is7"/>
             </connections>
             <point key="canvasLocation" x="132" y="81"/>
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="SeeAllButtonLabelColor">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

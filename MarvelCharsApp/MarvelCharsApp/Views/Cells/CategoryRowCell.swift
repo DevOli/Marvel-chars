@@ -15,6 +15,7 @@ class CategoryRowCell: UITableViewCell {
   
   @IBOutlet weak var categoryNameLabel: UILabel!
   @IBOutlet weak var charactersCollectionView: UICollectionView!
+  @IBOutlet weak var seeAllButton: UIButton!
   
   var delegate: CategoryRowCellDelegate?
   var category: CategoryModel?
@@ -30,6 +31,9 @@ class CategoryRowCell: UITableViewCell {
     charactersCollectionView.register(UINib(nibName: "CharacterPortraitCell", bundle: nil), forCellWithReuseIdentifier: "CharacterPortraitID")
     charactersCollectionView.dataSource = self
     charactersCollectionView.delegate = self
+    
+    categoryNameLabel.textColor = UIColor.primary_red
+    seeAllButton.titleLabel?.textColor = UIColor.primary_grey
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
@@ -67,8 +71,8 @@ extension CategoryRowCell: UICollectionViewDataSource {
 
 extension CategoryRowCell: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    if let category = self.category {
-      self.delegate?.onTappedCharacter(character: category.getCharacter(at: indexPath.row))
+    if let category = self.category, let character = category.getCharacter(at: indexPath.row) {
+      self.delegate?.onTappedCharacter(character: character)
     }
   }
 }

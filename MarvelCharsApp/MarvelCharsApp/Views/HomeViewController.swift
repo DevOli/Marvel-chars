@@ -62,9 +62,14 @@ extension HomeViewController: HomeViewModelDelegate {
 
 extension HomeViewController: CategoryRowCellDelegate {
   func onTappedCharacter(character: CharacterModel) {
-    let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewControllerID") as! DetailsViewController
-    vc.character = character
-    self.present(vc, animated: true, completion: nil)
+    self.performSegue(withIdentifier: "HomeToDetailsSegueID", sender: character)
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "HomeToDetailsSegueID", let destination = segue.destination as? DetailsViewController, let character = sender as? CharacterModel {
+      destination.character = character
+    }
+    
   }
   
   
