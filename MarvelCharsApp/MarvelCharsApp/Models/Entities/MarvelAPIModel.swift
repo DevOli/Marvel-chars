@@ -1,18 +1,11 @@
-//
-//  MarvelAPIModel.swift
-//  MarvelCharsApp
-//
-//  Created by admin on 11/24/21.
-//
-
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
-//   let category = try? newJSONDecoder().decode(Category.self, from: jsonData)
+//   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
 
 import Foundation
 
-// MARK: - CategoryElement
+// MARK: - WelcomeElement
 struct CategoryElement: Codable {
     let name, key: String
     let characterList: [Character]
@@ -51,7 +44,7 @@ enum Unity: String, Codable {
 }
 
 enum Universe: String, Codable {
-    case terra616 = "Terra 616"
+    case earth616 = "Earth 616"
 }
 
 typealias Category = [CategoryElement]

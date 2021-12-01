@@ -6,22 +6,27 @@
 //
 
 import UIKit
+import SideMenu
 
 class HomeViewController: UIViewController {
     
+    var menu: SideMenuNavigationController?
     // Quick Example to see if it works. Not final
-    let manager = MarvelAPI()
+    let marvelLogo = UIImageView(image: UIImage(named: "marvel")?.tintedWithLinearGradientColors(colorsArr: [UIColor(named: "gradient-red-b")!.cgColor, UIColor(named: "gradient-red-a")!.cgColor]))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
-        self.manager.delegate = self
-        self.manager.fetchData()
+        
+        menu = SideMenuNavigationController(rootViewController: SideMenuController())
+        menu?.leftSide = true
+        menu?.setNavigationBarHidden(true, animated: true)
+        
+        navigationItem.titleView = marvelLogo
+    }
+    
+    @IBAction func didTapMenu() {
+        present(menu!, animated: true)
     }
 }
-
-extension HomeViewController: MarvelAPIDelegate {
-    func didFetchData(categories: [CategoryModel]) {
-        print (categories)
-    }
-}
-
