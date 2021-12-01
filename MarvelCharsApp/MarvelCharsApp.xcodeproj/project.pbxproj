@@ -36,6 +36,7 @@
 		848A27DA274E91AD000CDBCE /* EmptyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A27D9274E91AD000CDBCE /* EmptyRepository.swift */; };
 		CE0A1147275099660064AA4B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A1146275099660064AA4B /* SearchViewModel.swift */; };
 		CE0A11492750997E0064AA4B /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A11482750997E0064AA4B /* SearchTableViewController.swift */; };
+		CE61C5FE275665B20024F244 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61C5FD275665B20024F244 /* SearchViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		848A27D9274E91AD000CDBCE /* EmptyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyRepository.swift; sourceTree = "<group>"; };
 		CE0A1146275099660064AA4B /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		CE0A11482750997E0064AA4B /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		CE61C5FD275665B20024F244 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				848A27AB274D5079000CDBCE /* MarvelCharsAppTests.swift */,
+				CE61C5FD275665B20024F244 /* SearchViewModelTests.swift */,
 			);
 			path = MarvelCharsAppTests;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				846B9982274FC1DE0055F2A6 /* CategoryModel.swift in Sources */,
 				84645F85274EC15A001A997A /* CharacterModel.swift in Sources */,
 				848A27D3274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */,
+				CE61C5FE275665B20024F244 /* SearchViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
