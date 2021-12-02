@@ -21,6 +21,7 @@
 		846B998727503A740055F2A6 /* CharacterPortraitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846B998527503A740055F2A6 /* CharacterPortraitCell.xib */; };
 		846B998C27517D5E0055F2A6 /* CategoryRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B998A27517D5E0055F2A6 /* CategoryRowCell.swift */; };
 		846B998D27517D5E0055F2A6 /* CategoryRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846B998B27517D5E0055F2A6 /* CategoryRowCell.xib */; };
+		8489D27D275940CD00F57F15 /* MarvelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85B7275829310059DE45 /* MarvelRepository.swift */; };
 		848A2795274D5077000CDBCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A2794274D5077000CDBCE /* AppDelegate.swift */; };
 		848A2797274D5077000CDBCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A2796274D5077000CDBCE /* SceneDelegate.swift */; };
 		848A2799274D5077000CDBCE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A2798274D5077000CDBCE /* HomeViewController.swift */; };
@@ -641,6 +642,7 @@
 				848A27D4274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */,
 				84E54D052757321A00A21EDA /* MarvelAPI.swift in Sources */,
 				84E54D03275731FF00A21EDA /* CharacterModel.swift in Sources */,
+				8489D27D275940CD00F57F15 /* MarvelRepository.swift in Sources */,
 				84E54D042757320D00A21EDA /* CategoryModel.swift in Sources */,
 				848A27CC274D8BBC000CDBCE /* DetailsViewController.swift in Sources */,
 				848A27D0274D8C86000CDBCE /* HomeViewModel.swift in Sources */,

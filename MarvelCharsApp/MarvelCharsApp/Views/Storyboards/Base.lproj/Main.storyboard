@@ -57,6 +57,17 @@
                             <constraint firstItem="Eb2-Xz-H2k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gfy-G1-83E"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="cR9-5v-xTH">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="gR3-As-qja">
+                            <color key="tintColor" name="primary-dark"/>
+                            <connections>
+                                <action selector="didTapMenu" destination="BYZ-38-t0r" id="t3G-OW-fiF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="search" id="Fhe-qE-w8m">
+                            <color key="tintColor" name="primary-dark"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <navigationItem key="navigationItem" id="Lz2-VP-P6U"/>
                     <connections>
                         <outlet property="tableView" destination="Eb2-Xz-H2k" id="vj6-gE-0Bn"/>
@@ -85,6 +96,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="menu" width="24" height="24"/>
+        <image name="search" width="24" height="24"/>
+        <namedColor name="primary-dark">
+            <color red="0.19215686274509805" green="0.19215686274509805" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
