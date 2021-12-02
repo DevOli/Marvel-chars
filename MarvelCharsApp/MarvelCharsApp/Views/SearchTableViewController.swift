@@ -22,39 +22,39 @@ class SearchTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     private func initialConfiguration() {
-      //Search UI configurations
-      searchController.searchResultsUpdater = self
-      searchController.obscuresBackgroundDuringPresentation = false
-      searchController.searchBar.placeholder = "Search Characters"
-      searchController.searchBar.delegate = self;
-      tableView.tableHeaderView = searchController.searchBar
-      definesPresentationContext = true
-      // Search VM configurations
-      searchVm.getAllcharacters()
-      assignClosureToViewModel()
+        //Search UI configurations
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Characters"
+        searchController.searchBar.delegate = self;
+        tableView.tableHeaderView = searchController.searchBar
+        definesPresentationContext = true
+        // Search VM configurations
+        searchVm.getAllcharacters()
+        assignClosureToViewModel()
     }
-  
+    
     private func assignClosureToViewModel() {
-      searchVm.refreshData = {
-        DispatchQueue.main.async { [weak self] in
-            self?.tableView.reloadData()
+        searchVm.refreshData = {
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+            }
         }
-      }
     }
-
+    
     // MARK: - Table view data sourc
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchVm.count()
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "nameCell", for: indexPath)
         let character = searchVm.get(byIndex: indexPath.row)
@@ -67,9 +67,9 @@ class SearchTableViewController: UITableViewController {
             .instantiateViewController(withIdentifier: "DetailsViewControllerID") as! DetailsViewController
         vc.character = searchVm.get(byIndex: indexPath.row)
         self.navigationController?.pushViewController(vc, animated: true)
-
+        
     }
-
+    
 }
 
 // MARK: - Search Results Update
@@ -77,7 +77,7 @@ class SearchTableViewController: UITableViewController {
 extension SearchTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text {
-          searchVm.getCharacters(byName: searchText)
+            searchVm.getCharacters(byName: searchText)
         }
     }
 }
@@ -86,7 +86,7 @@ extension SearchTableViewController: UISearchResultsUpdating {
 
 extension SearchTableViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-
+        
         searchBar.text = ""
         // Go to home
         self.navigationController?.popViewController(animated: true)
