@@ -9,22 +9,26 @@ import Foundation
 
 protocol HomeViewModelDelegate {
   func onFetchDataSuccessfully(categories: [CategoryModel])
-  
 }
 
 class HomeViewModel {
   
-  let manager = MarvelAPI()
+  var manager: MarvelAPI?
   var delegate: HomeViewModelDelegate?
   var categories: [CategoryModel] = []
   var categoriesNames: [String] = []
   
-  init(){
-    self.manager.delegate = self
+  init() {
+    self.setManager(manager: MarvelAPI())
+  }
+  
+  func setManager(manager: MarvelAPI) {
+    self.manager = manager
+    self.manager?.delegate = self
   }
   
   func fetchData() {
-    self.manager.fetchData()
+    self.manager?.fetchData()
   }
   
   func setDelegate(delegate: HomeViewModelDelegate){
@@ -37,7 +41,10 @@ class HomeViewModel {
   
 }
 
-extension HomeViewModel: MarvelAPIDelegate {
+extension HomeViewModel: MarvelRepositoryDelegate {
+  func didFailFetching(error: Error) {
+    print(error)
+  }
   
   func didFetchData(categories: [CategoryModel]) {
     self.categories = categories

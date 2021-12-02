@@ -6,21 +6,40 @@
 //
 
 import UIKit
+import SideMenu
 
 class HomeViewController: UIViewController {
   
+  var menu: SideMenuNavigationController?
+  // Quick Example to see if it works. Not final
+  let marvelLogo = UIImageView(image: UIImage(named: "marvel")?.tintedWithLinearGradientColors(colorsArr: [UIColor(named: "gradient-red-b")!.cgColor, UIColor(named: "gradient-red-a")!.cgColor]))
+  
   @IBOutlet weak var tableView: UITableView!
+  
+  private let cellReuseIdentifier = "CategoryRowID"
+  private let tableViewCellNibName = "CategoryRowCell"
+  private let homeToDetailsSegueIdentifier = "HomeToDetailsSegueID"
+  
   var viewModel: HomeViewModel?
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    menu = SideMenuNavigationController(rootViewController: SideMenuController())
+    menu?.leftSide = true
+    menu?.setNavigationBarHidden(true, animated: true)
+    
+    navigationItem.titleView = marvelLogo
+    
     self.tableView.dataSource = self
     self.tableView.delegate = self
-    self.tableView.register(UINib(nibName: "CategoryRowCell", bundle: nil), forCellReuseIdentifier: "CategoryRowID")
-    // Do any additional setup after loading the view.
+    self.tableView.register(UINib(nibName: self.tableViewCellNibName, bundle: nil), forCellReuseIdentifier: self.cellReuseIdentifier)
     viewModel = HomeViewModel()
     viewModel?.setDelegate(delegate: self)
     viewModel?.fetchData()
+  }
+  
+  @IBAction func didTapMenu() {
+      present(menu!, animated: true)
   }
   
   private func refresh() {
@@ -38,7 +57,9 @@ extension HomeViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = self.tableView.dequeueReusableCell(withIdentifier: "CategoryRowID", for: indexPath) as! CategoryRowCell
+    guard let cell = self.tableView.dequeueReusableCell(withIdentifier: self.cellReuseIdentifier, for: indexPath) as? CategoryRowCell else {
+      return UITableViewCell()
+    }
     cell.configure(category: viewModel?.categories[indexPath.row])
     cell.delegate = self
     return cell
@@ -55,14 +76,13 @@ extension HomeViewController: UITableViewDelegate {
 extension HomeViewController: HomeViewModelDelegate {
   func onFetchDataSuccessfully(categories: [CategoryModel]) {
     refresh()
-    return
   }
   
 }
 
 extension HomeViewController: CategoryRowCellDelegate {
   func onTappedCharacter(character: CharacterModel) {
-    self.performSegue(withIdentifier: "HomeToDetailsSegueID", sender: character)
+    self.performSegue(withIdentifier: self.homeToDetailsSegueIdentifier, sender: character)
   }
   
   func showCategoryView(category: CategoryModel) {
@@ -73,7 +93,7 @@ extension HomeViewController: CategoryRowCellDelegate {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "HomeToDetailsSegueID", let destination = segue.destination as? DetailsViewController, let character = sender as? CharacterModel {
+    if segue.identifier == self.homeToDetailsSegueIdentifier, let destination = segue.destination as? DetailsViewController, let character = sender as? CharacterModel {
       destination.character = character
     }
     

@@ -21,6 +21,9 @@ class CategoryRowCell: UITableViewCell {
   var delegate: CategoryRowCellDelegate?
   var category: CategoryModel?
   
+  private let collectionViewCellNibName = "CharacterPortraitCell"
+  private let cellReuseIdentifier = "CharacterPortraitID"
+  
   func configure(category: CategoryModel?){
     self.category = category
     self.categoryNameLabel.text = category?.category
@@ -31,7 +34,7 @@ class CategoryRowCell: UITableViewCell {
     super.awakeFromNib()
     self.selectionStyle = .none
     
-    charactersCollectionView.register(UINib(nibName: "CharacterPortraitCell", bundle: nil), forCellWithReuseIdentifier: "CharacterPortraitID")
+    charactersCollectionView.register(UINib(nibName: self.collectionViewCellNibName, bundle: nil), forCellWithReuseIdentifier: self.cellReuseIdentifier)
     charactersCollectionView.dataSource = self
     charactersCollectionView.delegate = self
     
@@ -67,7 +70,9 @@ extension CategoryRowCell: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = charactersCollectionView.dequeueReusableCell(withReuseIdentifier: "CharacterPortraitID", for: indexPath) as! CharacterPortraitCell
+    guard let cell = charactersCollectionView.dequeueReusableCell(withReuseIdentifier: self.cellReuseIdentifier, for: indexPath) as? CharacterPortraitCell else {
+      return UICollectionViewCell()
+    }
     if let character = self.category?.getCharacter(at: indexPath.row) {
       let image = UIImage(named: character.imagePath)
       cell.characterImage.image = image?.roundedImage

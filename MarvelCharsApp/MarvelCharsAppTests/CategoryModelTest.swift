@@ -60,12 +60,12 @@ class CategoryModelTest: XCTestCase {
     XCTAssertEqual(character?.alterEgo, "Tony Stark")
   }
   
-  func testGetCharacterThrowsErrorWhenNotSet() throws {
+  func testGetCharacterReturnsNilWhenNotSet() throws {
     let category = CategoryModel(category: "Heroes")
     XCTAssertNil(category.getCharacter(at: 0))
   }
   
-  func testGetCharacterThrowsErrorWhenIndexOutOfRange() throws {
+  func testGetCharacterReturnsNilWhenIndexOutOfRange() throws {
     let characteristics = Caracteristics("01-01-2000", Eight(70.0, .kg), Eight(170.0, .meters), .earth616)
     let abilities = Abilities(100, 90, 80, 70, 60)
     let category = CategoryModel(category: "Heroes", characters: [
