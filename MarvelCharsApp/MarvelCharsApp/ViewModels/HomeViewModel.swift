@@ -41,7 +41,10 @@ class HomeViewModel {
   
 }
 
-extension HomeViewModel: MarvelAPIDelegate {
+extension HomeViewModel: MarvelRepositoryDelegate {
+  func didFailFetching(error: Error) {
+    print(error)
+  }
   
   func didFetchData(categories: [CategoryModel]) {
     self.categories = categories

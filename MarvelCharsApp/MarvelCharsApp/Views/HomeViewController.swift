@@ -11,8 +11,8 @@ import SideMenu
 class HomeViewController: UIViewController {
   
   var menu: SideMenuNavigationController?
-    // Quick Example to see if it works. Not final
-    let marvelLogo = UIImageView(image: UIImage(named: "marvel")?.tintedWithLinearGradientColors(colorsArr: [UIColor(named: "gradient-red-b")!.cgColor, UIColor(named: "gradient-red-a")!.cgColor]))
+  // Quick Example to see if it works. Not final
+  let marvelLogo = UIImageView(image: UIImage(named: "marvel")?.tintedWithLinearGradientColors(colorsArr: [UIColor(named: "gradient-red-b")!.cgColor, UIColor(named: "gradient-red-a")!.cgColor]))
   
   @IBOutlet weak var tableView: UITableView!
   
@@ -25,10 +25,10 @@ class HomeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     menu = SideMenuNavigationController(rootViewController: SideMenuController())
-        menu?.leftSide = true
-        menu?.setNavigationBarHidden(true, animated: true)
-        
-        navigationItem.titleView = marvelLogo
+    menu?.leftSide = true
+    menu?.setNavigationBarHidden(true, animated: true)
+    
+    navigationItem.titleView = marvelLogo
     
     self.tableView.dataSource = self
     self.tableView.delegate = self
@@ -39,8 +39,8 @@ class HomeViewController: UIViewController {
   }
   
   @IBAction func didTapMenu() {
-        present(menu!, animated: true)
-    }
+      present(menu!, animated: true)
+  }
   
   private func refresh() {
     DispatchQueue.main.async {
@@ -93,25 +93,4 @@ extension HomeViewController: CategoryRowCellDelegate {
   }
   
   
-}
-    
-    var menu: SideMenuNavigationController?
-    // Quick Example to see if it works. Not final
-    let marvelLogo = UIImageView(image: UIImage(named: "marvel")?.tintedWithLinearGradientColors(colorsArr: [UIColor(named: "gradient-red-b")!.cgColor, UIColor(named: "gradient-red-a")!.cgColor]))
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        
-        menu = SideMenuNavigationController(rootViewController: SideMenuController())
-        menu?.leftSide = true
-        menu?.setNavigationBarHidden(true, animated: true)
-        
-        navigationItem.titleView = marvelLogo
-    }
-    
-    @IBAction func didTapMenu() {
-        present(menu!, animated: true)
-    }
 }
