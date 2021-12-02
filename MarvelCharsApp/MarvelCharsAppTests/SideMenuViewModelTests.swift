@@ -8,36 +8,34 @@
 import XCTest
 @testable import MarvelCharsApp
 
-class CategoriesViewModelTests: XCTestCase {
+class SideMenuViewModelTests: XCTestCase {
 
-    func testCategoriesViewModelCallsToTheRepositoryOnceWhenFetchingData() throws {
-        let categoriesViewModel = CategoriesViewModel()
+    func testSideMenuViewModelCallsToTheRepositoryOnceWhenFetchingData() throws {
+        let sideMenuViewModel = SideMenuViewModel()
         let mockedRepository = MockedMarvelRepository()
-        categoriesViewModel.repository = mockedRepository
-        categoriesViewModel.repository.setDelegate(delegate: categoriesViewModel)
-        categoriesViewModel.fetchData()
+        sideMenuViewModel.repository = mockedRepository
+        sideMenuViewModel.repository.setDelegate(delegate: sideMenuViewModel)
+        sideMenuViewModel.fetchData()
         XCTAssertEqual(1, mockedRepository.callsCount)
     }
     
-    func testCategoriesFetchDataSuccessfullyAndStoresItInCategoryListVariable() throws {
-        let categoriesViewModel = CategoriesViewModel()
+    func testSideMenuFetchDataSuccessfullyAndStoresItInCategoryListVariable() throws {
+        let sideMenuViewModel = SideMenuViewModel()
         let mockedRepository = MockedMarvelRepository()
-        categoriesViewModel.repository = mockedRepository
-        categoriesViewModel.repository.setDelegate(delegate: categoriesViewModel)
-        XCTAssertEqual(0, categoriesViewModel.countCategories())
-        categoriesViewModel.fetchData()
-        mockedRepository.fetchSuccessfully()
-        XCTAssertEqual(5, categoriesViewModel.countCategories())
+        sideMenuViewModel.repository = mockedRepository
+        sideMenuViewModel.repository.setDelegate(delegate: sideMenuViewModel)
+        XCTAssertEqual(0, sideMenuViewModel.countCategories())
+        sideMenuViewModel.fetchData()
+        XCTAssertEqual(5, sideMenuViewModel.countCategories())
     }
     
-    func testViewModelDelegateIsBeingCalledAfterFetchingData() throws {
+    func testSideMenuViewModelDelegateIsBeingCalledAfterFetchingData() throws {
         let mockedRepository = MockedMarvelRepository()
-        let categoriesViewModel = CategoriesViewModel(repository: mockedRepository)
-        let mockedDelegate = MockedCategoriesViewModelDelegate()
-        categoriesViewModel.delegate = mockedDelegate
-        
-        categoriesViewModel.fetchData()
-        mockedRepository.fetchSuccessfully()
+        let sideMenuViewModel = SideMenuViewModel(repository: mockedRepository)
+        let mockedDelegate = MockedSideMenuViewModelDelegate()
+        sideMenuViewModel.delegate = mockedDelegate
+        sideMenuViewModel.fetchData()
+
         XCTAssertEqual(1, mockedDelegate.successCalls)
         XCTAssertEqual(5, mockedDelegate.lastResponse?.count)
         XCTAssertEqual(0, mockedDelegate.errorCalls)
@@ -59,6 +57,7 @@ class MockedMarvelRepository : MarvelRepository {
     
     func fetchData() {
         callsCount+=1
+        fetchSuccessfully()
     }
     
     func setDelegate(delegate: MarvelRepositoryDelegate) {
@@ -72,7 +71,7 @@ class MockedMarvelRepository : MarvelRepository {
     }
 }
 
-class MockedCategoriesViewModelDelegate : CategoriesViewModelDelegate {
+class MockedSideMenuViewModelDelegate : SideMenuViewModelDelegate {
     var successCalls: Int = 0
     var errorCalls: Int = 0
     var lastResponse: [CategoryModel]?

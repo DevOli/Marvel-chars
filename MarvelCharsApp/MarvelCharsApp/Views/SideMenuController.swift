@@ -10,22 +10,22 @@ import SideMenu
 
 class SideMenuController: UITableViewController {
 
-    var categoriesViewModel = CategoriesViewModel()
+    var sideMenuViewModel = SideMenuViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        categoriesViewModel.delegate = self
-        categoriesViewModel.fetchData()
+        sideMenuViewModel.delegate = self
+        sideMenuViewModel.fetchData()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoriesViewModel.countCategories()
+        return sideMenuViewModel.countCategories()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = categoriesViewModel.getCategory(at: indexPath.row).category
+        cell.textLabel?.text = sideMenuViewModel.getCategory(at: indexPath.row).category
         cell.textLabel?.font = UIFont(name: "gilroy-medium", size: 16)
         return cell
     }
@@ -35,7 +35,7 @@ class SideMenuController: UITableViewController {
     }
 }
 
-extension SideMenuController: CategoriesViewModelDelegate {
+extension SideMenuController: SideMenuViewModelDelegate {
     func didFetchSuccessfuly(categories: [CategoryModel]) {
         DispatchQueue.main.async {
             self.tableView.reloadData()

@@ -44,12 +44,12 @@
 		C017B7AE2755A418002A8E3F /* gilroy-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C017B7A72755A3FF002A8E3F /* gilroy-semibold.ttf */; };
 		CE2B85B6275828E30059DE45 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85B5275828E30059DE45 /* SideMenuController.swift */; };
 		CE2B85B8275829310059DE45 /* MarvelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85B7275829310059DE45 /* MarvelRepository.swift */; };
-		CE2B85BA275829C50059DE45 /* CategoriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85B9275829C50059DE45 /* CategoriesViewModelTests.swift */; };
+		CE2B85BA275829C50059DE45 /* SideMenuViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85B9275829C50059DE45 /* SideMenuViewModelTests.swift */; };
 		CE2B85BC27582A2A0059DE45 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85BB27582A2A0059DE45 /* CategoriesViewModel.swift */; };
 		CE2B85BE27582A660059DE45 /* UIImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85BD27582A660059DE45 /* UIImageHelper.swift */; };
 		CE2B85BF275830490059DE45 /* MarvelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85B7275829310059DE45 /* MarvelRepository.swift */; };
 		CE2B85C0275830510059DE45 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85BB27582A2A0059DE45 /* CategoriesViewModel.swift */; };
-		CE2B85C1275830DD0059DE45 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85BB27582A2A0059DE45 /* CategoriesViewModel.swift */; };
+		CE2B85C22758BBBF0059DE45 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85B5275828E30059DE45 /* SideMenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,7 +106,7 @@
 		CBF0BAF1FB022BB73650B604 /* Pods-MarvelCharsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelCharsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelCharsAppTests/Pods-MarvelCharsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE2B85B5275828E30059DE45 /* SideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		CE2B85B7275829310059DE45 /* MarvelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelRepository.swift; sourceTree = "<group>"; };
-		CE2B85B9275829C50059DE45 /* CategoriesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModelTests.swift; sourceTree = "<group>"; };
+		CE2B85B9275829C50059DE45 /* SideMenuViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModelTests.swift; sourceTree = "<group>"; };
 		CE2B85BB27582A2A0059DE45 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		CE2B85BD27582A660059DE45 /* UIImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageHelper.swift; sourceTree = "<group>"; };
 		EC2100C015AF4FAD404893C0 /* Pods-MarvelCharsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelCharsAppTests.release.xcconfig"; path = "Target Support Files/Pods-MarvelCharsAppTests/Pods-MarvelCharsAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				848A27AB274D5079000CDBCE /* MarvelCharsAppTests.swift */,
-				CE2B85B9275829C50059DE45 /* CategoriesViewModelTests.swift */,
+				CE2B85B9275829C50059DE45 /* SideMenuViewModelTests.swift */,
 			);
 			path = MarvelCharsAppTests;
 			sourceTree = "<group>";
@@ -573,8 +573,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84645F7F274E9E1B001A997A /* MarvelAPI.swift in Sources */,
+				CE2B85C22758BBBF0059DE45 /* SideMenuController.swift in Sources */,
 				848A27AC274D5079000CDBCE /* MarvelCharsAppTests.swift in Sources */,
-				CE2B85BA275829C50059DE45 /* CategoriesViewModelTests.swift in Sources */,
+				CE2B85BA275829C50059DE45 /* SideMenuViewModelTests.swift in Sources */,
 				848A27CF274D8C86000CDBCE /* HomeViewModel.swift in Sources */,
 				84645F82274E9E53001A997A /* MarvelAPIModel.swift in Sources */,
 				848A27CB274D8BBC000CDBCE /* DetailsViewController.swift in Sources */,
@@ -594,7 +595,6 @@
 				848A27B8274D5079000CDBCE /* MarvelCharsAppUITestsLaunchTests.swift in Sources */,
 				848A27D4274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */,
 				848A27CC274D8BBC000CDBCE /* DetailsViewController.swift in Sources */,
-				CE2B85C1275830DD0059DE45 /* CategoriesViewModel.swift in Sources */,
 				848A27D0274D8C86000CDBCE /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

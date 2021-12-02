@@ -7,15 +7,15 @@
 
 import Foundation
 
-protocol CategoriesViewModelDelegate {
+protocol SideMenuViewModelDelegate {
     func didFetchSuccessfuly(categories: [CategoryModel])
     func didFailFetching(error: Error)
 }
 
-class CategoriesViewModel {
+class SideMenuViewModel {
     
     var categoriesList: [CategoryModel] = []
-    var delegate: CategoriesViewModelDelegate?
+    var delegate: SideMenuViewModelDelegate?
     var repository: MarvelRepository
     
     init() {
@@ -41,7 +41,7 @@ class CategoriesViewModel {
     }
 }
 
-extension CategoriesViewModel: MarvelRepositoryDelegate {
+extension SideMenuViewModel: MarvelRepositoryDelegate {
     func didFetchData(categories: [CategoryModel]) {
         categoriesList = categories
         delegate?.didFetchSuccessfuly(categories: categories)
