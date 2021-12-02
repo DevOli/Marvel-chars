@@ -44,7 +44,11 @@ class SearchViewModel {
     
 }
 
-extension SearchViewModel: MarvelAPIDelegate {
+extension SearchViewModel: MarvelRepositoryDelegate {
+    func didFailFetching(error: Error) {
+        print(error)
+    }
+    
     func didFetchData(categories: [CategoryModel]) {
         var charnames: [CharacterModel] = []
         categories.forEach { category in
