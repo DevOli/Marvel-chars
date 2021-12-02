@@ -89,4 +89,7 @@ fastlane/test_output
 
 iOSInjectionProject/
 
+# OS generated files
+#
 .DS_Store
+.DS_Store?

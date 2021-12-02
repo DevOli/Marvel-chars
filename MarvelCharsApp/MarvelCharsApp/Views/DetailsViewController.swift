@@ -8,10 +8,14 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
+  
+  // Testing, not final
+  var character: CharacterModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+      print(character)
     }
 
 
