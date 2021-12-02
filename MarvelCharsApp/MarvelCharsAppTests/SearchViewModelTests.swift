@@ -12,7 +12,8 @@ class SearchViewModelTests: XCTestCase {
     var search = SearchViewModel()
     var refreshCallsCount = 0
     
-    override func setUpWithError() throws {
+    
+    func prepareAndWaitFirstFetchExpectation() {
         let expectationForFecthAll = self.expectation(description: "Request to API")
         search.refreshData = {
             self.refreshCallsCount += 1
@@ -20,6 +21,18 @@ class SearchViewModelTests: XCTestCase {
         }
         search.getAllcharacters()
         self.waitForExpectations(timeout: 2, handler: nil)
+    }
+    
+    func prepareSearchlocalExpectation() {
+        let expectationForSearch = self.expectation(description: "Search locally")
+        search.refreshData = {
+            self.refreshCallsCount += 1
+            expectationForSearch.fulfill()
+        }
+    }
+    
+    override func setUpWithError() throws {
+        prepareAndWaitFirstFetchExpectation()
     }
 
     override func tearDownWithError() throws {
@@ -43,12 +56,8 @@ class SearchViewModelTests: XCTestCase {
     }
 
     func testGetCharacterByCorrectName() throws {
-        let expectationForSearch = self.expectation(description: "Search locally")
-        search.refreshData = {
-            self.refreshCallsCount += 1
-            expectationForSearch.fulfill()
-        }
-        search.getCharacters(byName: "Homem Aranha")
+        prepareSearchlocalExpectation()
+        search.getCharacters(byName: "Spider Man")
         self.waitForExpectations(timeout: 2, handler: nil)
         let count = search.count()
         XCTAssertEqual(2, refreshCallsCount)
@@ -56,11 +65,7 @@ class SearchViewModelTests: XCTestCase {
     }
 
     func testGetCharacterByInCorrectName() throws {
-        let expectationForSearch = self.expectation(description: "Search locally")
-        search.refreshData = {
-            self.refreshCallsCount += 1
-            expectationForSearch.fulfill()
-        }
+        prepareSearchlocalExpectation()
         search.getCharacters(byName: "Wrong Name")
         self.waitForExpectations(timeout: 2, handler: nil)
         let count = search.count()
@@ -69,11 +74,7 @@ class SearchViewModelTests: XCTestCase {
     }
 
     func testGetCharacterByEmptyName() throws {
-        let expectationForSearch = self.expectation(description: "Search locally")
-        search.refreshData = {
-            self.refreshCallsCount += 1
-            expectationForSearch.fulfill()
-        }
+        prepareSearchlocalExpectation()
         search.getCharacters(byName: "")
         self.waitForExpectations(timeout: 2, handler: nil)
         let count = search.count()
@@ -85,7 +86,7 @@ class SearchViewModelTests: XCTestCase {
 //Not using mock in this test
 class MockMarvelAPI {
     
-    var delegate: MarvelAPIDelegate?
+    var delegate: MarvelRepositoryDelegate?
 
     let characterOne = CharacterModel(name: "SpidermanTest", alterEgo: "AlterEgoTest", imagePath: "", biography: "", birth: "", weight: 0, weightUnit: "", height: 0, heightUnit: "", universe: "", force: 0, intelligence: 0, agility: 0, endurance: 0, velocity: 0, movies: [])
     let characterTwo = CharacterModel(name: "IronManTest", alterEgo: "AlterEgoTest", imagePath: "", biography: "", birth: "", weight: 0, weightUnit: "", height: 0, heightUnit: "", universe: "", force: 0, intelligence: 0, agility: 0, endurance: 0, velocity: 0, movies: [])

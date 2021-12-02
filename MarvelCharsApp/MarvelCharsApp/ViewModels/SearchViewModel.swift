@@ -9,7 +9,7 @@ import Foundation
 class SearchViewModel {
     private var apiCaller = MarvelAPI()
     var refreshData = { () -> () in }
-    
+    private var allCharacters: [CharacterModel] = []
     private var searchedItems: [CharacterModel] = [] {
         didSet {
             refreshData()
@@ -34,11 +34,11 @@ class SearchViewModel {
     
     func getCharacters(byName name:String) {
         if !name.isEmpty {
-            searchedItems = searchedItems.filter { (character: CharacterModel) -> Bool in
+            searchedItems = allCharacters.filter { (character: CharacterModel) -> Bool in
                 return (character.name.lowercased().contains(name.lowercased()))
             }
         } else {
-            apiCaller.fetchData()
+            searchedItems = allCharacters
         }
     }
     
@@ -50,10 +50,9 @@ extension SearchViewModel: MarvelRepositoryDelegate {
     }
     
     func didFetchData(categories: [CategoryModel]) {
-        var charnames: [CharacterModel] = []
         categories.forEach { category in
-            charnames += category.characters
+            allCharacters += category.characters
         }
-        searchedItems = charnames
+        searchedItems = allCharacters
     }
 }

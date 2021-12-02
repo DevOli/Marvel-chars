@@ -11,11 +11,21 @@ class SearchTableViewController: UITableViewController {
     
     let searchVm = SearchViewModel()
     let searchController = UISearchController(searchResultsController: nil)
-  
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialConfiguration()
+    }
+    
+    //Hide Navigation bar when view appears and show it when it disappear
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     private func initialConfiguration() {
@@ -23,6 +33,7 @@ class SearchTableViewController: UITableViewController {
       searchController.searchResultsUpdater = self
       searchController.obscuresBackgroundDuringPresentation = false
       searchController.searchBar.placeholder = "Search Characters"
+      searchController.searchBar.delegate = self;
       tableView.tableHeaderView = searchController.searchBar
       definesPresentationContext = true
       // Search VM configurations
@@ -50,23 +61,34 @@ class SearchTableViewController: UITableViewController {
         cell.textLabel?.text = character.name
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "DetailsViewControllerID") as! DetailsViewController
+        vc.character = searchVm.get(byIndex: indexPath.row)
+        self.navigationController?.pushViewController(vc, animated: true)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }
+
+// MARK: - Search Results Update
 
 extension SearchTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text {
           searchVm.getCharacters(byName: searchText)
         }
+    }
+}
+
+// MARK: - Search Delegate
+
+extension SearchTableViewController: UISearchBarDelegate {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+
+        searchBar.text = ""
+        // Go to home
+        self.navigationController?.popViewController(animated: true)
     }
 }
