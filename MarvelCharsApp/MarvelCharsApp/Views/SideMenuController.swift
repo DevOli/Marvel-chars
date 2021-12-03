@@ -11,7 +11,8 @@ import SideMenu
 class SideMenuController: UITableViewController {
 
     var sideMenuViewModel = SideMenuViewModel()
-    
+    var delegate: CharacterPortraitDelegate?
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenuViewModel.delegate = self
@@ -31,7 +32,9 @@ class SideMenuController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+      tableView.deselectRow(at: indexPath, animated: true)
+      self.dismiss(animated: true, completion: nil)
+      self.delegate?.showCategoryView(category: sideMenuViewModel.getCategory(at: indexPath.row))
     }
 }
 

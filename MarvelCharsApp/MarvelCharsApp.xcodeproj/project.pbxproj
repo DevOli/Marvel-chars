@@ -41,6 +41,12 @@
 		848A27D3274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A27D1274D8CA3000CDBCE /* DetailsViewModel.swift */; };
 		848A27D4274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A27D1274D8CA3000CDBCE /* DetailsViewModel.swift */; };
 		848A27DA274E91AD000CDBCE /* EmptyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A27D9274E91AD000CDBCE /* EmptyRepository.swift */; };
+		84DC6820275A4FA4009B9CAD /* CharactersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E54D0C2757D89E00A21EDA /* CharactersCollectionViewController.swift */; };
+		84DC6821275A4FA4009B9CAD /* CharactersCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E54D0D2757D89E00A21EDA /* CharactersCollectionViewController.xib */; };
+		84DC6822275A4FA4009B9CAD /* CharactersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E54D0C2757D89E00A21EDA /* CharactersCollectionViewController.swift */; };
+		84DC6823275A4FA4009B9CAD /* CharactersCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E54D0D2757D89E00A21EDA /* CharactersCollectionViewController.xib */; };
+		84DC682A275AC410009B9CAD /* CharactersCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC6828275AC410009B9CAD /* CharactersCollectionHeader.swift */; };
+		84DC682B275AC410009B9CAD /* CharactersCollectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DC6829275AC410009B9CAD /* CharactersCollectionHeader.xib */; };
 		84E54D00275727CB00A21EDA /* UIColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E54CFF275727CB00A21EDA /* UIColorHelper.swift */; };
 		84E54D022757308600A21EDA /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E54D012757308600A21EDA /* HomeViewModelTest.swift */; };
 		84E54D03275731FF00A21EDA /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84645F83274EC15A001A997A /* CharacterModel.swift */; };
@@ -113,6 +119,8 @@
 		848A27CD274D8C86000CDBCE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		848A27D1274D8CA3000CDBCE /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		848A27D9274E91AD000CDBCE /* EmptyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyRepository.swift; sourceTree = "<group>"; };
+		84DC6828275AC410009B9CAD /* CharactersCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCollectionHeader.swift; sourceTree = "<group>"; };
+		84DC6829275AC410009B9CAD /* CharactersCollectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersCollectionHeader.xib; sourceTree = "<group>"; };
 		84E54CFF275727CB00A21EDA /* UIColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHelper.swift; sourceTree = "<group>"; };
 		84E54D012757308600A21EDA /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
 		84E54D07275734AC00A21EDA /* CategoryModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModelTest.swift; sourceTree = "<group>"; };
@@ -341,6 +349,8 @@
 			children = (
 				84E54D0C2757D89E00A21EDA /* CharactersCollectionViewController.swift */,
 				84E54D0D2757D89E00A21EDA /* CharactersCollectionViewController.xib */,
+				84DC6828275AC410009B9CAD /* CharactersCollectionHeader.swift */,
+				84DC6829275AC410009B9CAD /* CharactersCollectionHeader.xib */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -466,6 +476,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84DC682B275AC410009B9CAD /* CharactersCollectionHeader.xib in Resources */,
 				846B998727503A740055F2A6 /* CharacterPortraitCell.xib in Resources */,
 				C017B7AA2755A40A002A8E3F /* gilroy-bold.ttf in Resources */,
 				C017B7AD2755A416002A8E3F /* gilroy-regular.ttf in Resources */,
@@ -484,7 +495,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84E54D112757D89E00A21EDA /* CharactersCollectionViewController.xib in Resources */,
+				84DC6821275A4FA4009B9CAD /* CharactersCollectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +503,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84E54D112757D89E00A21EDA /* CharactersCollectionViewController.xib in Resources */,
+				84DC6823275A4FA4009B9CAD /* CharactersCollectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,10 +633,10 @@
 				CE2B85B8275829310059DE45 /* MarvelRepository.swift in Sources */,
 				84645F84274EC15A001A997A /* CharacterModel.swift in Sources */,
 				848A27D2274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */,
+				84DC682A275AC410009B9CAD /* CharactersCollectionHeader.swift in Sources */,
 				84E54D00275727CB00A21EDA /* UIColorHelper.swift in Sources */,
 				848A27DA274E91AD000CDBCE /* EmptyRepository.swift in Sources */,
 				84E54D0E2757D89E00A21EDA /* CharactersCollectionViewController.swift in Sources */,
-				84D3CA35275679EF006BC748 /* UIImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,7 +652,7 @@
 				848A27CF274D8C86000CDBCE /* HomeViewModel.swift in Sources */,
 				84645F82274E9E53001A997A /* MarvelAPIModel.swift in Sources */,
 				84E54D08275734AC00A21EDA /* CategoryModelTest.swift in Sources */,
-				84E54D0E2757D89E00A21EDA /* CharactersCollectionViewController.swift in Sources */,
+				84DC6820275A4FA4009B9CAD /* CharactersCollectionViewController.swift in Sources */,
 				848A27CB274D8BBC000CDBCE /* DetailsViewController.swift in Sources */,
 				CE2B85BF275830490059DE45 /* MarvelRepository.swift in Sources */,
 				846B9982274FC1DE0055F2A6 /* CategoryModel.swift in Sources */,
@@ -660,7 +671,7 @@
 				848A27B6274D5079000CDBCE /* MarvelCharsAppUITests.swift in Sources */,
 				848A27B8274D5079000CDBCE /* MarvelCharsAppUITestsLaunchTests.swift in Sources */,
 				848A27D4274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */,
-				84E54D0E2757D89E00A21EDA /* CharactersCollectionViewController.swift in Sources */,
+				84DC6822275A4FA4009B9CAD /* CharactersCollectionViewController.swift in Sources */,
 				84E54D052757321A00A21EDA /* MarvelAPI.swift in Sources */,
 				84E54D03275731FF00A21EDA /* CharacterModel.swift in Sources */,
 				8489D27D275940CD00F57F15 /* MarvelRepository.swift in Sources */,

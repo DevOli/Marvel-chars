@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol CategoryRowCellDelegate {
+protocol CharacterPortraitDelegate {
   func onTappedCharacter(character: CharacterModel)
   func showCategoryView(category: CategoryModel)
 }
@@ -18,7 +18,7 @@ class CategoryRowCell: UITableViewCell {
   @IBOutlet weak var charactersCollectionView: UICollectionView!
   @IBOutlet weak var seeAllButton: UIButton!
   
-  var delegate: CategoryRowCellDelegate?
+  var delegate: CharacterPortraitDelegate?
   var category: CategoryModel?
   
   private let collectionViewCellNibName = "CharacterPortraitCell"

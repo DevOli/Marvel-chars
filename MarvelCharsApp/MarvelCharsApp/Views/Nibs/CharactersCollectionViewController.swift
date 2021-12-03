@@ -7,10 +7,15 @@
 
 import UIKit
 
-class CharactersCollectionViewController: UICollectionViewController {
+class CharactersCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
   
-  var delegate: CategoryRowCellDelegate?
+  var delegate: CharacterPortraitDelegate?
   var category: CategoryModel?
+  
+  private let collectionViewCellNibName = "CharacterPortraitCell"
+  private let cellReuseIdentifier = "CharacterPortraitID"
+  private let collectionViewHeaderNibName = "CharactersCollectionHeader"
+  private let headerReuseIdentifier = "CharacterCollectionReusableViewID"
   
   func configure(category: CategoryModel?){
     self.category = category
@@ -26,7 +31,8 @@ class CharactersCollectionViewController: UICollectionViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.collectionView.register(UINib(nibName: "CharacterPortraitCell", bundle: nil), forCellWithReuseIdentifier: "CharacterPortraitID")
+    self.collectionView.register(UINib(nibName: self.collectionViewCellNibName, bundle: nil), forCellWithReuseIdentifier: self.cellReuseIdentifier)
+    self.collectionView.register(UINib(nibName: self.collectionViewHeaderNibName, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: self.headerReuseIdentifier)
   }
   
   // MARK: UICollectionViewDataSource
@@ -35,16 +41,14 @@ class CharactersCollectionViewController: UICollectionViewController {
     return 1
   }
   
-  override func indexTitles(for collectionView: UICollectionView) -> [String]? {
-    return [self.category!.category]
-  }
-  
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return self.category?.charactersCount ?? 0
   }
   
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "CharacterPortraitID", for: indexPath) as! CharacterPortraitCell
+    guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: self.cellReuseIdentifier, for: indexPath) as? CharacterPortraitCell else {
+      return UICollectionViewCell()
+    }
     if let character = self.category?.getCharacter(at: indexPath.row) {
       let image = UIImage(named: character.imagePath)
       cell.characterImage.image = image?.roundedImage
@@ -61,6 +65,20 @@ class CharactersCollectionViewController: UICollectionViewController {
       self.delegate?.onTappedCharacter(character: character)
       self.dismiss(animated: false, completion: nil)
     }
+  }
+  
+  override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    if (kind == UICollectionView.elementKindSectionHeader), let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: self.headerReuseIdentifier, for: indexPath) as? CharactersCollectionHeader{
+      headerView.categoryTitleLabel.text = self.category?.category
+      return headerView
+    }
+    return UICollectionReusableView()
+  }
+  
+  // MARK: UICollectionViewDelegateFlowLayout
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    return CGSize(width: 150.0, height: 260.0)
   }
   
 }
