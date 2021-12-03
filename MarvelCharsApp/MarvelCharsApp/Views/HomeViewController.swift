@@ -16,9 +16,9 @@ class HomeViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   
-  private let cellReuseIdentifier = "CategoryRowID"
-  private let tableViewCellNibName = "CategoryRowCell"
-  private let homeToDetailsSegueIdentifier = "HomeToDetailsSegueID"
+  private let cellReuseIdentifier = ResourceName.cellReuseIdentifier
+  private let tableViewCellNibName = ResourceName.tableViewCellNibName
+  private let homeToDetailsSegueIdentifier = ResourceName.homeToDetailsSegueIdentifier
   
   var viewModel: HomeViewModel?
   

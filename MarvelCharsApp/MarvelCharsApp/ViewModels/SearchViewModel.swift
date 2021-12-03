@@ -7,8 +7,9 @@
 
 import Foundation
 class SearchViewModel {
-    private var apiCaller = MarvelAPI()
+    private var repository: MarvelRepository
     var refreshData = { () -> () in }
+    var errorHandler = { (error: Error) -> () in }
     private var allCharacters: [CharacterModel] = []
     private var searchedItems: [CharacterModel] = [] {
         didSet {
@@ -17,7 +18,13 @@ class SearchViewModel {
     }
     
     init() {
-        apiCaller.delegate = self
+        repository = MarvelAPI()
+        repository.setDelegate(delegate: self)
+    }
+    
+    init(repository: MarvelRepository) {
+        self.repository = repository
+        repository.setDelegate(delegate: self)
     }
     
     func count() -> Int {
@@ -29,7 +36,7 @@ class SearchViewModel {
     }
     
     func getAllcharacters() {
-        apiCaller.fetchData()
+        repository.fetchData()
     }
     
     func getCharacters(byName name:String) {
@@ -46,7 +53,7 @@ class SearchViewModel {
 
 extension SearchViewModel: MarvelRepositoryDelegate {
     func didFailFetching(error: Error) {
-        print(error)
+        errorHandler(error)
     }
     
     func didFetchData(categories: [CategoryModel]) {

@@ -34,11 +34,17 @@ class SearchTableViewController: UITableViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Characters"
         searchController.searchBar.delegate = self;
+        searchController.searchBar.showsCancelButton = true
         tableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
         // Search VM configurations
         searchVm.getAllcharacters()
         assignClosureToViewModel()
+        searchVm.refreshData = {
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+            }
+        }
     }
     
     private func assignClosureToViewModel() {
@@ -56,18 +62,18 @@ class SearchTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "nameCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: ResourceName.searchNameCell, for: indexPath)
         let character = searchVm.get(byIndex: indexPath.row)
         cell.textLabel?.text = character.name
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = UIStoryboard(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: "DetailsViewControllerID") as! DetailsViewController
-        vc.character = searchVm.get(byIndex: indexPath.row)
-        self.navigationController?.pushViewController(vc, animated: true)
-        
+        if let vc = UIStoryboard(name: ResourceName.mainStoryBoardName, bundle: nil)
+            .instantiateViewController(withIdentifier: ResourceName.detailsViewController) as? DetailsViewController {
+            vc.character = searchVm.get(byIndex: indexPath.row)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }
