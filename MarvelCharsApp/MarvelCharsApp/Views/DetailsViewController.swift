@@ -6,17 +6,26 @@
 //
 
 import UIKit
+import SwiftUI
 
 class DetailsViewController: UIViewController {
   
-  // Testing, not final
-  var character: CharacterModel?
-
+    @IBOutlet weak var abilitiesView: UIView!
+    // Testing, not final
+    var character: CharacterModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-      print(character)
+        //print(character)
+        let contentView = AbilitiesView(character: character!)
+        let childView = UIHostingController(rootView: contentView)
+        addChild(childView)
+        childView.view.frame = abilitiesView.bounds
+        abilitiesView.addSubview(childView.view)
+        abilitiesView.addConstrained(subview: childView.view)
+        childView.didMove(toParent: self)
     }
 
-
 }
+

@@ -10,6 +10,8 @@ import UIKit
 extension UIColor {
   static let primary_grey = UIColor(rgb: 0xB7B7C8)
   static let primary_red = UIColor(rgb: 0xF2264B)
+  static let primary_black = UIColor(rgb: 0x000000)
+  static let primary_white = UIColor(rgb: 0xFFFFFF)
   convenience init(rgb: Int) {
     self.init(
       red: (rgb >> 16) & 0xFF,
