@@ -67,6 +67,7 @@
 		CE2B85E0275AB4710059DE45 /* UIViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85DF275AB4710059DE45 /* UIViewHelper.swift */; };
 		CE2B85E3275AB5C60059DE45 /* AbilitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85E2275AB5C60059DE45 /* AbilitiesView.swift */; };
 		CE2B85E5275ABED70059DE45 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85E4275ABED70059DE45 /* TextHelper.swift */; };
+		CE3AA2E4275C27C00006931F /* UIFontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3AA2E3275C27C00006931F /* UIFontHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,7 @@
 		CE2B85DF275AB4710059DE45 /* UIViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewHelper.swift; sourceTree = "<group>"; };
 		CE2B85E2275AB5C60059DE45 /* AbilitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilitiesView.swift; sourceTree = "<group>"; };
 		CE2B85E4275ABED70059DE45 /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
+		CE3AA2E3275C27C00006931F /* UIFontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontHelper.swift; sourceTree = "<group>"; };
 		EC2100C015AF4FAD404893C0 /* Pods-MarvelCharsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelCharsAppTests.release.xcconfig"; path = "Target Support Files/Pods-MarvelCharsAppTests/Pods-MarvelCharsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -308,6 +310,7 @@
 			children = (
 				848A2794274D5077000CDBCE /* AppDelegate.swift */,
 				848A2796274D5077000CDBCE /* SceneDelegate.swift */,
+				CE3AA2E3275C27C00006931F /* UIFontHelper.swift */,
 				CE2B85E4275ABED70059DE45 /* TextHelper.swift */,
 				CE2B85DF275AB4710059DE45 /* UIViewHelper.swift */,
 				84E54CFF275727CB00A21EDA /* UIColorHelper.swift */,
@@ -609,6 +612,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3AA2E4275C27C00006931F /* UIFontHelper.swift in Sources */,
 				846B9981274FC1DE0055F2A6 /* CategoryModel.swift in Sources */,
 				848A2799274D5077000CDBCE /* HomeViewController.swift in Sources */,
 				848A2795274D5077000CDBCE /* AppDelegate.swift in Sources */,

@@ -12,6 +12,6 @@ extension Text {
     func abilitiesStyles() -> some View {
         self.foregroundColor(Color(UIColor.primary_white))
             .frame(width: 110, alignment: .leading)
-            .font(.custom("gilroy-regular", size: 16))
+            .font(Font(UIFont.ability() as CTFont))
     }
 }

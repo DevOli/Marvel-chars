@@ -15,6 +15,8 @@ class CharacterPortraitCell: UICollectionViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
+      characterNameLabel.font = UIFont.cardTitle()
+      characterAlterEgoLabel.font = UIFont.cardSubtitle()
   }
   
 }

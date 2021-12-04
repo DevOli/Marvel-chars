@@ -38,7 +38,9 @@ class CategoryRowCell: UITableViewCell {
     charactersCollectionView.delegate = self
     
     categoryNameLabel.textColor = UIColor.primary_red
+    categoryNameLabel.font = UIFont.sectionTitle()
     seeAllButton.titleLabel?.textColor = UIColor.primary_grey
+      seeAllButton.titleLabel?.font = UIFont.description()
   }
   
   override func layoutSubviews() {

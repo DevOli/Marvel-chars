@@ -15,7 +15,7 @@ struct AbilitiesView: View {
             VStack(alignment: .leading) {
                 Text("Abilities")
                     .foregroundColor(Color(UIColor.primary_white))
-                    .font(.custom("gilroy-bold", size: 25))
+                    .font(Font(UIFont.sectionTitle() as CTFont))
                 HStack {
                     Text("Force").abilitiesStyles()
                     AbilityProgressBar(percent: CGFloat(character.force))

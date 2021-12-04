@@ -11,13 +11,12 @@ import SwiftUI
 class DetailsViewController: UIViewController {
   
     @IBOutlet weak var abilitiesView: UIView!
-    // Testing, not final
+    
     var character: CharacterModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        //print(character)
+
         let contentView = AbilitiesView(character: character!)
         let childView = UIHostingController(rootView: contentView)
         addChild(childView)
