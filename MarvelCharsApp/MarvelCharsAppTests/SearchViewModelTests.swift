@@ -62,7 +62,6 @@ class SearchViewModelTests: XCTestCase {
     }
 }
 
-//Not using mock in this test
 class MockMarvelAPI: MarvelRepository {
     
     var delegate: MarvelRepositoryDelegate?
