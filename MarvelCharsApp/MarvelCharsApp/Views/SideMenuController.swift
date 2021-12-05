@@ -26,7 +26,7 @@ class SideMenuController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = sideMenuViewModel.getCategory(at: indexPath.row).category
-        cell.textLabel?.font = UIFont(name: "gilroy-medium", size: 16)
+        cell.textLabel?.font = UIFont.profileSubtitle()
         return cell
     }
     
