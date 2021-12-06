@@ -101,6 +101,8 @@
 		CEAED4F3275DA6F800319BF6 /* UIFontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3AA2E3275C27C00006931F /* UIFontHelper.swift */; };
 		CEAED4F4275DA70800319BF6 /* AbilityProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85DD275AA69C0059DE45 /* AbilityProgressBar.swift */; };
 		CEAED4F5275DA79F00319BF6 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85E4275ABED70059DE45 /* TextHelper.swift */; };
+		CEEEDBF8275EA844002C3E09 /* MovieSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEEDBF7275EA844002C3E09 /* MovieSectionView.swift */; };
+		CEEEDBFA275EA875002C3E09 /* MovieSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEEDBF9275EA875002C3E09 /* MovieSectionView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +183,8 @@
 		CE3AA2E3275C27C00006931F /* UIFontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontHelper.swift; sourceTree = "<group>"; };
 		CE61C5FD275665B20024F244 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
 		CE835E9D275A5AC300B6105C /* ResourceNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceNames.swift; sourceTree = "<group>"; };
+		CEEEDBF7275EA844002C3E09 /* MovieSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSectionView.swift; sourceTree = "<group>"; };
+		CEEEDBF9275EA875002C3E09 /* MovieSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieSectionView.xib; sourceTree = "<group>"; };
 		EC2100C015AF4FAD404893C0 /* Pods-MarvelCharsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelCharsAppTests.release.xcconfig"; path = "Target Support Files/Pods-MarvelCharsAppTests/Pods-MarvelCharsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -399,6 +403,8 @@
 				84E54D0D2757D89E00A21EDA /* CharactersCollectionViewController.xib */,
 				84DC6828275AC410009B9CAD /* CharactersCollectionHeader.swift */,
 				84DC6829275AC410009B9CAD /* CharactersCollectionHeader.xib */,
+				CEEEDBF7275EA844002C3E09 /* MovieSectionView.swift */,
+				CEEEDBF9275EA875002C3E09 /* MovieSectionView.xib */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -532,6 +538,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEEEDBFA275EA875002C3E09 /* MovieSectionView.xib in Resources */,
 				84DC682B275AC410009B9CAD /* CharactersCollectionHeader.xib in Resources */,
 				846B998727503A740055F2A6 /* CharacterPortraitCell.xib in Resources */,
 				C017B7AA2755A40A002A8E3F /* gilroy-bold.ttf in Resources */,
@@ -683,6 +690,7 @@
 				84645F81274E9E53001A997A /* MarvelAPIModel.swift in Sources */,
 				CE0A1147275099660064AA4B /* SearchViewModel.swift in Sources */,
 				CE2B85BE27582A660059DE45 /* UIImageHelper.swift in Sources */,
+				CEEEDBF8275EA844002C3E09 /* MovieSectionView.swift in Sources */,
 				CE2B85BC27582A2A0059DE45 /* SideMenuViewModel.swift in Sources */,
 				84645F7E274E9E1B001A997A /* MarvelAPI.swift in Sources */,
 				846B998C27517D5E0055F2A6 /* CategoryRowCell.swift in Sources */,
