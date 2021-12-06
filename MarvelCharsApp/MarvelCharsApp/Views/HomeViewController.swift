@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
   private let cellReuseIdentifier = ResourceName.cellReuseIdentifier
   private let tableViewCellNibName = ResourceName.tableViewCellNibName
   private let homeToDetailsSegueIdentifier = ResourceName.homeToDetailsSegueIdentifier
-  private let charactersCollectionVCNibName = "CharactersCollectionViewController"
+  private let charactersCollectionVCNibName = ResourceName.charactersCollectionVCNibName
   
   var viewModel: HomeViewModel?
   

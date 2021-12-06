@@ -41,6 +41,14 @@
 		848A27D3274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A27D1274D8CA3000CDBCE /* DetailsViewModel.swift */; };
 		848A27D4274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A27D1274D8CA3000CDBCE /* DetailsViewModel.swift */; };
 		848A27DA274E91AD000CDBCE /* EmptyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A27D9274E91AD000CDBCE /* EmptyRepository.swift */; };
+		84C7D0F6275DC202000BC67C /* CategoryRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B998A27517D5E0055F2A6 /* CategoryRowCell.swift */; };
+		84C7D0F7275DC202000BC67C /* CategoryRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B998A27517D5E0055F2A6 /* CategoryRowCell.swift */; };
+		84C7D0F8275DC20F000BC67C /* CharactersCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC6828275AC410009B9CAD /* CharactersCollectionHeader.swift */; };
+		84C7D0F9275DC20F000BC67C /* CharactersCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC6828275AC410009B9CAD /* CharactersCollectionHeader.swift */; };
+		84C7D0FA275DC22E000BC67C /* CharacterPortraitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B998427503A740055F2A6 /* CharacterPortraitCell.swift */; };
+		84C7D0FB275DC22E000BC67C /* CharacterPortraitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B998427503A740055F2A6 /* CharacterPortraitCell.swift */; };
+		84C7D0FC275DC27D000BC67C /* UIImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85BD27582A660059DE45 /* UIImageHelper.swift */; };
+		84C7D0FD275DC27E000BC67C /* UIImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85BD27582A660059DE45 /* UIImageHelper.swift */; };
 		84DC6820275A4FA4009B9CAD /* CharactersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E54D0C2757D89E00A21EDA /* CharactersCollectionViewController.swift */; };
 		84DC6821275A4FA4009B9CAD /* CharactersCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E54D0D2757D89E00A21EDA /* CharactersCollectionViewController.xib */; };
 		84DC6822275A4FA4009B9CAD /* CharactersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E54D0C2757D89E00A21EDA /* CharactersCollectionViewController.swift */; };
@@ -702,6 +710,7 @@
 			files = (
 				84E54D022757308600A21EDA /* HomeViewModelTest.swift in Sources */,
 				CEAED4EF275DA68900319BF6 /* UIColorHelper.swift in Sources */,
+				84C7D0F6275DC202000BC67C /* CategoryRowCell.swift in Sources */,
 				CEAED4EA275DA53700319BF6 /* AbilitiesView.swift in Sources */,
 				84645F7F274E9E1B001A997A /* MarvelAPI.swift in Sources */,
 				CE2B85C22758BBBF0059DE45 /* SideMenuController.swift in Sources */,
@@ -709,12 +718,14 @@
 				848A27AC274D5079000CDBCE /* MarvelCharsAppTests.swift in Sources */,
 				CE2B85BA275829C50059DE45 /* SideMenuViewModelTests.swift in Sources */,
 				848A27CF274D8C86000CDBCE /* HomeViewModel.swift in Sources */,
+				84C7D0F8275DC20F000BC67C /* CharactersCollectionHeader.swift in Sources */,
 				84645F82274E9E53001A997A /* MarvelAPIModel.swift in Sources */,
 				84E54D08275734AC00A21EDA /* CategoryModelTest.swift in Sources */,
 				84DC6820275A4FA4009B9CAD /* CharactersCollectionViewController.swift in Sources */,
 				848A27CB274D8BBC000CDBCE /* DetailsViewController.swift in Sources */,
 				CE2B85BF275830490059DE45 /* MarvelRepository.swift in Sources */,
 				846B9982274FC1DE0055F2A6 /* CategoryModel.swift in Sources */,
+				84C7D0FA275DC22E000BC67C /* CharacterPortraitCell.swift in Sources */,
 				84E54D0A2757428D00A21EDA /* CharacterModelTest.swift in Sources */,
 				CEAED4EE275DA64700319BF6 /* TextHelper.swift in Sources */,
 				84645F85274EC15A001A997A /* CharacterModel.swift in Sources */,
@@ -724,6 +735,7 @@
 				CE7FFE78275ABDF500147FE6 /* SearchViewModel.swift in Sources */,
 				CE61C5FE275665B20024F244 /* SearchViewModelTests.swift in Sources */,
 				CE2B85C0275830510059DE45 /* SideMenuViewModel.swift in Sources */,
+				84C7D0FC275DC27D000BC67C /* UIImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,14 +743,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C7D0FB275DC22E000BC67C /* CharacterPortraitCell.swift in Sources */,
 				CEAED4F5275DA79F00319BF6 /* TextHelper.swift in Sources */,
 				CEAED4F4275DA70800319BF6 /* AbilityProgressBar.swift in Sources */,
 				84E54D062757326E00A21EDA /* MarvelAPIModel.swift in Sources */,
 				CEAED4F2275DA6E800319BF6 /* UIColorHelper.swift in Sources */,
 				848A27B6274D5079000CDBCE /* MarvelCharsAppUITests.swift in Sources */,
+				84C7D0FD275DC27E000BC67C /* UIImageHelper.swift in Sources */,
 				CEAED4F1275DA6DD00319BF6 /* UIViewHelper.swift in Sources */,
 				848A27B8274D5079000CDBCE /* MarvelCharsAppUITestsLaunchTests.swift in Sources */,
 				848A27D4274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */,
+				84C7D0F9275DC20F000BC67C /* CharactersCollectionHeader.swift in Sources */,
+				84C7D0F7275DC202000BC67C /* CategoryRowCell.swift in Sources */,
 				84DC6822275A4FA4009B9CAD /* CharactersCollectionViewController.swift in Sources */,
 				84E54D052757321A00A21EDA /* MarvelAPI.swift in Sources */,
 				CEAED4EB275DA53A00319BF6 /* AbilitiesView.swift in Sources */,
