@@ -73,6 +73,18 @@
 		CE61C5FE275665B20024F244 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61C5FD275665B20024F244 /* SearchViewModelTests.swift */; };
 		CE7FFE78275ABDF500147FE6 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A1146275099660064AA4B /* SearchViewModel.swift */; };
 		CE835E9E275A5AC300B6105C /* ResourceNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE835E9D275A5AC300B6105C /* ResourceNames.swift */; };
+		CEAED4EA275DA53700319BF6 /* AbilitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85E2275AB5C60059DE45 /* AbilitiesView.swift */; };
+		CEAED4EB275DA53A00319BF6 /* AbilitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85E2275AB5C60059DE45 /* AbilitiesView.swift */; };
+		CEAED4EC275DA63D00319BF6 /* UIViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85DF275AB4710059DE45 /* UIViewHelper.swift */; };
+		CEAED4ED275DA64400319BF6 /* UIFontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3AA2E3275C27C00006931F /* UIFontHelper.swift */; };
+		CEAED4EE275DA64700319BF6 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85E4275ABED70059DE45 /* TextHelper.swift */; };
+		CEAED4EF275DA68900319BF6 /* UIColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E54CFF275727CB00A21EDA /* UIColorHelper.swift */; };
+		CEAED4F0275DA69C00319BF6 /* AbilityProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85DD275AA69C0059DE45 /* AbilityProgressBar.swift */; };
+		CEAED4F1275DA6DD00319BF6 /* UIViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85DF275AB4710059DE45 /* UIViewHelper.swift */; };
+		CEAED4F2275DA6E800319BF6 /* UIColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E54CFF275727CB00A21EDA /* UIColorHelper.swift */; };
+		CEAED4F3275DA6F800319BF6 /* UIFontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3AA2E3275C27C00006931F /* UIFontHelper.swift */; };
+		CEAED4F4275DA70800319BF6 /* AbilityProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85DD275AA69C0059DE45 /* AbilityProgressBar.swift */; };
+		CEAED4F5275DA79F00319BF6 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85E4275ABED70059DE45 /* TextHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -659,8 +671,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E54D022757308600A21EDA /* HomeViewModelTest.swift in Sources */,
+				CEAED4EF275DA68900319BF6 /* UIColorHelper.swift in Sources */,
+				CEAED4EA275DA53700319BF6 /* AbilitiesView.swift in Sources */,
 				84645F7F274E9E1B001A997A /* MarvelAPI.swift in Sources */,
 				CE2B85C22758BBBF0059DE45 /* SideMenuController.swift in Sources */,
+				CEAED4F0275DA69C00319BF6 /* AbilityProgressBar.swift in Sources */,
 				848A27AC274D5079000CDBCE /* MarvelCharsAppTests.swift in Sources */,
 				CE2B85BA275829C50059DE45 /* SideMenuViewModelTests.swift in Sources */,
 				848A27CF274D8C86000CDBCE /* HomeViewModel.swift in Sources */,
@@ -670,8 +685,11 @@
 				CE2B85BF275830490059DE45 /* MarvelRepository.swift in Sources */,
 				846B9982274FC1DE0055F2A6 /* CategoryModel.swift in Sources */,
 				84E54D0A2757428D00A21EDA /* CharacterModelTest.swift in Sources */,
+				CEAED4EE275DA64700319BF6 /* TextHelper.swift in Sources */,
 				84645F85274EC15A001A997A /* CharacterModel.swift in Sources */,
+				CEAED4ED275DA64400319BF6 /* UIFontHelper.swift in Sources */,
 				848A27D3274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */,
+				CEAED4EC275DA63D00319BF6 /* UIViewHelper.swift in Sources */,
 				CE7FFE78275ABDF500147FE6 /* SearchViewModel.swift in Sources */,
 				CE61C5FE275665B20024F244 /* SearchViewModelTests.swift in Sources */,
 				CE2B85C0275830510059DE45 /* SideMenuViewModel.swift in Sources */,
@@ -682,15 +700,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAED4F5275DA79F00319BF6 /* TextHelper.swift in Sources */,
+				CEAED4F4275DA70800319BF6 /* AbilityProgressBar.swift in Sources */,
 				84E54D062757326E00A21EDA /* MarvelAPIModel.swift in Sources */,
+				CEAED4F2275DA6E800319BF6 /* UIColorHelper.swift in Sources */,
 				848A27B6274D5079000CDBCE /* MarvelCharsAppUITests.swift in Sources */,
+				CEAED4F1275DA6DD00319BF6 /* UIViewHelper.swift in Sources */,
 				848A27B8274D5079000CDBCE /* MarvelCharsAppUITestsLaunchTests.swift in Sources */,
 				848A27D4274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */,
 				84E54D052757321A00A21EDA /* MarvelAPI.swift in Sources */,
+				CEAED4EB275DA53A00319BF6 /* AbilitiesView.swift in Sources */,
 				84E54D03275731FF00A21EDA /* CharacterModel.swift in Sources */,
 				8489D27D275940CD00F57F15 /* MarvelRepository.swift in Sources */,
 				84E54D042757320D00A21EDA /* CategoryModel.swift in Sources */,
 				848A27CC274D8BBC000CDBCE /* DetailsViewController.swift in Sources */,
+				CEAED4F3275DA6F800319BF6 /* UIFontHelper.swift in Sources */,
 				848A27D0274D8C86000CDBCE /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
