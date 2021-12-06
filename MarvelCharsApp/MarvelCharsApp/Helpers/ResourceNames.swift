@@ -7,10 +7,11 @@
 
 import Foundation
 struct ResourceName {
-    static let cellReuseIdentifier = "CategoryRowID"
-    static let tableViewCellNibName = "CategoryRowCell"
-    static let homeToDetailsSegueIdentifier = "HomeToDetailsSegueID"
-    static let mainStoryBoardName = "Main"
-    static let detailsViewController = "DetailsViewControllerID"
-    static let searchNameCell = "NameCellID"
+  static let cellReuseIdentifier = "CategoryRowID"
+  static let tableViewCellNibName = "CategoryRowCell"
+  static let homeToDetailsSegueIdentifier = "HomeToDetailsSegueID"
+  static let charactersCollectionVCNibName = "CharactersCollectionViewController"
+  static let mainStoryBoardName = "Main"
+  static let detailsViewController = "DetailsViewControllerID"
+  static let searchNameCell = "NameCellID"
 }
