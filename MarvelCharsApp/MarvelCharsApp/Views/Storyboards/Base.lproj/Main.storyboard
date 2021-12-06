@@ -106,11 +106,12 @@
                     <navigationItem key="navigationItem" id="35j-O6-UPD"/>
                     <connections>
                         <outlet property="abilitiesView" destination="6RH-to-q7Q" id="bFG-uG-2Sq"/>
+                        <outlet property="generalView" destination="ucq-7U-vOX" id="gls-tb-0h7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="emF-U3-dYo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054" y="96"/>
+            <point key="canvasLocation" x="1053.6231884057972" y="95.758928571428569"/>
         </scene>
     </scenes>
     <resources>
