@@ -65,6 +65,11 @@
 		CE2B85BF275830490059DE45 /* MarvelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85B7275829310059DE45 /* MarvelRepository.swift */; };
 		CE2B85C0275830510059DE45 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85BB27582A2A0059DE45 /* SideMenuViewModel.swift */; };
 		CE2B85C22758BBBF0059DE45 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85B5275828E30059DE45 /* SideMenuController.swift */; };
+		CE2B85DE275AA69C0059DE45 /* AbilityProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85DD275AA69C0059DE45 /* AbilityProgressBar.swift */; };
+		CE2B85E0275AB4710059DE45 /* UIViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85DF275AB4710059DE45 /* UIViewHelper.swift */; };
+		CE2B85E3275AB5C60059DE45 /* AbilitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85E2275AB5C60059DE45 /* AbilitiesView.swift */; };
+		CE2B85E5275ABED70059DE45 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85E4275ABED70059DE45 /* TextHelper.swift */; };
+		CE3AA2E4275C27C00006931F /* UIFontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3AA2E3275C27C00006931F /* UIFontHelper.swift */; };
 		CE61C5FE275665B20024F244 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61C5FD275665B20024F244 /* SearchViewModelTests.swift */; };
 		CE7FFE78275ABDF500147FE6 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A1146275099660064AA4B /* SearchViewModel.swift */; };
 		CE835E9E275A5AC300B6105C /* ResourceNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE835E9D275A5AC300B6105C /* ResourceNames.swift */; };
@@ -137,6 +142,11 @@
 		CE2B85B9275829C50059DE45 /* SideMenuViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModelTests.swift; sourceTree = "<group>"; };
 		CE2B85BB27582A2A0059DE45 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
 		CE2B85BD27582A660059DE45 /* UIImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageHelper.swift; sourceTree = "<group>"; };
+		CE2B85DD275AA69C0059DE45 /* AbilityProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityProgressBar.swift; sourceTree = "<group>"; };
+		CE2B85DF275AB4710059DE45 /* UIViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewHelper.swift; sourceTree = "<group>"; };
+		CE2B85E2275AB5C60059DE45 /* AbilitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilitiesView.swift; sourceTree = "<group>"; };
+		CE2B85E4275ABED70059DE45 /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
+		CE3AA2E3275C27C00006931F /* UIFontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontHelper.swift; sourceTree = "<group>"; };
 		CE61C5FD275665B20024F244 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
 		CE835E9D275A5AC300B6105C /* ResourceNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceNames.swift; sourceTree = "<group>"; };
 		EC2100C015AF4FAD404893C0 /* Pods-MarvelCharsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelCharsAppTests.release.xcconfig"; path = "Target Support Files/Pods-MarvelCharsAppTests/Pods-MarvelCharsAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +210,7 @@
 				846B998527503A740055F2A6 /* CharacterPortraitCell.xib */,
 				846B998A27517D5E0055F2A6 /* CategoryRowCell.swift */,
 				846B998B27517D5E0055F2A6 /* CategoryRowCell.xib */,
+				CE2B85DD275AA69C0059DE45 /* AbilityProgressBar.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -275,6 +286,7 @@
 		848A27C5274D6290000CDBCE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE2B85E1275AB5960059DE45 /* Components */,
 				846B998327503A2A0055F2A6 /* Cells */,
 				848A27C7274D62D4000CDBCE /* Storyboards */,
 				CE0A11482750997E0064AA4B /* SearchTableViewController.swift */,
@@ -310,6 +322,9 @@
 			children = (
 				848A2794274D5077000CDBCE /* AppDelegate.swift */,
 				848A2796274D5077000CDBCE /* SceneDelegate.swift */,
+				CE3AA2E3275C27C00006931F /* UIFontHelper.swift */,
+				CE2B85E4275ABED70059DE45 /* TextHelper.swift */,
+				CE2B85DF275AB4710059DE45 /* UIViewHelper.swift */,
 				84E54CFF275727CB00A21EDA /* UIColorHelper.swift */,
 				CE2B85BD27582A660059DE45 /* UIImageHelper.swift */,
 				CE835E9D275A5AC300B6105C /* ResourceNames.swift */,
@@ -354,6 +369,14 @@
 				C017B7A72755A3FF002A8E3F /* gilroy-semibold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CE2B85E1275AB5960059DE45 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE2B85E2275AB5C60059DE45 /* AbilitiesView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -602,6 +625,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3AA2E4275C27C00006931F /* UIFontHelper.swift in Sources */,
 				846B9981274FC1DE0055F2A6 /* CategoryModel.swift in Sources */,
 				848A2799274D5077000CDBCE /* HomeViewController.swift in Sources */,
 				848A2795274D5077000CDBCE /* AppDelegate.swift in Sources */,
@@ -614,10 +638,14 @@
 				CE2B85BC27582A2A0059DE45 /* SideMenuViewModel.swift in Sources */,
 				84645F7E274E9E1B001A997A /* MarvelAPI.swift in Sources */,
 				846B998C27517D5E0055F2A6 /* CategoryRowCell.swift in Sources */,
+				CE2B85E0275AB4710059DE45 /* UIViewHelper.swift in Sources */,
 				846B998627503A740055F2A6 /* CharacterPortraitCell.swift in Sources */,
+				CE2B85E5275ABED70059DE45 /* TextHelper.swift in Sources */,
 				CE2B85B6275828E30059DE45 /* SideMenuController.swift in Sources */,
+				CE2B85DE275AA69C0059DE45 /* AbilityProgressBar.swift in Sources */,
 				848A27CA274D8BBC000CDBCE /* DetailsViewController.swift in Sources */,
 				CE2B85B8275829310059DE45 /* MarvelRepository.swift in Sources */,
+				CE2B85E3275AB5C60059DE45 /* AbilitiesView.swift in Sources */,
 				84645F84274EC15A001A997A /* CharacterModel.swift in Sources */,
 				CE0A11492750997E0064AA4B /* SearchTableViewController.swift in Sources */,
 				848A27D2274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */,

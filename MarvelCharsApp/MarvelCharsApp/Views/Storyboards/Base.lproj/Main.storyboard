@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hml-Ko-07H">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -117,10 +117,28 @@
                     <view key="view" contentMode="scaleToFill" id="ucq-7U-vOX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6RH-to-q7Q">
+                                <rect key="frame" x="0.0" y="542" width="414" height="260"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="ZhP-D0-gvO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4bu-sF-eQO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6RH-to-q7Q" firstAttribute="centerX" secondItem="ucq-7U-vOX" secondAttribute="centerX" id="PaW-MB-uuJ"/>
+                            <constraint firstItem="6RH-to-q7Q" firstAttribute="centerY" secondItem="ucq-7U-vOX" secondAttribute="centerY" multiplier="1.5" id="a5X-qw-3xH"/>
+                            <constraint firstItem="6RH-to-q7Q" firstAttribute="trailing" secondItem="4bu-sF-eQO" secondAttribute="trailing" id="aO4-aG-dWI"/>
+                            <constraint firstItem="6RH-to-q7Q" firstAttribute="leading" secondItem="4bu-sF-eQO" secondAttribute="leading" id="fhg-FV-ITN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="35j-O6-UPD"/>
+                    <connections>
+                        <outlet property="abilitiesView" destination="6RH-to-q7Q" id="bFG-uG-2Sq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="emF-U3-dYo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -133,6 +151,9 @@
         <namedColor name="primary-dark">
             <color red="0.19215686274509805" green="0.19215686274509805" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
