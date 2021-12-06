@@ -11,20 +11,22 @@ import SideMenu
 class HomeViewController: UIViewController {
   
   var menu: SideMenuNavigationController?
-  // Quick Example to see if it works. Not final
   let marvelLogo = UIImageView(image: UIImage(named: "marvel")?.tintedWithLinearGradientColors(colorsArr: [UIColor(named: "gradient-red-b")!.cgColor, UIColor(named: "gradient-red-a")!.cgColor]))
   
   @IBOutlet weak var tableView: UITableView!
   
-  private let cellReuseIdentifier = "CategoryRowID"
-  private let tableViewCellNibName = "CategoryRowCell"
-  private let homeToDetailsSegueIdentifier = "HomeToDetailsSegueID"
+  private let cellReuseIdentifier = ResourceName.cellReuseIdentifier
+  private let tableViewCellNibName = ResourceName.tableViewCellNibName
+  private let homeToDetailsSegueIdentifier = ResourceName.homeToDetailsSegueIdentifier
+  private let charactersCollectionVCNibName = ResourceName.charactersCollectionVCNibName
   
   var viewModel: HomeViewModel?
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    menu = SideMenuNavigationController(rootViewController: SideMenuController())
+    let menuController = SideMenuController()
+    menuController.delegate = self
+    menu = SideMenuNavigationController(rootViewController: menuController)
     menu?.leftSide = true
     menu?.setNavigationBarHidden(true, animated: true)
     
@@ -39,7 +41,7 @@ class HomeViewController: UIViewController {
   }
   
   @IBAction func didTapMenu() {
-      present(menu!, animated: true)
+    present(menu!, animated: true)
   }
   
   private func refresh() {
@@ -80,9 +82,16 @@ extension HomeViewController: HomeViewModelDelegate {
   
 }
 
-extension HomeViewController: CategoryRowCellDelegate {
+extension HomeViewController: CharacterPortraitDelegate {
   func onTappedCharacter(character: CharacterModel) {
     self.performSegue(withIdentifier: self.homeToDetailsSegueIdentifier, sender: character)
+  }
+  
+  func showCategoryView(category: CategoryModel) {
+    let vc = CharactersCollectionViewController(nibName: self.charactersCollectionVCNibName, bundle: nil)
+    vc.configure(category: category)
+    vc.delegate = self
+    self.navigationController?.pushViewController(vc, animated: true)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

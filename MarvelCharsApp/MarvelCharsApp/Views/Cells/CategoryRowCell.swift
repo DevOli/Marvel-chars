@@ -7,8 +7,9 @@
 
 import UIKit
 
-protocol CategoryRowCellDelegate {
+protocol CharacterPortraitDelegate {
   func onTappedCharacter(character: CharacterModel)
+  func showCategoryView(category: CategoryModel)
 }
 
 class CategoryRowCell: UITableViewCell {
@@ -17,7 +18,7 @@ class CategoryRowCell: UITableViewCell {
   @IBOutlet weak var charactersCollectionView: UICollectionView!
   @IBOutlet weak var seeAllButton: UIButton!
   
-  var delegate: CategoryRowCellDelegate?
+  var delegate: CharacterPortraitDelegate?
   var category: CategoryModel?
   
   private let collectionViewCellNibName = "CharacterPortraitCell"
@@ -40,13 +41,20 @@ class CategoryRowCell: UITableViewCell {
     categoryNameLabel.textColor = UIColor.primary_red
     categoryNameLabel.font = UIFont.sectionTitle()
     seeAllButton.titleLabel?.textColor = UIColor.primary_grey
-      seeAllButton.titleLabel?.font = UIFont.description()
+    seeAllButton.titleLabel?.tintColor = UIColor.primary_grey
+    seeAllButton.titleLabel?.font = UIFont.description()
   }
   
   override func layoutSubviews() {
     super.layoutSubviews()
     
     contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0))
+  }
+  
+  @IBAction func onSeeAllButtonTapped(_ sender: UIButton) {
+    if let category = self.category {
+      self.delegate?.showCategoryView(category: category)
+    }
   }
   
   private func refresh() {
