@@ -89,6 +89,7 @@
 		CE61C5FE275665B20024F244 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61C5FD275665B20024F244 /* SearchViewModelTests.swift */; };
 		CE7FFE78275ABDF500147FE6 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A1146275099660064AA4B /* SearchViewModel.swift */; };
 		CE835E9E275A5AC300B6105C /* ResourceNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE835E9D275A5AC300B6105C /* ResourceNames.swift */; };
+		CEA064B8275FDEF50059852D /* MovieSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA064B7275FDEF50059852D /* MovieSectionView.xib */; };
 		CEAED4EA275DA53700319BF6 /* AbilitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85E2275AB5C60059DE45 /* AbilitiesView.swift */; };
 		CEAED4EB275DA53A00319BF6 /* AbilitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85E2275AB5C60059DE45 /* AbilitiesView.swift */; };
 		CEAED4EC275DA63D00319BF6 /* UIViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85DF275AB4710059DE45 /* UIViewHelper.swift */; };
@@ -102,7 +103,6 @@
 		CEAED4F4275DA70800319BF6 /* AbilityProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85DD275AA69C0059DE45 /* AbilityProgressBar.swift */; };
 		CEAED4F5275DA79F00319BF6 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85E4275ABED70059DE45 /* TextHelper.swift */; };
 		CEEEDBF8275EA844002C3E09 /* MovieSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEEDBF7275EA844002C3E09 /* MovieSectionView.swift */; };
-		CEEEDBFA275EA875002C3E09 /* MovieSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEEDBF9275EA875002C3E09 /* MovieSectionView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,8 +183,8 @@
 		CE3AA2E3275C27C00006931F /* UIFontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontHelper.swift; sourceTree = "<group>"; };
 		CE61C5FD275665B20024F244 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
 		CE835E9D275A5AC300B6105C /* ResourceNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceNames.swift; sourceTree = "<group>"; };
+		CEA064B7275FDEF50059852D /* MovieSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieSectionView.xib; sourceTree = "<group>"; };
 		CEEEDBF7275EA844002C3E09 /* MovieSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSectionView.swift; sourceTree = "<group>"; };
-		CEEEDBF9275EA875002C3E09 /* MovieSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieSectionView.xib; sourceTree = "<group>"; };
 		EC2100C015AF4FAD404893C0 /* Pods-MarvelCharsAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelCharsAppTests.release.xcconfig"; path = "Target Support Files/Pods-MarvelCharsAppTests/Pods-MarvelCharsAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -404,7 +404,7 @@
 				84DC6828275AC410009B9CAD /* CharactersCollectionHeader.swift */,
 				84DC6829275AC410009B9CAD /* CharactersCollectionHeader.xib */,
 				CEEEDBF7275EA844002C3E09 /* MovieSectionView.swift */,
-				CEEEDBF9275EA875002C3E09 /* MovieSectionView.xib */,
+				CEA064B7275FDEF50059852D /* MovieSectionView.xib */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -538,7 +538,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEEEDBFA275EA875002C3E09 /* MovieSectionView.xib in Resources */,
+				CEA064B8275FDEF50059852D /* MovieSectionView.xib in Resources */,
 				84DC682B275AC410009B9CAD /* CharactersCollectionHeader.xib in Resources */,
 				846B998727503A740055F2A6 /* CharacterPortraitCell.xib in Resources */,
 				C017B7AA2755A40A002A8E3F /* gilroy-bold.ttf in Resources */,

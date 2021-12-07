@@ -13,6 +13,8 @@ protocol MoviePortraitDelegate {
 
 class MovieSectionView: UIView {
     
+    @IBOutlet weak var moviesCollection: UICollectionView!
+    
     let nibName = "MovieSectionView"
     var character: CharacterModel?
     var delegate: MoviePortraitDelegate?
@@ -20,10 +22,10 @@ class MovieSectionView: UIView {
     private let collectionViewCellNibName = "CharacterPortraitCell"
     private let cellReuseIdentifier = "CharacterPortraitID"
     
-    @IBOutlet weak var moviesCollection: UICollectionView!
-    
-    func configure(character: CharacterModel) {
+    required init(character: CharacterModel, frame: CGRect) {
         self.character = character
+        super.init(frame: frame)
+        commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,25 +39,25 @@ class MovieSectionView: UIView {
     }
     
     func commonInit() {
-        //Load view
-        guard let view = loadViewFromNib() else { return }
-        view.frame = self.bounds
-        self.addSubview(view)
-        //Collection
-        moviesCollection.register(UINib(nibName: self.collectionViewCellNibName, bundle: nil), forCellWithReuseIdentifier: self.cellReuseIdentifier)
-        moviesCollection.dataSource = self
-        moviesCollection.delegate = self
+        if let viewXib = Bundle.main.loadNibNamed(nibName, owner: self, options: nil)?.first as? UIView {
+            viewXib.frame = self.bounds
+            addSubview(viewXib)
+            moviesCollection.register(UINib(nibName: self.collectionViewCellNibName, bundle: nil), forCellWithReuseIdentifier: self.cellReuseIdentifier)
+            moviesCollection.dataSource = self
+            moviesCollection.delegate = self
+        }
     }
     
     func loadViewFromNib() -> UIView? {
         let nib = UINib(nibName: nibName, bundle: nil)
-        return nib.instantiate(withOwner: self, options: nil).first as? UIView
+        return nib.instantiate(withOwner: self, options: nil).first as? MovieSectionView
     }
 }
 
 extension MovieSectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.character?.movies.count ?? 0
+        let test = self.character?.movies.count ?? 0
+        return test
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -66,8 +68,8 @@ extension MovieSectionView: UICollectionViewDataSource {
         guard let movie = self.character?.movies[indexPath.row] else { return UICollectionViewCell() }
         let image = UIImage(named: movie)
         cell.characterImage.image = image?.roundedImage
-//        cell.characterNameLabel.text = character.name
-//        cell.characterAlterEgoLabel.text = character.alterEgo
+        cell.characterNameLabel.text = ""
+        cell.characterAlterEgoLabel.text = ""
         return cell
     }
     
