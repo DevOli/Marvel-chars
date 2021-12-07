@@ -15,12 +15,12 @@ class MovieSectionView: UIView {
     
     @IBOutlet weak var moviesCollection: UICollectionView!
     
-    let nibName = "MovieSectionView"
+    let nibName = ResourceName.moviesSectionNibName
     var character: CharacterModel?
     var delegate: MoviePortraitDelegate?
     
-    private let collectionViewCellNibName = "CharacterPortraitCell"
-    private let cellReuseIdentifier = "CharacterPortraitID"
+    private let collectionViewCellNibName = ResourceName.characterCollectionViewCellNibName
+    private let cellReuseIdentifier = ResourceName.characterCellReuseIdentifier
     
     required init(character: CharacterModel, frame: CGRect) {
         self.character = character
