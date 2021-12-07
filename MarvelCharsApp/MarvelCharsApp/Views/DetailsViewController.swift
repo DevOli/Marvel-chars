@@ -19,13 +19,6 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         configureNavBar()
         
-        // removes line at bottom of navigation bar
-        navigationController?.navigationBar.shadowImage = UIImage()
-
-        // makes navigation bar completely transparent
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.isTranslucent = true
-        
         let contentView = GeneralView(character: character!)
         let childView = UIHostingController(rootView: contentView)
         addChild(childView)
