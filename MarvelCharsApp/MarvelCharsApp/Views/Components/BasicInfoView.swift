@@ -10,16 +10,18 @@ import SwiftUI
 struct BasicInfoView: View {
     var character: CharacterModel
     let year = Calendar.current.component(.year, from: Date())
-
+    
     var body: some View {
         VStack(alignment: .leading) {
             Image("").resizable().frame(width: 20, height: 250, alignment: .center)
             Text("\(character.alterEgo)")
                 .foregroundColor(Color(UIColor.primary_white))
-                .font(Font(UIFont.profileSubtitle() as CTFont)).padding(.init(top: 10, leading: 25, bottom: 0, trailing: 0))
+                .font(Font(UIFont.profileSubtitle() as CTFont))
+                .padding(.init(top: 10, leading: 25, bottom: 0, trailing: 0))
             Text("\(character.name)")
                 .foregroundColor(Color(UIColor.primary_white))
-                .font(Font(UIFont.profileTitle() as CTFont)).padding(.init(top: 10, leading: 25, bottom: 0, trailing: 0))
+                .font(Font(UIFont.profileTitle() as CTFont))
+                .padding(.init(top: 10, leading: 25, bottom: 0, trailing: 0))
                 
             HStack(alignment: .center, spacing: 60) {
                 VStack {
@@ -46,13 +48,12 @@ struct BasicInfoView: View {
                         .foregroundColor(Color(UIColor.primary_white))
                         .font(Font(UIFont.characteristics() as CTFont))
                 }
-            }.padding(.init(top: 30, leading: 40, bottom: 0, trailing: 30)).background(.black)
+            }.padding(.init(top: 30, leading: 40, bottom: 0, trailing: 30))
         }
-        VStack{
+        VStack {
             Text("\(character.biography)")
                 .foregroundColor(Color(UIColor.primary_white))
                 .font(Font(UIFont.description() as CTFont)).padding(.init(top: 20, leading: 25, bottom: 0, trailing: 25))
-            }.background(.black)
+        }
     }
 }
-

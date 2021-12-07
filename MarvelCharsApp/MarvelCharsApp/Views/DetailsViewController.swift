@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 
 class DetailsViewController: UIViewController {
-  
+    
     @IBOutlet weak var abilitiesView: UIView!
     @IBOutlet var generalView: UIView!
     
@@ -17,11 +17,14 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavBar()
         
-        let yourBackImage = UIImage(named: "back")
-        self.navigationController?.navigationBar.backIndicatorImage = yourBackImage
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = yourBackImage
-        self.navigationController?.navigationBar.backItem?.title = ""
+        // removes line at bottom of navigation bar
+        navigationController?.navigationBar.shadowImage = UIImage()
+
+        // makes navigation bar completely transparent
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.isTranslucent = true
         
         let contentView = GeneralView(character: character!)
         let childView = UIHostingController(rootView: contentView)
@@ -30,16 +33,17 @@ class DetailsViewController: UIViewController {
         generalView.addSubview(childView.view)
         generalView.addConstrained(subview: childView.view)
         childView.didMove(toParent: self)
-        
-        /*
-        let contentView = AbilitiesView(character: character!)
-        let childView = UIHostingController(rootView: contentView)
-        addChild(childView)
-        childView.view.frame = abilitiesView.bounds
-        abilitiesView.addSubview(childView.view)
-        abilitiesView.addConstrained(subview: childView.view)
-        childView.didMove(toParent: self)
-        */
+    }
+    
+    func configureNavBar() {
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.isTranslucent = true
+        let action = UIAction { UIAction in
+            self.navigationController?.navigationBar.barStyle = .default
+            self.navigationController?.popViewController(animated: true)
+        }
+        let button = UIBarButtonItem(title: "", image: UIImage(named: "back"), primaryAction: action, menu: nil)
+        button.tintColor = UIColor.white
+        navigationItem.leftBarButtonItem = button
     }
 }
-

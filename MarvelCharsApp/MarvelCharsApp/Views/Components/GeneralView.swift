@@ -12,13 +12,14 @@ struct GeneralView: View {
     var body: some View {
         ZStack {
             Image("\(character.imagePath)").resizable().scaledToFill().edgesIgnoringSafeArea(.all)
-            ScrollView(){
+            Rectangle().foregroundColor(.clear).background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
+            Rectangle().foregroundColor(.clear).background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottomTrailing))
+            
                 VStack(alignment: .leading, spacing:0) {
                     BasicInfoView(character: character)
                     AbilitiesView(character: character)
-                    //Movies View
                 }.padding()
-            }
+            
         }
     }
 }
