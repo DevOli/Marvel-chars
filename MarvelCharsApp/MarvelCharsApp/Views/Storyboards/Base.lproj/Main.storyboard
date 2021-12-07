@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hml-Ko-07H">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -118,31 +118,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6RH-to-q7Q">
-                                <rect key="frame" x="0.0" y="542" width="414" height="260"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqr-jl-IeJ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iBB-Hh-IaK">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1173"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SPh-Et-BFj" userLabel="Details View">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="913"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4z-fq-mbi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="913"/>
+                                                        <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit, elit non euismod convallis, elit sem feugiat orci, eget molestie justo nisi nec magna. Pellentesque non maximus justo, eget gravida arcu. Maecenas non ornare lacus. Proin dictum risus sit amet diam semper congue. Mauris sodales sit amet diam at dictum. Maecenas maximus diam vitae libero viverra efficitur. In hac habitasse platea dictumst. Maecenas euismod accumsan arcu, vitae semper nisl commodo vitae. Proin viverra dolor vitae mattis tincidunt. Quisque tincidunt mattis neque eu varius. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec porta velit ac lorem egestas, quis auctor nibh aliquet.
+
+Pellentesque egestas convallis turpis, vel aliquam libero. Mauris quis orci vel ipsum suscipit pulvinar eu imperdiet risus. Integer vestibulum arcu in sollicitudin pulvinar. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum vitae sem nibh. Sed pellentesque aliquam dolor, eget aliquet nisi porta consectetur. Fusce a viverra augue. Sed tempus consequat elit, sed iaculis massa blandit at. Praesent non nunc risus. Suspendisse lobortis mauris sit amet turpis mollis sodales. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam vitae scelerisque neque. Mauris in lorem eu odio rhoncus placerat. Nullam scelerisque augue id ex efficitur, a facilisis sapien viverra. Aenean porta arcu sed condimentum congue. Aenean elementum ullamcorper risus at euismod.</mutableString>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="t4z-fq-mbi" firstAttribute="leading" secondItem="SPh-Et-BFj" secondAttribute="leading" id="7gZ-Vm-Q3X"/>
+                                                    <constraint firstItem="t4z-fq-mbi" firstAttribute="top" secondItem="SPh-Et-BFj" secondAttribute="top" id="XFY-JO-DdE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="t4z-fq-mbi" secondAttribute="trailing" id="hMA-3J-tuJ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="t4z-fq-mbi" secondAttribute="bottom" id="spW-Di-rxW"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6RH-to-q7Q">
+                                                <rect key="frame" x="0.0" y="913" width="414" height="260"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="260" id="ZhP-D0-gvO"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="260" id="ZhP-D0-gvO"/>
+                                    <constraint firstItem="iBB-Hh-IaK" firstAttribute="width" secondItem="hqr-jl-IeJ" secondAttribute="width" id="8id-6Y-eIY"/>
+                                    <constraint firstItem="iBB-Hh-IaK" firstAttribute="leading" secondItem="hqr-jl-IeJ" secondAttribute="leading" id="CkJ-EJ-6ke"/>
+                                    <constraint firstAttribute="trailing" secondItem="iBB-Hh-IaK" secondAttribute="trailing" id="Gnh-bD-u1v"/>
+                                    <constraint firstItem="iBB-Hh-IaK" firstAttribute="top" secondItem="hqr-jl-IeJ" secondAttribute="top" id="Ync-jz-Gcu"/>
+                                    <constraint firstAttribute="bottom" secondItem="iBB-Hh-IaK" secondAttribute="bottom" id="tyQ-oP-WrF"/>
                                 </constraints>
-                            </view>
+                                <viewLayoutGuide key="contentLayoutGuide" id="frD-PK-xOk"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="C22-ax-ZYt"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4bu-sF-eQO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6RH-to-q7Q" firstAttribute="centerX" secondItem="ucq-7U-vOX" secondAttribute="centerX" id="PaW-MB-uuJ"/>
-                            <constraint firstItem="6RH-to-q7Q" firstAttribute="centerY" secondItem="ucq-7U-vOX" secondAttribute="centerY" multiplier="1.5" id="a5X-qw-3xH"/>
-                            <constraint firstItem="6RH-to-q7Q" firstAttribute="trailing" secondItem="4bu-sF-eQO" secondAttribute="trailing" id="aO4-aG-dWI"/>
-                            <constraint firstItem="6RH-to-q7Q" firstAttribute="leading" secondItem="4bu-sF-eQO" secondAttribute="leading" id="fhg-FV-ITN"/>
+                            <constraint firstAttribute="bottom" secondItem="hqr-jl-IeJ" secondAttribute="bottom" id="6Kr-ql-gVf"/>
+                            <constraint firstItem="hqr-jl-IeJ" firstAttribute="leading" secondItem="4bu-sF-eQO" secondAttribute="leading" id="EoN-l5-0oX"/>
+                            <constraint firstItem="hqr-jl-IeJ" firstAttribute="trailing" secondItem="4bu-sF-eQO" secondAttribute="trailing" id="P1N-R3-esZ"/>
+                            <constraint firstItem="hqr-jl-IeJ" firstAttribute="top" secondItem="ucq-7U-vOX" secondAttribute="top" id="hRr-Xd-YUD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="35j-O6-UPD"/>
                     <connections>
                         <outlet property="abilitiesView" destination="6RH-to-q7Q" id="bFG-uG-2Sq"/>
+                        <outlet property="stackView" destination="iBB-Hh-IaK" id="D6H-bd-nM0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="emF-U3-dYo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054" y="96"/>
+            <point key="canvasLocation" x="1053.6231884057972" y="95.758928571428569"/>
         </scene>
     </scenes>
     <resources>
