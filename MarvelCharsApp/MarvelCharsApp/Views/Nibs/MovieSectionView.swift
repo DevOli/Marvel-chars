@@ -22,7 +22,7 @@ class MovieSectionView: UIView {
     private let collectionViewCellNibName = ResourceName.characterCollectionViewCellNibName
     private let cellReuseIdentifier = ResourceName.characterCellReuseIdentifier
     
-    required init(character: CharacterModel, frame: CGRect) {
+    required init(character: CharacterModel?, frame: CGRect) {
         self.character = character
         super.init(frame: frame)
         commonInit()
@@ -56,8 +56,7 @@ class MovieSectionView: UIView {
 
 extension MovieSectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let test = self.character?.movies.count ?? 0
-        return test
+        return self.character?.movies.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

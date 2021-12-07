@@ -10,8 +10,7 @@ import SwiftUI
 
 class DetailsViewController: UIViewController {
   
-    @IBOutlet weak var abilitiesView: UIView!
-    
+    @IBOutlet weak var abilitiesView: UIView!    
     @IBOutlet weak var stackView: UIStackView!
     var character: CharacterModel?
     
@@ -20,19 +19,21 @@ class DetailsViewController: UIViewController {
         // Make the top and bottom bar black
         view.backgroundColor = .black
 
-        let contentView = AbilitiesView(character: character!)
-        let childView = UIHostingController(rootView: contentView)
-        addChild(childView)
-        childView.view.frame = abilitiesView.bounds
-        abilitiesView.addSubview(childView.view)
-        abilitiesView.addConstrained(subview: childView.view)
-        childView.didMove(toParent: self)
+        if let safeCharacter = character {
+            let contentView = AbilitiesView(character: safeCharacter)
+            let childView = UIHostingController(rootView: contentView)
+            addChild(childView)
+            childView.view.frame = abilitiesView.bounds
+            abilitiesView.addSubview(childView.view)
+            abilitiesView.addConstrained(subview: childView.view)
+            childView.didMove(toParent: self)
+        }
         
-        
-        let movieCustomView = MovieSectionView(character: character!, frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        let movieCustomView = MovieSectionView(character: character, frame: CGRect(x: 0, y: 0, width: 0, height: 0))
 
         stackView.addArrangedSubview(movieCustomView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        
     }
     
     // Set the status bar to black style with white icons
