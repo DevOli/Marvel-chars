@@ -28,6 +28,7 @@ class HomeViewController: UIViewController {
   private let tableViewCellNibName = ResourceName.tableViewCellNibName
   private let homeToDetailsSegueIdentifier = ResourceName.homeToDetailsSegueIdentifier
   private let charactersCollectionVCNibName = ResourceName.charactersCollectionVCNibName
+  private let categoryButtonCollectionViewCell = ResourceName.categoryButtonCollectionViewCell
   
   var viewModel: HomeViewModel?
   
@@ -133,7 +134,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryButtonCollectionViewCell", for: indexPath) as! CategoryButtonCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.categoryButtonCollectionViewCell, for: indexPath) as? CategoryButtonCollectionViewCell else {
+            return UICollectionViewCell()
+        }
         
         cell.categoryButton.setImage(UIImage(named: categoryButton[indexPath.row].categoryName), for: .normal)
         cell.categoryButton.buttonTitleStyles(colours: categoryButton[indexPath.row].colours)
