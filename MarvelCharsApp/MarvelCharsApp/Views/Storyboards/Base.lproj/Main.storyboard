@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hml-Ko-07H">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -70,7 +70,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3GF-1L-LbJ">
-                                <rect key="frame" x="20" y="134" width="187" height="20.5"/>
+                                <rect key="frame" x="20" y="134" width="239" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="66" id="Brb-oJ-IKB"/>
                                 </constraints>
@@ -147,7 +147,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MgK-t4-gvn" secondAttribute="trailing" id="Aqu-T2-DfB"/>
                             <constraint firstItem="fyH-FM-OoV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Foj-Z7-sbD"/>
                             <constraint firstItem="Eb2-Xz-H2k" firstAttribute="top" secondItem="MgK-t4-gvn" secondAttribute="bottom" constant="20" id="IMc-CK-G8e"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3GF-1L-LbJ" secondAttribute="trailing" multiplier="2" id="MjD-K4-O1S"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3GF-1L-LbJ" secondAttribute="trailing" multiplier="1.6" id="MjD-K4-O1S"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Eb2-Xz-H2k" secondAttribute="bottom" id="PUc-IM-fiC"/>
                             <constraint firstItem="3GF-1L-LbJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TeB-Jc-fx3"/>
                             <constraint firstItem="fyH-FM-OoV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="VNO-es-jPI"/>
@@ -202,9 +202,9 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4z-fq-mbi">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="913"/>
-                                                        <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit, elit non euismod convallis, elit sem feugiat orci, eget molestie justo nisi nec magna. Pellentesque non maximus justo, eget gravida arcu. Maecenas non ornare lacus. Proin dictum risus sit amet diam semper congue. Mauris sodales sit amet diam at dictum. Maecenas maximus diam vitae libero viverra efficitur. In hac habitasse platea dictumst. Maecenas euismod accumsan arcu, vitae semper nisl commodo vitae. Proin viverra dolor vitae mattis tincidunt. Quisque tincidunt mattis neque eu varius. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec porta velit ac lorem egestas, quis auctor nibh aliquet.
+                                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit, elit non euismod convallis, elit sem feugiat orci, eget molestie justo nisi nec magna. Pellentesque non maximus justo, eget gravida arcu. Maecenas non ornare lacus. Proin dictum risus sit amet diam semper congue. Mauris sodales sit amet diam at dictum. Maecenas maximus diam vitae libero viverra efficitur. In hac habitasse platea dictumst. Maecenas euismod accumsan arcu, vitae semper nisl commodo vitae. Proin viverra dolor vitae mattis tincidunt. Quisque tincidunt mattis neque eu varius. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec porta velit ac lorem egestas, quis auctor nibh aliquet.
 
-Pellentesque egestas convallis turpis, vel aliquam libero. Mauris quis orci vel ipsum suscipit pulvinar eu imperdiet risus. Integer vestibulum arcu in sollicitudin pulvinar. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum vitae sem nibh. Sed pellentesque aliquam dolor, eget aliquet nisi porta consectetur. Fusce a viverra augue. Sed tempus consequat elit, sed iaculis massa blandit at. Praesent non nunc risus. Suspendisse lobortis mauris sit amet turpis mollis sodales. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam vitae scelerisque neque. Mauris in lorem eu odio rhoncus placerat. Nullam scelerisque augue id ex efficitur, a facilisis sapien viverra. Aenean porta arcu sed condimentum congue. Aenean elementum ullamcorper risus at euismod.</mutableString>
+Pellentesque egestas convallis turpis, vel aliquam libero. Mauris quis orci vel ipsum suscipit pulvinar eu imperdiet risus. Integer vestibulum arcu in sollicitudin pulvinar. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum vitae sem nibh. Sed pellentesque aliquam dolor, eget aliquet nisi porta consectetur. Fusce a viverra augue. Sed tempus consequat elit, sed iaculis massa blandit at. Praesent non nunc risus. Suspendisse lobortis mauris sit amet turpis mollis sodales. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam vitae scelerisque neque. Mauris in lorem eu odio rhoncus placerat. Nullam scelerisque augue id ex efficitur, a facilisis sapien viverra. Aenean porta arcu sed condimentum congue. Aenean elementum ullamcorper risus at euismod.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -263,7 +263,7 @@ Pellentesque egestas convallis turpis, vel aliquam libero. Mauris quis orci vel 
         <image name="menu" width="24" height="24"/>
         <image name="search" width="24" height="24"/>
         <namedColor name="primary-dark">
-            <color red="0.19215686274509805" green="0.19215686274509805" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.19200000166893005" green="0.19200000166893005" blue="0.25099998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
