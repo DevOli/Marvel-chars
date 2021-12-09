@@ -11,6 +11,7 @@ struct AbilitiesView: View {
     var character: CharacterModel
     var body: some View {
         ZStack(alignment: .topLeading) {
+            Color(.black)
             VStack(alignment: .leading, spacing: 30) {
                 Text("Abilities")
                     .foregroundColor(Color(UIColor.primary_white))
