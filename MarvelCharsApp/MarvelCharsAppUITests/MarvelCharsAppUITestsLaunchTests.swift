@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import MarvelCharsApp
 
 class MarvelCharsAppUITestsLaunchTests: XCTestCase {
 

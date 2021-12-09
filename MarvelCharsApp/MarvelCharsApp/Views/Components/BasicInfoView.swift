@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+ 
 struct BasicInfoView: View {
     var character: CharacterModel
     let year = Calendar.current.component(.year, from: Date())
