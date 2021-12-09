@@ -10,16 +10,28 @@ import SwiftUI
 
 class DetailsViewController: UIViewController {
   
+    @IBOutlet weak var basicInfoView: UIView!
     @IBOutlet weak var abilitiesView: UIView!    
     @IBOutlet weak var stackView: UIStackView!
+    
+    var backgroundView: UIImageView = UIImageView()
+    
     var character: CharacterModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Make the top and bottom bar black
         view.backgroundColor = .black
-
+        configureNavBar()
+        
         if let safeCharacter = character {
+            let contentView2 = BasicInfoView(character: safeCharacter)
+            let childView2 = UIHostingController(rootView: contentView2)
+            addChild(childView2)
+            childView2.view.frame = basicInfoView.bounds
+            basicInfoView.addSubview(childView2.view)
+            basicInfoView.addConstrained(subview: childView2.view)
+            childView2.didMove(toParent: self)
+            
             let contentView = AbilitiesView(character: safeCharacter)
             let childView = UIHostingController(rootView: contentView)
             addChild(childView)
@@ -34,6 +46,18 @@ class DetailsViewController: UIViewController {
         stackView.addArrangedSubview(movieCustomView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
+    }
+    
+    func configureNavBar() {
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.isTranslucent = true
+        let action = UIAction { UIAction in
+            self.navigationController?.navigationBar.barStyle = .default
+            self.navigationController?.popViewController(animated: true)
+        }
+        let button = UIBarButtonItem(title: "", image: UIImage(named: "back"), primaryAction: action, menu: nil)
+        button.tintColor = UIColor.white
+        navigationItem.leftBarButtonItem = button
     }
     
     // Set the status bar to black style with white icons
