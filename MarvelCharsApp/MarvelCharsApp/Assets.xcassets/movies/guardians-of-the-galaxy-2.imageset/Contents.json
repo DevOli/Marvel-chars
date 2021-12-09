@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "guardians-of-the-galaxy-2.jpg",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "guardians-of-the-galaxy-2@2x.jpg",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "guardians-of-the-galaxy-2@3x.jpg",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "guardians-of-the-galaxy-2.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {
