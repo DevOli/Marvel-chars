@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "captain-america-2.jpg",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "captain-america-2@2x.jpg",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "captain-america-2@3x.jpg",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "captain-america-2.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {

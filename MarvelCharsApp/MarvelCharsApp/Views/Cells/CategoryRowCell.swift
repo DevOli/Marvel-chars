@@ -68,7 +68,10 @@ class CategoryRowCell: UITableViewCell {
 
 extension CategoryRowCell: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return self.category?.charactersCount ?? 0
+    if let safeCharacterCount = self.category?.charactersCount {
+      return safeCharacterCount < 4 ? safeCharacterCount : 4
+    }
+    return 0
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
