@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "winter-soldier.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

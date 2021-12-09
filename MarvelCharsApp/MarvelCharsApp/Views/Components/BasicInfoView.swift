@@ -13,7 +13,7 @@ struct BasicInfoView: View {
   
     var body: some View {
         ZStack(alignment: .topLeading) {
-            Image("\(character.imagePath)").resizable().scaledToFill().edgesIgnoringSafeArea(.all)
+            Image("\(character.imagePath)").resizable().scaledToFit().edgesIgnoringSafeArea(.all)
             Rectangle().foregroundColor(.clear).background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
             Rectangle().foregroundColor(.clear).background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottomTrailing))
             VStack(alignment: .leading) {
@@ -58,7 +58,8 @@ struct BasicInfoView: View {
                         .foregroundColor(Color(UIColor.primary_white))
                         .font(Font(UIFont.description() as CTFont)).padding(.init(top: 20, leading: 25, bottom: 0, trailing: 25))
 
-            }.padding(.init(top: 0, leading: 47, bottom: 15, trailing: 47))
+            }.padding(.init(top: 0, leading: 0, bottom: 15, trailing: 0))
         }
     }
 }
+
