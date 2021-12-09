@@ -9,23 +9,41 @@ import UIKit
 import SwiftUI
 
 class DetailsViewController: UIViewController {
-    
-    @IBOutlet weak var abilitiesView: UIView!
-    @IBOutlet var generalView: UIView!
+  
+    @IBOutlet weak var basicInfoView: UIView!
+    @IBOutlet weak var abilitiesView: UIView!    
+    @IBOutlet weak var stackView: UIStackView!
     
     var character: CharacterModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .black
         configureNavBar()
         
-        let contentView = GeneralView(character: character!)
-        let childView = UIHostingController(rootView: contentView)
-        addChild(childView)
-        childView.view.frame = generalView.bounds
-        generalView.addSubview(childView.view)
-        generalView.addConstrained(subview: childView.view)
-        childView.didMove(toParent: self)
+        if let safeCharacter = character {
+            let contentView2 = BasicInfoView(character: safeCharacter)
+            let childView2 = UIHostingController(rootView: contentView2)
+            addChild(childView2)
+            childView2.view.frame = basicInfoView.bounds
+            basicInfoView.addSubview(childView2.view)
+            basicInfoView.addConstrained(subview: childView2.view)
+            childView2.didMove(toParent: self)
+            
+            let contentView = AbilitiesView(character: safeCharacter)
+            let childView = UIHostingController(rootView: contentView)
+            addChild(childView)
+            childView.view.frame = abilitiesView.bounds
+            abilitiesView.addSubview(childView.view)
+            abilitiesView.addConstrained(subview: childView.view)
+            childView.didMove(toParent: self)
+        }
+        
+        let movieCustomView = MovieSectionView(character: character, frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+
+        stackView.addArrangedSubview(movieCustomView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
     }
     
     func configureNavBar() {
@@ -38,5 +56,10 @@ class DetailsViewController: UIViewController {
         let button = UIBarButtonItem(title: "", image: UIImage(named: "back"), primaryAction: action, menu: nil)
         button.tintColor = UIColor.white
         navigationItem.leftBarButtonItem = button
+    }
+    
+    // Set the status bar to black style with white icons
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.navigationBar.barStyle = .black
     }
 }

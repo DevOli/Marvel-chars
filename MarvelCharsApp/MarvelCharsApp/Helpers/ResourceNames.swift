@@ -14,4 +14,8 @@ struct ResourceName {
   static let mainStoryBoardName = "Main"
   static let detailsViewController = "DetailsViewControllerID"
   static let searchNameCell = "NameCellID"
+  static let moviesSectionNibName = "MovieSectionView"
+  static let characterCollectionViewCellNibName = "CharacterPortraitCell"
+  static let characterCellReuseIdentifier = "CharacterPortraitID"
+  static let categoryButtonCollectionViewCell = "CategoryButtonCollectionViewCell"
 }
