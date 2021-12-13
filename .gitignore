@@ -93,3 +93,6 @@ iOSInjectionProject/
 #
 .DS_Store
 .DS_Store?
+
+# Code Coverage xml
+sonarqube-generic-coverage.xml
