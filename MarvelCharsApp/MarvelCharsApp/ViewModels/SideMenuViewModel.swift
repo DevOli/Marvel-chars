@@ -42,6 +42,10 @@ class SideMenuViewModel {
 }
 
 extension SideMenuViewModel: MarvelRepositoryDelegate {
+    func didFetchMovies(movies: [MovieModel]) {
+        
+    }
+    
     func didFetchData(categories: [CategoryModel]) {
         categoriesList = categories
         delegate?.didFetchSuccessfuly(categories: categories)

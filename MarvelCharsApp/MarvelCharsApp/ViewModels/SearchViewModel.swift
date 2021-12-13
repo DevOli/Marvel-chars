@@ -52,6 +52,10 @@ class SearchViewModel {
 }
 
 extension SearchViewModel: MarvelRepositoryDelegate {
+    func didFetchMovies(movies: [MovieModel]) {
+
+    }
+    
     func didFailFetching(error: Error) {
         errorHandler(error)
     }

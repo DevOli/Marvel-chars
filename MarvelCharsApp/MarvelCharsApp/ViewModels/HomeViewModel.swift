@@ -42,6 +42,10 @@ class HomeViewModel {
 }
 
 extension HomeViewModel: MarvelRepositoryDelegate {
+  func didFetchMovies(movies: [MovieModel]) {
+    
+  }
+    
   func didFailFetching(error: Error) {
     print(error)
   }
