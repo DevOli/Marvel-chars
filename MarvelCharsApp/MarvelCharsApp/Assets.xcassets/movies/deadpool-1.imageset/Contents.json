@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "deadpool-1.jpg",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "deadpool-1@2x.jpg",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "deadpool-1@3x.jpg",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "deadpool-1.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {

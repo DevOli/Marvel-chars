@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "spider-man-far-from-home.jpg",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "spider-man-far-from-home@2x.jpg",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "spider-man-far-from-home@3x.jpg",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "spider-man-far-from-home.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {
