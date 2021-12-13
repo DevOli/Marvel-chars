@@ -19,13 +19,13 @@ class CharacterPortraitCell: UICollectionViewCell {
       characterAlterEgoLabel.font = UIFont.cardSubtitle()
   }
 
-  func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
+  func dropShadow(color: UIColor) {
     layer.masksToBounds = false
     layer.shadowColor = color.cgColor
-    layer.shadowOpacity = opacity
-    layer.shadowOffset = offSet
-    layer.shadowRadius = radius
+    layer.shadowOpacity = 0.7
+    layer.shadowOffset = CGSize(width: 0, height: 8)
+    layer.shadowRadius = 6
     layer.shouldRasterize = true
-    layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+    layer.rasterizationScale = UIScreen.main.scale
   }
 }

@@ -80,7 +80,7 @@ extension CategoryRowCell: UICollectionViewDataSource {
     }
     if let character = self.category?.getCharacter(at: indexPath.row) {
       let image = UIImage(named: character.imagePath)
-      cell.dropShadow(color: image?.averageColor ?? .clear, opacity: 0.7, offSet: CGSize(width: 0, height: 8), radius: 6, scale: true)
+      cell.dropShadow(color: image?.averageColor ?? .clear)
       cell.characterImage.image = image?.roundedImage
       cell.characterNameLabel.text = character.name
       cell.characterAlterEgoLabel.text = character.alterEgo
