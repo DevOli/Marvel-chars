@@ -455,6 +455,7 @@
 				848A278E274D5077000CDBCE /* Frameworks */,
 				848A278F274D5077000CDBCE /* Resources */,
 				E88D05E371C7C7FB4B139204 /* [CP] Embed Pods Frameworks */,
+				C0CD394D2761E21E000226BE /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -625,6 +626,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarvelCharsApp-MarvelCharsAppUITests/Pods-MarvelCharsApp-MarvelCharsAppUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		C0CD394D2761E21E000226BE /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		D23F039A3C353B24420A1FF1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
