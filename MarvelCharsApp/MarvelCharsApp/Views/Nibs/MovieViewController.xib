@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="gilroy-bold.ttf">
+            <string>Gilroy-Bold</string>
+        </array>
+        <array key="gilroy-heavy.ttf">
+            <string>Gilroy-Heavy</string>
+        </array>
+        <array key="gilroy-medium.ttf">
+            <string>Gilroy-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieViewController" customModule="MarvelCharsApp" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="DMJ-Ds-sBV" id="3At-lF-a8d"/>
+                <outlet property="mainImage" destination="ETF-6G-zr3" id="HR2-a9-62R"/>
+                <outlet property="synopsisLabel" destination="tef-jG-Xs6" id="8eC-px-0Oi"/>
+                <outlet property="titleLabel" destination="FJ0-1L-Aap" id="UXl-dR-z9W"/>
+                <outlet property="trailerLabel" destination="Ea8-UJ-MVy" id="Doa-Zp-UMA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zav-aZ-ELy">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMJ-Ds-sBV" userLabel="Content View">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="849"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ETF-6G-zr3">
+                                    <rect key="frame" x="0.0" y="-90" width="414" height="923"/>
+                                    <color key="backgroundColor" name="primary-black"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="923" id="yCx-eR-ERz"/>
+                                    </constraints>
+                                </imageView>
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJ0-1L-Aap">
+                                    <rect key="frame" x="24" y="400" width="366" height="40"/>
+                                    <fontDescription key="fontDescription" name="Gilroy-Heavy" family="Gilroy-Heavy" pointSize="40"/>
+                                    <color key="textColor" name="primary-white"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tef-jG-Xs6" userLabel="Synopsis Label">
+                                    <rect key="frame" x="24" y="468" width="366" height="308"/>
+                                    <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis lorem sit amet orci ullamcorper iaculis. Vivamus iaculis imperdiet congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper tortor arcu, bibendum commodo libero euismod non. Vivamus ac finibus elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis condimentum sem ac lacinia. Nullam eleifend lectus quis lorem auctor varius aliquet quis mauris. Ut maximus eros vitae urna efficitur, eget placerat lacus porta. Suspendisse condimentum rhoncus eleifend. Vivamus iaculis tincidunt elementum. Sed mauris nulla, commodo eu lectus sit amet, tristique dictum lacus.
+
+Sed elit enim, sollicitudin vel libero vel, malesuada rutrum nunc. Morbi at odio dui. Etiam vitae metus vitae libero scelerisque tristique ut vel felis. Maecenas aliquet est orci, ac faucibus ipsum elementum ut. Donec aliquet a diam non faucibus. Sed vestibulum bibendum leo sed feugiat. Ut lobortis suscipit sem, a pretium arcu. Morbi nec vestibulum arcu. Proin tempus auctor urna at suscipit.</string>
+                                    <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="14"/>
+                                    <color key="textColor" name="primary-white"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trailer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ea8-UJ-MVy">
+                                    <rect key="frame" x="24" y="806" width="366" height="18"/>
+                                    <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="18"/>
+                                    <color key="textColor" name="primary-white"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="tef-jG-Xs6" firstAttribute="trailing" secondItem="FJ0-1L-Aap" secondAttribute="trailing" id="6Fx-5D-Nz7"/>
+                                <constraint firstAttribute="trailing" secondItem="ETF-6G-zr3" secondAttribute="trailing" id="9YD-PO-Sa3"/>
+                                <constraint firstItem="ETF-6G-zr3" firstAttribute="top" secondItem="DMJ-Ds-sBV" secondAttribute="top" constant="-90" id="9xU-0D-HrC"/>
+                                <constraint firstItem="tef-jG-Xs6" firstAttribute="top" secondItem="FJ0-1L-Aap" secondAttribute="bottom" constant="28" id="Bur-ZJ-EWZ"/>
+                                <constraint firstItem="Ea8-UJ-MVy" firstAttribute="top" secondItem="tef-jG-Xs6" secondAttribute="bottom" constant="30" id="MOQ-GW-8Xj"/>
+                                <constraint firstItem="Ea8-UJ-MVy" firstAttribute="trailing" secondItem="FJ0-1L-Aap" secondAttribute="trailing" id="Osw-cQ-SP1"/>
+                                <constraint firstItem="FJ0-1L-Aap" firstAttribute="top" secondItem="DMJ-Ds-sBV" secondAttribute="top" constant="400" id="Yph-uc-eYq"/>
+                                <constraint firstAttribute="bottom" secondItem="Ea8-UJ-MVy" secondAttribute="bottom" constant="25" id="dTQ-ic-udS"/>
+                                <constraint firstItem="tef-jG-Xs6" firstAttribute="leading" secondItem="FJ0-1L-Aap" secondAttribute="leading" id="fUC-qs-CXz"/>
+                                <constraint firstItem="FJ0-1L-Aap" firstAttribute="leading" secondItem="DMJ-Ds-sBV" secondAttribute="leading" constant="24" id="gAt-CU-5Mo"/>
+                                <constraint firstItem="ETF-6G-zr3" firstAttribute="leading" secondItem="DMJ-Ds-sBV" secondAttribute="leading" id="ggR-QD-0Gp"/>
+                                <constraint firstItem="Ea8-UJ-MVy" firstAttribute="leading" secondItem="FJ0-1L-Aap" secondAttribute="leading" id="mbg-sN-Y8H"/>
+                                <constraint firstAttribute="trailing" secondItem="FJ0-1L-Aap" secondAttribute="trailing" constant="24" id="qs7-Km-zmX"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="DMJ-Ds-sBV" secondAttribute="trailing" id="4lq-he-fL7"/>
+                        <constraint firstItem="DMJ-Ds-sBV" firstAttribute="height" secondItem="zav-aZ-ELy" secondAttribute="height" priority="250" id="Jh7-Ym-pti"/>
+                        <constraint firstItem="DMJ-Ds-sBV" firstAttribute="leading" secondItem="zav-aZ-ELy" secondAttribute="leading" id="bJU-lW-UxB"/>
+                        <constraint firstItem="DMJ-Ds-sBV" firstAttribute="top" secondItem="zav-aZ-ELy" secondAttribute="top" id="eYW-6L-mAb"/>
+                        <constraint firstAttribute="bottom" secondItem="DMJ-Ds-sBV" secondAttribute="bottom" id="gtI-HC-beR"/>
+                        <constraint firstItem="DMJ-Ds-sBV" firstAttribute="width" secondItem="zav-aZ-ELy" secondAttribute="width" id="iIZ-56-OMD"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="XIA-io-jix"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="KvX-a5-BpC"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="zav-aZ-ELy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1un-1a-7Kt"/>
+                <constraint firstItem="zav-aZ-ELy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="83m-mG-yhk"/>
+                <constraint firstAttribute="bottom" secondItem="zav-aZ-ELy" secondAttribute="bottom" id="iKF-9l-Ye6"/>
+                <constraint firstItem="zav-aZ-ELy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qck-uv-Tnn"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <point key="canvasLocation" x="131.8840579710145" y="111.83035714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="primary-black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary-white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

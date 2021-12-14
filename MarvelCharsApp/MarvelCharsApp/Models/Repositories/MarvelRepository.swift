@@ -8,7 +8,7 @@
 import Foundation
 protocol MarvelRepository {
     func fetchData()
-    func fetchMovie(byName: String)
+    func fetchMovie(byKey: String)
     func setDelegate(delegate: MarvelRepositoryDelegate)
 }
 protocol MarvelRepositoryDelegate {

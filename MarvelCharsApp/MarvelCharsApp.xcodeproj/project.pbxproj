@@ -105,6 +105,8 @@
 		CE7150F62767AF86004F8115 /* MovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7150F22767AF86004F8115 /* MovieViewController.xib */; };
 		CE7150F72767AF86004F8115 /* MovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7150F22767AF86004F8115 /* MovieViewController.xib */; };
 		CE7150F82767AF86004F8115 /* MovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7150F22767AF86004F8115 /* MovieViewController.xib */; };
+		CE7150F92767D89F004F8115 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7150ED2767A16F004F8115 /* MovieModel.swift */; };
+		CE7150FA2767D89F004F8115 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7150ED2767A16F004F8115 /* MovieModel.swift */; };
 		CE7FFE78275ABDF500147FE6 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A1146275099660064AA4B /* SearchViewModel.swift */; };
 		CE835E9E275A5AC300B6105C /* ResourceNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE835E9D275A5AC300B6105C /* ResourceNames.swift */; };
 		CEA064B8275FDEF50059852D /* MovieSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA064B7275FDEF50059852D /* MovieSectionView.xib */; };
@@ -357,6 +359,7 @@
 				848A2798274D5077000CDBCE /* HomeViewController.swift */,
 				848A27C9274D8BBC000CDBCE /* DetailsViewController.swift */,
 				CE2B85B5275828E30059DE45 /* SideMenuController.swift */,
+				CE7150F12767AF86004F8115 /* MovieViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -434,7 +437,6 @@
 				84DC6829275AC410009B9CAD /* CharactersCollectionHeader.xib */,
 				CEEEDBF7275EA844002C3E09 /* MovieSectionView.swift */,
 				CEA064B7275FDEF50059852D /* MovieSectionView.xib */,
-				CE7150F12767AF86004F8115 /* MovieViewController.swift */,
 				CE7150F22767AF86004F8115 /* MovieViewController.xib */,
 			);
 			path = Nibs;
@@ -761,6 +763,7 @@
 				CE59ECFB27601CCE00C2B527 /* CategoryButtonCollectionViewCell.swift in Sources */,
 				CE59ECFD27601CF100C2B527 /* HomeViewController.swift in Sources */,
 				CEAED4EF275DA68900319BF6 /* UIColorHelper.swift in Sources */,
+				CE7150F92767D89F004F8115 /* MovieModel.swift in Sources */,
 				84C7D0F6275DC202000BC67C /* CategoryRowCell.swift in Sources */,
 				CEAED4EA275DA53700319BF6 /* AbilitiesView.swift in Sources */,
 				84645F7F274E9E1B001A997A /* MarvelAPI.swift in Sources */,
@@ -805,6 +808,7 @@
 				CEA064BA276003AA0059852D /* MovieSectionView.swift in Sources */,
 				84E54D062757326E00A21EDA /* MarvelAPIModel.swift in Sources */,
 				CEAED4F2275DA6E800319BF6 /* UIColorHelper.swift in Sources */,
+				CE7150FA2767D89F004F8115 /* MovieModel.swift in Sources */,
 				848A27B6274D5079000CDBCE /* MarvelCharsAppUITests.swift in Sources */,
 				84C7D0FD275DC27E000BC67C /* UIImageHelper.swift in Sources */,
 				CEAED4F1275DA6DD00319BF6 /* UIViewHelper.swift in Sources */,

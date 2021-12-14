@@ -79,7 +79,7 @@ class MockMarvelAPI: MarvelRepository {
         self.delegate?.didFetchData(categories: categories)
     }
     
-    func fetchMovie(byName: String) {
+    func fetchMovie(byKey: String) {
         
     }
 }

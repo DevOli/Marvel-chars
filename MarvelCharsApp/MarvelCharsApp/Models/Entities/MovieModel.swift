@@ -7,7 +7,7 @@
 
 import Foundation
 struct MovieModel {
-    let name, key, image: String?
-    let trailer: String?
-    let synopsis: String?
+    let name, key, image: String
+    let trailer: String
+    let synopsis: String
 }
