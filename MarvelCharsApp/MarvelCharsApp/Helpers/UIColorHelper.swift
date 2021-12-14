@@ -8,31 +8,23 @@
 import Foundation
 import UIKit
 extension UIColor {
-  static let primary_grey = UIColor(rgb: 0xB7B7C8)
-  static let primary_red = UIColor(rgb: 0xF2264B)
-  static let primary_black = UIColor(rgb: 0x000000)
-  static let primary_white = UIColor(rgb: 0xFFFFFF)
-  static let primary_dark = UIColor(rgb: 0x313140)
-  static let primary_silver = UIColor(rgb: 0xF8F8F8)
-  static let gradient_blue_a = UIColor(rgb: 0x005BEA)
-  static let gradient_blue_b = UIColor(rgb: 0x00C6FB)
-  static let gradient_red_a = UIColor(rgb: 0xED1D24)
-  static let gradient_red_b = UIColor(rgb: 0xED1F69)
-  static let gradient_purple_a = UIColor(rgb: 0xB224EF)
-  static let gradient_purple_b = UIColor(rgb: 0x7579FF)
-  static let gradient_green_a = UIColor(rgb: 0x0BA360)
-  static let gradient_green_b = UIColor(rgb: 0x3CBA92)
-  static let gradient_pink_a = UIColor(rgb: 0xFF7EB3)
-  static let gradient_pink_b = UIColor(rgb: 0xFF758C)
+  
+  static let gradient_blue_a = UIColor(named: "gradient-blue-a") ?? .blue
+  static let gradient_blue_b = UIColor(named: "gradient-blue-b") ?? .blue
+  static let gradient_green_a = UIColor(named: "gradient-green-a") ?? .green
+  static let gradient_green_b = UIColor(named: "gradient-green-b") ?? .green
+  static let gradient_pink_a = UIColor(named: "gradient-pink-a") ?? .red
+  static let gradient_pink_b = UIColor(named: "gradient-pink-b") ?? .red
+  static let gradient_purple_a = UIColor(named: "gradient-purple-a") ?? .blue
+  static let gradient_purple_b = UIColor(named: "gradient-purple-b") ?? .blue
+  static let gradient_red_a = UIColor(named: "gradient-red-a") ?? .red
+  static let gradient_red_b = UIColor(named: "gradient-red-b") ?? .red
+  static let primary_black = UIColor(named: "primary-black") ?? .black
+  static let primary_dark = UIColor(named: "primary-dark") ?? .darkGray
+  static let primary_grey = UIColor(named: "primary-grey") ?? .gray
+  static let primary_red = UIColor(named: "primary-red") ?? .red
+  static let primary_silver = UIColor(named: "primary-silver") ?? .white
+  static let primary_white: UIColor = UIColor(named: "primary-white") ?? .white
     
-  convenience init(rgb: Int) {
-    self.init(
-      red: (rgb >> 16) & 0xFF,
-      green: (rgb >> 8) & 0xFF,
-      blue: rgb & 0xFF
-    )
-  }
-  convenience init(red: Int, green: Int, blue: Int) {
-    self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
-  }
+
 }

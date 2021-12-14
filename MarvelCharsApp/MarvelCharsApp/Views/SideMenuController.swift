@@ -7,6 +7,7 @@
 
 import Foundation
 import SideMenu
+import UIKit
 
 class SideMenuController: UITableViewController {
 
@@ -18,6 +19,7 @@ class SideMenuController: UITableViewController {
         sideMenuViewModel.delegate = self
         sideMenuViewModel.fetchData()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+      self.tableView.backgroundColor = UIColor.primary_silver
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,6 +30,7 @@ class SideMenuController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = sideMenuViewModel.getCategory(at: indexPath.row).category
         cell.textLabel?.font = UIFont.profileSubtitle()
+      cell.backgroundColor = UIColor.primary_silver
         return cell
     }
     
