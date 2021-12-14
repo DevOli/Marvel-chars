@@ -71,6 +71,9 @@
 		C017B7AC2755A413002A8E3F /* gilroy-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C017B7A62755A3FF002A8E3F /* gilroy-medium.ttf */; };
 		C017B7AD2755A416002A8E3F /* gilroy-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C017B7A92755A3FF002A8E3F /* gilroy-regular.ttf */; };
 		C017B7AE2755A418002A8E3F /* gilroy-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C017B7A72755A3FF002A8E3F /* gilroy-semibold.ttf */; };
+		C0CD394C2761A79F000226BE /* BasicInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD394B2761A79F000226BE /* BasicInfoView.swift */; };
+		C0F3906C2762575E00DEADF4 /* BasicInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD394B2761A79F000226BE /* BasicInfoView.swift */; };
+		C0F3906D2762575E00DEADF4 /* BasicInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD394B2761A79F000226BE /* BasicInfoView.swift */; };
 		CE0A1147275099660064AA4B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A1146275099660064AA4B /* SearchViewModel.swift */; };
 		CE0A11492750997E0064AA4B /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0A11482750997E0064AA4B /* SearchTableViewController.swift */; };
 		CE2B85B6275828E30059DE45 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85B5275828E30059DE45 /* SideMenuController.swift */; };
@@ -177,6 +180,7 @@
 		C017B7A72755A3FF002A8E3F /* gilroy-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gilroy-semibold.ttf"; sourceTree = "<group>"; };
 		C017B7A82755A3FF002A8E3F /* gilroy-heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gilroy-heavy.ttf"; sourceTree = "<group>"; };
 		C017B7A92755A3FF002A8E3F /* gilroy-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gilroy-regular.ttf"; sourceTree = "<group>"; };
+		C0CD394B2761A79F000226BE /* BasicInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfoView.swift; sourceTree = "<group>"; };
 		C1A3292B88C2AFAD7D69F47C /* Pods_MarvelCharsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelCharsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBF0BAF1FB022BB73650B604 /* Pods-MarvelCharsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelCharsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelCharsAppTests/Pods-MarvelCharsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE0A1146275099660064AA4B /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -439,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				CE2B85E2275AB5C60059DE45 /* AbilitiesView.swift */,
+				C0CD394B2761A79F000226BE /* BasicInfoView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -736,6 +741,7 @@
 				CE2B85DE275AA69C0059DE45 /* AbilityProgressBar.swift in Sources */,
 				848A27CA274D8BBC000CDBCE /* DetailsViewController.swift in Sources */,
 				CE2B85B8275829310059DE45 /* MarvelRepository.swift in Sources */,
+				C0CD394C2761A79F000226BE /* BasicInfoView.swift in Sources */,
 				CE2B85E3275AB5C60059DE45 /* AbilitiesView.swift in Sources */,
 				84645F84274EC15A001A997A /* CharacterModel.swift in Sources */,
 				CE0A11492750997E0064AA4B /* SearchTableViewController.swift in Sources */,
@@ -769,6 +775,7 @@
 				84C7D0F8275DC20F000BC67C /* CharactersCollectionHeader.swift in Sources */,
 				84645F82274E9E53001A997A /* MarvelAPIModel.swift in Sources */,
 				84E54D08275734AC00A21EDA /* CategoryModelTest.swift in Sources */,
+				C0F3906C2762575E00DEADF4 /* BasicInfoView.swift in Sources */,
 				84DC6820275A4FA4009B9CAD /* CharactersCollectionViewController.swift in Sources */,
 				848A27CB274D8BBC000CDBCE /* DetailsViewController.swift in Sources */,
 				CE59ECFC27601CEF00C2B527 /* SearchTableViewController.swift in Sources */,
@@ -815,6 +822,7 @@
 				848A27CC274D8BBC000CDBCE /* DetailsViewController.swift in Sources */,
 				CEAED4F3275DA6F800319BF6 /* UIFontHelper.swift in Sources */,
 				848A27D0274D8C86000CDBCE /* HomeViewModel.swift in Sources */,
+				C0F3906D2762575E00DEADF4 /* BasicInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

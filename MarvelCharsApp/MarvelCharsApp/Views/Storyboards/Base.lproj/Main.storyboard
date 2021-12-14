@@ -194,49 +194,52 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqr-jl-IeJ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iBB-Hh-IaK">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1173"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEY-OI-3tP">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1310"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SPh-Et-BFj" userLabel="Details View">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="913"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4z-fq-mbi">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="913"/>
-                                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit, elit non euismod convallis, elit sem feugiat orci, eget molestie justo nisi nec magna. Pellentesque non maximus justo, eget gravida arcu. Maecenas non ornare lacus. Proin dictum risus sit amet diam semper congue. Mauris sodales sit amet diam at dictum. Maecenas maximus diam vitae libero viverra efficitur. In hac habitasse platea dictumst. Maecenas euismod accumsan arcu, vitae semper nisl commodo vitae. Proin viverra dolor vitae mattis tincidunt. Quisque tincidunt mattis neque eu varius. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec porta velit ac lorem egestas, quis auctor nibh aliquet.
-
-Pellentesque egestas convallis turpis, vel aliquam libero. Mauris quis orci vel ipsum suscipit pulvinar eu imperdiet risus. Integer vestibulum arcu in sollicitudin pulvinar. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum vitae sem nibh. Sed pellentesque aliquam dolor, eget aliquet nisi porta consectetur. Fusce a viverra augue. Sed tempus consequat elit, sed iaculis massa blandit at. Praesent non nunc risus. Suspendisse lobortis mauris sit amet turpis mollis sodales. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam vitae scelerisque neque. Mauris in lorem eu odio rhoncus placerat. Nullam scelerisque augue id ex efficitur, a facilisis sapien viverra. Aenean porta arcu sed condimentum congue. Aenean elementum ullamcorper risus at euismod.</string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
+                                                <rect key="frame" x="0.0" y="-88" width="414" height="838"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="t4z-fq-mbi" firstAttribute="leading" secondItem="SPh-Et-BFj" secondAttribute="leading" id="7gZ-Vm-Q3X"/>
-                                                    <constraint firstItem="t4z-fq-mbi" firstAttribute="top" secondItem="SPh-Et-BFj" secondAttribute="top" id="XFY-JO-DdE"/>
-                                                    <constraint firstAttribute="trailing" secondItem="t4z-fq-mbi" secondAttribute="trailing" id="hMA-3J-tuJ"/>
-                                                    <constraint firstAttribute="bottom" secondItem="t4z-fq-mbi" secondAttribute="bottom" id="spW-Di-rxW"/>
+                                                    <constraint firstAttribute="height" constant="838" id="WOg-jB-j0F"/>
                                                 </constraints>
                                             </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iBB-Hh-IaK">
+                                                <rect key="frame" x="0.0" y="1010" width="414" height="300"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="epY-H1-iec"/>
+                                                </constraints>
+                                            </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6RH-to-q7Q">
-                                                <rect key="frame" x="0.0" y="913" width="414" height="260"/>
+                                                <rect key="frame" x="0.0" y="750" width="414" height="260"/>
                                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="260" id="ZhP-D0-gvO"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="6RH-to-q7Q" firstAttribute="leading" secondItem="rEY-OI-3tP" secondAttribute="leading" id="0ez-4L-6fQ"/>
+                                            <constraint firstItem="iBB-Hh-IaK" firstAttribute="top" secondItem="6RH-to-q7Q" secondAttribute="bottom" id="9Ee-KH-hAk"/>
+                                            <constraint firstAttribute="trailing" secondItem="SPh-Et-BFj" secondAttribute="trailing" id="9Sf-Ph-G9Q"/>
+                                            <constraint firstAttribute="bottom" secondItem="iBB-Hh-IaK" secondAttribute="bottom" id="EKJ-I9-DXt"/>
+                                            <constraint firstAttribute="trailing" secondItem="6RH-to-q7Q" secondAttribute="trailing" id="VXX-lf-Dtm"/>
+                                            <constraint firstAttribute="trailing" secondItem="iBB-Hh-IaK" secondAttribute="trailing" id="bP7-1p-8LU"/>
+                                            <constraint firstItem="SPh-Et-BFj" firstAttribute="top" secondItem="rEY-OI-3tP" secondAttribute="top" constant="-88" id="sfn-gx-TLl"/>
+                                            <constraint firstItem="SPh-Et-BFj" firstAttribute="leading" secondItem="rEY-OI-3tP" secondAttribute="leading" id="unC-yg-I7F"/>
+                                            <constraint firstItem="6RH-to-q7Q" firstAttribute="top" secondItem="SPh-Et-BFj" secondAttribute="bottom" id="xp4-Zh-yj4"/>
+                                            <constraint firstItem="iBB-Hh-IaK" firstAttribute="leading" secondItem="rEY-OI-3tP" secondAttribute="leading" id="yVj-PU-fKQ"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="iBB-Hh-IaK" firstAttribute="width" secondItem="hqr-jl-IeJ" secondAttribute="width" id="8id-6Y-eIY"/>
-                                    <constraint firstItem="iBB-Hh-IaK" firstAttribute="leading" secondItem="hqr-jl-IeJ" secondAttribute="leading" id="CkJ-EJ-6ke"/>
-                                    <constraint firstAttribute="trailing" secondItem="iBB-Hh-IaK" secondAttribute="trailing" id="Gnh-bD-u1v"/>
-                                    <constraint firstItem="iBB-Hh-IaK" firstAttribute="top" secondItem="hqr-jl-IeJ" secondAttribute="top" id="Ync-jz-Gcu"/>
-                                    <constraint firstAttribute="bottom" secondItem="iBB-Hh-IaK" secondAttribute="bottom" id="tyQ-oP-WrF"/>
+                                    <constraint firstItem="rEY-OI-3tP" firstAttribute="top" secondItem="hqr-jl-IeJ" secondAttribute="top" id="NVb-9Q-GIg"/>
+                                    <constraint firstAttribute="trailing" secondItem="rEY-OI-3tP" secondAttribute="trailing" id="bqH-iE-VSp"/>
+                                    <constraint firstAttribute="bottom" secondItem="rEY-OI-3tP" secondAttribute="bottom" id="hZQ-hC-WHb"/>
+                                    <constraint firstItem="rEY-OI-3tP" firstAttribute="centerX" secondItem="hqr-jl-IeJ" secondAttribute="centerX" id="ozS-EV-ZxI"/>
+                                    <constraint firstItem="rEY-OI-3tP" firstAttribute="leading" secondItem="hqr-jl-IeJ" secondAttribute="leading" id="wTt-h0-9AR"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="frD-PK-xOk"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="C22-ax-ZYt"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4bu-sF-eQO"/>
@@ -251,6 +254,7 @@ Pellentesque egestas convallis turpis, vel aliquam libero. Mauris quis orci vel 
                     <navigationItem key="navigationItem" id="35j-O6-UPD"/>
                     <connections>
                         <outlet property="abilitiesView" destination="6RH-to-q7Q" id="bFG-uG-2Sq"/>
+                        <outlet property="basicInfoView" destination="SPh-Et-BFj" id="bAx-HO-ptY"/>
                         <outlet property="stackView" destination="iBB-Hh-IaK" id="D6H-bd-nM0"/>
                     </connections>
                 </viewController>

@@ -12,7 +12,7 @@ struct AbilitiesView: View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             Color(.black)
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 30) {
                 Text("Abilities")
                     .foregroundColor(Color(UIColor.primaryWhite))
                     .font(Font(UIFont.sectionTitle() as CTFont))
@@ -39,4 +39,4 @@ struct AbilitiesView: View {
             }.padding(.init(top: 10, leading: 25, bottom: 10, trailing: 40))
         }
     }
-}
+} 

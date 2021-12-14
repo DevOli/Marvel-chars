@@ -66,7 +66,10 @@ class CategoryRowCell: UITableViewCell {
 
 extension CategoryRowCell: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return self.category?.charactersCount ?? 0
+    if let safeCharacterCount = self.category?.charactersCount {
+      return safeCharacterCount < 4 ? safeCharacterCount : 4
+    }
+    return 0
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -76,6 +79,7 @@ extension CategoryRowCell: UICollectionViewDataSource {
     }
     if let character = self.category?.getCharacter(at: indexPath.row) {
       let image = UIImage(named: character.imagePath)
+      cell.dropShadow(color: image?.averageColor ?? .clear)
       cell.characterImage.image = image?.roundedImage
       cell.characterNameLabel.text = character.name
       cell.characterAlterEgoLabel.text = character.alterEgo
@@ -91,3 +95,4 @@ extension CategoryRowCell: UICollectionViewDelegate {
     }
   }
 }
+

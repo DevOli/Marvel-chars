@@ -52,6 +52,7 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
     }
     if let character = self.category?.getCharacter(at: indexPath.row) {
       let image = UIImage(named: character.imagePath)
+      cell.dropShadow(color: image?.averageColor ?? .clear)
       cell.characterImage.image = image?.roundedImage
       cell.characterNameLabel.text = character.name
       cell.characterAlterEgoLabel.text = character.alterEgo

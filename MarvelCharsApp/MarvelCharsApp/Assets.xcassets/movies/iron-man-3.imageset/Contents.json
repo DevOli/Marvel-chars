@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "iron-man-3.jpg",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "iron-man-3@2x.jpg",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "iron-man-3@3x.jpg",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "iron-man-3.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {
