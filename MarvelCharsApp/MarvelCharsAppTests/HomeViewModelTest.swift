@@ -25,7 +25,7 @@ class HomeViewModelTest: XCTestCase {
     let category = viewModel.getCategoryWith(name: "AntiHeroes")
     XCTAssertEqual(category?.category, "AntiHeroes")
   }
-  
+
   func testReturnNilWhenGetCategoryWithWrongName() throws {
     let viewModel = HomeViewModel()
     let mockedManager = MockedMarvelAPI()
@@ -34,7 +34,7 @@ class HomeViewModelTest: XCTestCase {
     let category = viewModel.getCategoryWith(name: "Antiheroes")
     XCTAssertNil(category)
   }
-  
+
   func testReturnNilWhenGetCategoryWithNameAndDidntFetchData() throws {
     let viewModel = HomeViewModel()
     let mockedManager = MockedMarvelAPI()
@@ -46,7 +46,7 @@ class HomeViewModelTest: XCTestCase {
 }
 
 class MockedMarvelAPI: MarvelAPI {
-  
+
   override func fetchData() {
     var categories: [CategoryModel] = []
     categories.append(CategoryModel(category: "Heroes"))
@@ -54,5 +54,4 @@ class MockedMarvelAPI: MarvelAPI {
     categories.append(CategoryModel(category: "Humans"))
     self.delegate?.didFetchData(categories: categories)
   }
-  
 }

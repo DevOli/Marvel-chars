@@ -11,17 +11,17 @@ struct AbilityProgressBar: View {
     var percent: CGFloat
 
     var body: some View {
-        let multiplier: CGFloat = percent/100
+        let multiplier: CGFloat = percent / 100
 
         ZStack(alignment: .leading) {
             Color(.black)
             GeometryReader { geometry in
                 Path { path in
                     path.move(to: CGPoint(x: 0, y: geometry.size.height / 2))
-                    path.addLine(to: CGPoint(x: geometry.size.width, y:  geometry.size.height / 2))
+                    path.addLine(to: CGPoint(x: geometry.size.width, y: geometry.size.height / 2))
                 }
                 .stroke(style: StrokeStyle( lineWidth: 12, dash: [2, 7]))
-                .foregroundColor(Color(UIColor.primary_grey))
+                .foregroundColor(Color(UIColor.primaryGrey))
             }
 
             GeometryReader { geometry in
@@ -30,16 +30,16 @@ struct AbilityProgressBar: View {
                     path.addLine(to: CGPoint(x: geometry.size.width * multiplier, y: geometry.size.height / 2))
                 }
                 .stroke(style: StrokeStyle( lineWidth: 12, dash: [2, 7]))
-                .foregroundColor(Color(UIColor.primary_white))
+                .foregroundColor(Color(UIColor.primaryWhite))
             }
-            
+
             GeometryReader { geometry in
                 Path { path in
-                    path.move(to: CGPoint(x: (geometry.size.width * multiplier)-1, y: geometry.size.height / 2))
-                    path.addLine(to: CGPoint(x: (geometry.size.width * multiplier)+1, y: geometry.size.height / 2))
+                    path.move(to: CGPoint(x: (geometry.size.width * multiplier) - 1, y: geometry.size.height / 2))
+                    path.addLine(to: CGPoint(x: (geometry.size.width * multiplier) + 1, y: geometry.size.height / 2))
                 }
                 .stroke(style: StrokeStyle( lineWidth: 18, dash: [2, 7]))
-                .foregroundColor(Color(UIColor.primary_white))
+                .foregroundColor(Color(UIColor.primaryWhite))
             }
         }
     }

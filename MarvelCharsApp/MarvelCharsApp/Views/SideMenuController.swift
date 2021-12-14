@@ -9,32 +9,31 @@ import Foundation
 import SideMenu
 
 class SideMenuController: UITableViewController {
-
     var sideMenuViewModel = SideMenuViewModel()
-    var delegate: CharacterPortraitDelegate?
-  
+    weak var delegate: CharacterPortraitDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenuViewModel.delegate = self
         sideMenuViewModel.fetchData()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sideMenuViewModel.countCategories()
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = sideMenuViewModel.getCategory(at: indexPath.row).category
+        cell.textLabel?.text = sideMenuViewModel.getCategory(atIndex: indexPath.row).category
         cell.textLabel?.font = UIFont.profileSubtitle()
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       tableView.deselectRow(at: indexPath, animated: true)
       self.dismiss(animated: true, completion: nil)
-      self.delegate?.showCategoryView(category: sideMenuViewModel.getCategory(at: indexPath.row))
+      self.delegate?.showCategoryView(category: sideMenuViewModel.getCategory(atIndex: indexPath.row))
     }
 }
 
@@ -44,7 +43,7 @@ extension SideMenuController: SideMenuViewModelDelegate {
             self.tableView.reloadData()
         }
     }
-    
+
     func didFailFetching(error: Error) {
         print(error)
     }

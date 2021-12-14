@@ -7,14 +7,13 @@
 
 import Foundation
 
-class MarvelAPI : MarvelRepository {
-    
+class MarvelAPI: MarvelRepository {
     func setDelegate(delegate: MarvelRepositoryDelegate) {
         self.delegate = delegate
     }
-    
+
     private let baseURL = "https://619d463f131c600017088e71.mockapi.io/api/v1/characters"
-    var delegate: MarvelRepositoryDelegate?
+    weak var delegate: MarvelRepositoryDelegate?
 
     func fetchData() {
         let urlString = baseURL
@@ -23,9 +22,7 @@ class MarvelAPI : MarvelRepository {
             return
         }
         let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: urlSafe) {
-            [weak self]
-            (data: Data?, response: URLResponse?, error: Error?) in
+        let task = session.dataTask(with: urlSafe) { [weak self] (data: Data?, _: URLResponse?, _: Error?) in
             let decoder = JSONDecoder()
             guard let safeData = data else {
                 return
@@ -34,17 +31,17 @@ class MarvelAPI : MarvelRepository {
             guard let results = marvelAPI else {
                 return
             }
-            
-            let categories: [CategoryModel] = results.map { CategoryElement in
-                let chars = self?.getCharactersFrom(category: CategoryElement.characterList)
-                return CategoryModel(category: CategoryElement.name, characters: chars ?? [])
+
+            let categories: [CategoryModel] = results.map { categoryElement in
+                let chars = self?.getCharactersFrom(category: categoryElement.characterList)
+                return CategoryModel(category: categoryElement.name, characters: chars ?? [])
             }
             self?.delegate?.didFetchData(categories: categories)
         }
         task.resume()
     }
-    
-    func getCharactersFrom(category: [Character]) -> [CharacterModel]{
+
+    func getCharactersFrom(category: [Character]) -> [CharacterModel] {
         var characters: [CharacterModel] = []
         for character in category {
             characters.append(CharacterModel(character: character))

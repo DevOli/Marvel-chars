@@ -10,7 +10,7 @@ protocol MarvelRepository {
     func fetchData()
     func setDelegate(delegate: MarvelRepositoryDelegate)
 }
-protocol MarvelRepositoryDelegate {
+protocol MarvelRepositoryDelegate: AnyObject {
     func didFetchData(categories: [CategoryModel])
     func didFailFetching(error: Error)
 }

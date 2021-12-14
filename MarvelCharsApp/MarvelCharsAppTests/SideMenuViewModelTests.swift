@@ -18,7 +18,7 @@ class SideMenuViewModelTests: XCTestCase {
         sideMenuViewModel.fetchData()
         XCTAssertEqual(1, mockedRepository.callsCount)
     }
-    
+
     func testSideMenuFetchDataSuccessfullyAndStoresItInCategoryListVariable() throws {
         let sideMenuViewModel = SideMenuViewModel()
         let mockedRepository = MockedMarvelRepository()
@@ -28,7 +28,7 @@ class SideMenuViewModelTests: XCTestCase {
         sideMenuViewModel.fetchData()
         XCTAssertEqual(5, sideMenuViewModel.countCategories())
     }
-    
+
     func testSideMenuViewModelDelegateIsBeingCalledAfterFetchingData() throws {
         let mockedRepository = MockedMarvelRepository()
         let sideMenuViewModel = SideMenuViewModel(repository: mockedRepository)
@@ -40,7 +40,7 @@ class SideMenuViewModelTests: XCTestCase {
         XCTAssertEqual(5, mockedDelegate.lastResponse?.count)
         XCTAssertEqual(0, mockedDelegate.errorCalls)
     }
-    
+
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
@@ -49,29 +49,32 @@ class SideMenuViewModelTests: XCTestCase {
     }
 }
 
-
-class MockedMarvelRepository : MarvelRepository {
+    class MockedMarvelRepository: MarvelRepository {
 
     var delegate: MarvelRepositoryDelegate?
     var callsCount: Int = 0
-    
+
     func fetchData() {
         callsCount+=1
         fetchSuccessfully()
     }
-    
+
     func setDelegate(delegate: MarvelRepositoryDelegate) {
         self.delegate = delegate
     }
-    
+
     func fetchSuccessfully() {
         for _ in 1...callsCount {
-            delegate?.didFetchData(categories: [CategoryModel(category: "Heroes"),CategoryModel(category: "Villians"),CategoryModel(category: "AntiHeroes"),CategoryModel(category: "Aliens"),CategoryModel(category: "Humans")])
+            delegate?.didFetchData(categories: [CategoryModel(category: "Heroes"),
+                                                CategoryModel(category: "Villians"),
+                                                CategoryModel(category: "AntiHeroes"),
+                                                CategoryModel(category: "Aliens"),
+                                                CategoryModel(category: "Humans")])
         }
     }
 }
 
-class MockedSideMenuViewModelDelegate : SideMenuViewModelDelegate {
+class MockedSideMenuViewModelDelegate: SideMenuViewModelDelegate {
     var successCalls: Int = 0
     var errorCalls: Int = 0
     var lastResponse: [CategoryModel]?
@@ -79,7 +82,7 @@ class MockedSideMenuViewModelDelegate : SideMenuViewModelDelegate {
         successCalls += 1
         lastResponse = categories
     }
-    
+
     func didFailFetching(error: Error) {
         errorCalls += 1
     }

@@ -7,6 +7,5 @@
 
 import Foundation
 class EmptyModel {
-    
-    init(json: [Alien], category: String){}
+    init(json: [Alien], category: String) { }
 }
