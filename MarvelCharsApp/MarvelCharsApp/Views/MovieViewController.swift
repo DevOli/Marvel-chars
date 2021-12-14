@@ -22,16 +22,7 @@ class MovieViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .black
         contentView.backgroundColor = .black
-        navigationController?.navigationBar.barTintColor = UIColor.black.withAlphaComponent(0.1)
-        
-        let gradient = CAGradientLayer()
-        gradient.frame = mainImage.bounds
-        let startColor = UIColor.clear.cgColor
-        let endColor = UIColor.black.cgColor
-        gradient.colors = [startColor, endColor]
-        gradient.locations = [0, 0.5]
-        mainImage.layer.insertSublayer(gradient, at: 0)
-        
+        addGradientLayer()
         configureNavBar()
         
         if let key = movieKey {
@@ -61,5 +52,14 @@ class MovieViewController: UIViewController {
         button.tintColor = UIColor.white
         navigationItem.leftBarButtonItem = button
     }
-
+    
+    func addGradientLayer() {
+        let gradient = CAGradientLayer()
+        gradient.frame = mainImage.bounds
+        let startColor = UIColor.clear.cgColor
+        let endColor = UIColor.black.cgColor
+        gradient.colors = [startColor, endColor]
+        gradient.locations = [0, 0.7]
+        mainImage.layer.insertSublayer(gradient, at: 0)
+    }
 }

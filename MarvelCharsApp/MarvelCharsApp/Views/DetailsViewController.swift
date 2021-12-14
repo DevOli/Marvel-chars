@@ -62,7 +62,7 @@ class DetailsViewController: UIViewController {
 
 extension DetailsViewController: MoviePortraitDelegate {
     func onTappedMovie(movieName: String) {
-        let vc = MovieViewController(nibName: "MovieViewController", bundle: nil)
+        let vc = MovieViewController(nibName: ResourceName.movieViewControllerNibName, bundle: nil)
         vc.movieKey = movieName
         self.navigationController?.pushViewController(vc, animated: true)
     }

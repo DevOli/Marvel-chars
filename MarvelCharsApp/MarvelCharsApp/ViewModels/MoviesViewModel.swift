@@ -30,22 +30,6 @@ class MoviesViewModel {
     func getMovie(byKey key:String) {
         repository.fetchMovie(byKey: key)
     }
-    
-    func getMovieImage() -> String {
-        return movie?.image ?? ""
-    }
-    
-    func getMovieTitle() -> String {
-        return movie?.name ?? ""
-    }
-    
-    func getMovieSynop() -> String {
-        return movie?.synopsis ?? ""
-    }
-    
-    func getMovieUrl() -> String {
-        return movie?.trailer ?? ""
-    }
 }
 
 extension MoviesViewModel: MarvelRepositoryDelegate {
