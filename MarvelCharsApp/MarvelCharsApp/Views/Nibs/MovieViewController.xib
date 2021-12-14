@@ -72,13 +72,13 @@ Sed elit enim, sollicitudin vel libero vel, malesuada rutrum nunc. Morbi at odio
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Qq-l6-qb2" userLabel="Trailer View">
                                     <rect key="frame" x="0.0" y="851" width="414" height="233"/>
-                                    <color key="backgroundColor" name="primary-dark"/>
+                                    <color key="backgroundColor" name="primary-black"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="1Qq-l6-qb2" secondAttribute="height" multiplier="16:9" id="z89-Rw-h4F"/>
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" name="primary-black"/>
                             <constraints>
                                 <constraint firstItem="tef-jG-Xs6" firstAttribute="trailing" secondItem="FJ0-1L-Aap" secondAttribute="trailing" id="6Fx-5D-Nz7"/>
                                 <constraint firstAttribute="trailing" secondItem="ETF-6G-zr3" secondAttribute="trailing" id="9YD-PO-Sa3"/>
@@ -127,9 +127,6 @@ Sed elit enim, sollicitudin vel libero vel, malesuada rutrum nunc. Morbi at odio
     <resources>
         <namedColor name="primary-black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="primary-dark">
-            <color red="0.19200000166893005" green="0.19200000166893005" blue="0.25099998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primary-white">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

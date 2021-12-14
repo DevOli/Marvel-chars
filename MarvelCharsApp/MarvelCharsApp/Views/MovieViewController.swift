@@ -33,9 +33,12 @@ class MovieViewController: UIViewController {
             movieViewModel.getMovie(byKey: key)
             movieViewModel.refreshData = loadMovieInfo
         }
+        //Video player config
+        webConfiguration.allowsInlineMediaPlayback = true
+        webPlayer = WKWebView(frame: self.videoView.bounds, configuration: self.webConfiguration)
+        webPlayer.backgroundColor = .primary_black
+        videoView.addSubview(self.webPlayer)
         
-        
-
     }
     
     private func loadMovieInfo(movie: MovieModel) {
@@ -72,14 +75,7 @@ class MovieViewController: UIViewController {
     }
     
     func playVideo(url: String) {
-        
-        webConfiguration.allowsInlineMediaPlayback = true
-        
         DispatchQueue.main.async {
-            self.webPlayer = WKWebView(frame: self.videoView.bounds, configuration: self.webConfiguration)
-            self.webPlayer.backgroundColor = .primary_black
-            self.videoView.addSubview(self.webPlayer)
-            
             guard let videoURL = URL(string: "\(url)?playsinline=1") else { return }
             let request = URLRequest(url: videoURL)
             self.webPlayer.load(request)
