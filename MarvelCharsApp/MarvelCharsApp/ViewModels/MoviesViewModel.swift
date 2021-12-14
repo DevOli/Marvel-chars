@@ -34,8 +34,10 @@ class MoviesViewModel {
 
 extension MoviesViewModel: MarvelRepositoryDelegate {
     func didFetchMovies(movie: MovieModel) {
-        self.movie = movie
-        refreshData(movie)
+        var embedMovie = movie
+        embedMovie.embedUrlTrailer()
+        self.movie = embedMovie
+        refreshData(embedMovie)
     }
     
     func didFailFetching(error: Error) {

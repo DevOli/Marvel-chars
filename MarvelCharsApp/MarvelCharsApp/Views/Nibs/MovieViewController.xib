@@ -27,6 +27,7 @@
                 <outlet property="synopsisLabel" destination="tef-jG-Xs6" id="8eC-px-0Oi"/>
                 <outlet property="titleLabel" destination="FJ0-1L-Aap" id="UXl-dR-z9W"/>
                 <outlet property="trailerLabel" destination="Ea8-UJ-MVy" id="Doa-Zp-UMA"/>
+                <outlet property="videoView" destination="1Qq-l6-qb2" id="cRX-gN-Vyu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -39,7 +40,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMJ-Ds-sBV" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="849"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1109"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ETF-6G-zr3">
                                     <rect key="frame" x="0.0" y="-90" width="414" height="923"/>
@@ -69,20 +70,31 @@ Sed elit enim, sollicitudin vel libero vel, malesuada rutrum nunc. Morbi at odio
                                     <color key="textColor" name="primary-white"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Qq-l6-qb2" userLabel="Trailer View">
+                                    <rect key="frame" x="0.0" y="851" width="414" height="233"/>
+                                    <color key="backgroundColor" name="primary-dark"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="1Qq-l6-qb2" secondAttribute="height" multiplier="16:9" id="z89-Rw-h4F"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="tef-jG-Xs6" firstAttribute="trailing" secondItem="FJ0-1L-Aap" secondAttribute="trailing" id="6Fx-5D-Nz7"/>
                                 <constraint firstAttribute="trailing" secondItem="ETF-6G-zr3" secondAttribute="trailing" id="9YD-PO-Sa3"/>
                                 <constraint firstItem="ETF-6G-zr3" firstAttribute="top" secondItem="DMJ-Ds-sBV" secondAttribute="top" constant="-90" id="9xU-0D-HrC"/>
+                                <constraint firstItem="1Qq-l6-qb2" firstAttribute="leading" secondItem="DMJ-Ds-sBV" secondAttribute="leading" id="ADX-ob-MuT"/>
                                 <constraint firstItem="tef-jG-Xs6" firstAttribute="top" secondItem="FJ0-1L-Aap" secondAttribute="bottom" constant="28" id="Bur-ZJ-EWZ"/>
                                 <constraint firstItem="Ea8-UJ-MVy" firstAttribute="top" secondItem="tef-jG-Xs6" secondAttribute="bottom" constant="30" id="MOQ-GW-8Xj"/>
                                 <constraint firstItem="Ea8-UJ-MVy" firstAttribute="trailing" secondItem="FJ0-1L-Aap" secondAttribute="trailing" id="Osw-cQ-SP1"/>
+                                <constraint firstItem="1Qq-l6-qb2" firstAttribute="width" secondItem="DMJ-Ds-sBV" secondAttribute="width" id="Phi-aE-Kgz"/>
+                                <constraint firstAttribute="bottom" secondItem="1Qq-l6-qb2" secondAttribute="bottom" constant="25" id="Unm-0j-EXa"/>
                                 <constraint firstItem="FJ0-1L-Aap" firstAttribute="top" secondItem="DMJ-Ds-sBV" secondAttribute="top" constant="400" id="Yph-uc-eYq"/>
-                                <constraint firstAttribute="bottom" secondItem="Ea8-UJ-MVy" secondAttribute="bottom" constant="25" id="dTQ-ic-udS"/>
+                                <constraint firstAttribute="trailing" secondItem="1Qq-l6-qb2" secondAttribute="trailing" id="cyT-fK-dTL"/>
                                 <constraint firstItem="tef-jG-Xs6" firstAttribute="leading" secondItem="FJ0-1L-Aap" secondAttribute="leading" id="fUC-qs-CXz"/>
                                 <constraint firstItem="FJ0-1L-Aap" firstAttribute="leading" secondItem="DMJ-Ds-sBV" secondAttribute="leading" constant="24" id="gAt-CU-5Mo"/>
                                 <constraint firstItem="ETF-6G-zr3" firstAttribute="leading" secondItem="DMJ-Ds-sBV" secondAttribute="leading" id="ggR-QD-0Gp"/>
+                                <constraint firstItem="1Qq-l6-qb2" firstAttribute="top" secondItem="Ea8-UJ-MVy" secondAttribute="bottom" constant="27" id="l0D-Bk-A04"/>
                                 <constraint firstItem="Ea8-UJ-MVy" firstAttribute="leading" secondItem="FJ0-1L-Aap" secondAttribute="leading" id="mbg-sN-Y8H"/>
                                 <constraint firstAttribute="trailing" secondItem="FJ0-1L-Aap" secondAttribute="trailing" constant="24" id="qs7-Km-zmX"/>
                             </constraints>
@@ -115,6 +127,9 @@ Sed elit enim, sollicitudin vel libero vel, malesuada rutrum nunc. Morbi at odio
     <resources>
         <namedColor name="primary-black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary-dark">
+            <color red="0.19200000166893005" green="0.19200000166893005" blue="0.25099998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primary-white">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

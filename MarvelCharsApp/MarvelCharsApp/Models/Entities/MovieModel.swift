@@ -8,6 +8,12 @@
 import Foundation
 struct MovieModel {
     let name, key, image: String
-    let trailer: String
+    var trailer: String
     let synopsis: String
+
+    mutating func embedUrlTrailer() {
+        if trailer.contains("/watch?v=") {
+            trailer = trailer.replacingOccurrences(of: "/watch?v=", with: "/embed/")
+        }
+    }
 }

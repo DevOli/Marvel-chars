@@ -6,17 +6,21 @@
 //
 
 import UIKit
+import WebKit
 
 class MovieViewController: UIViewController {
 
     var movieKey: String?
     let movieViewModel = MoviesViewModel()
+    var webPlayer: WKWebView!
+    let webConfiguration = WKWebViewConfiguration()
     
     @IBOutlet weak var trailerLabel: UILabel!
     @IBOutlet weak var synopsisLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var mainImage: UIImageView!
+    @IBOutlet weak var videoView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,19 +33,23 @@ class MovieViewController: UIViewController {
             movieViewModel.getMovie(byKey: key)
             movieViewModel.refreshData = loadMovieInfo
         }
+        
+        
 
     }
     
     private func loadMovieInfo(movie: MovieModel) {
-            DispatchQueue.main.async { [weak self] in
-                self?.mainImage.image = UIImage(named: movie.image)
-                self?.titleLabel.text = movie.name
-                self?.synopsisLabel.text = movie.synopsis
-                
-                self?.titleLabel.isHidden = false
-                self?.synopsisLabel.isHidden = false
-                self?.trailerLabel.isHidden = false
-            }
+        DispatchQueue.main.async { [weak self] in
+            self?.mainImage.image = UIImage(named: movie.image)
+            self?.titleLabel.text = movie.name
+            self?.synopsisLabel.text = movie.synopsis
+            
+            self?.titleLabel.isHidden = false
+            self?.synopsisLabel.isHidden = false
+            self?.trailerLabel.isHidden = false
+        }
+        
+        playVideo(url: movie.trailer)
     }
     
     func configureNavBar() {
@@ -61,5 +69,20 @@ class MovieViewController: UIViewController {
         gradient.colors = [startColor, endColor]
         gradient.locations = [0, 0.7]
         mainImage.layer.insertSublayer(gradient, at: 0)
+    }
+    
+    func playVideo(url: String) {
+        
+        webConfiguration.allowsInlineMediaPlayback = true
+        
+        DispatchQueue.main.async {
+            self.webPlayer = WKWebView(frame: self.videoView.bounds, configuration: self.webConfiguration)
+            self.webPlayer.backgroundColor = .primary_black
+            self.videoView.addSubview(self.webPlayer)
+            
+            guard let videoURL = URL(string: "\(url)?playsinline=1") else { return }
+            let request = URLRequest(url: videoURL)
+            self.webPlayer.load(request)
+        }
     }
 }
