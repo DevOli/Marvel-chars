@@ -51,9 +51,13 @@ class SideMenuViewModelTests: XCTestCase {
 
 
 class MockedMarvelRepository : MarvelRepository {
-
+    
     var delegate: MarvelRepositoryDelegate?
     var callsCount: Int = 0
+    
+    func fetchMovie(byName: String) {
+        
+    }
     
     func fetchData() {
         callsCount+=1

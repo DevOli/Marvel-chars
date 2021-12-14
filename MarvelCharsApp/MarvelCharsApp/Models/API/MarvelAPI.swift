@@ -45,7 +45,7 @@ class MarvelAPI : MarvelRepository {
         task.resume()
     }
     
-    func fetchMovieData() {
+    func fetchMovie(byName name: String) {
         let urlString = baseURL + "movies"
         let url = URL(string: urlString)
         guard let urlSafe = url else {
@@ -68,7 +68,9 @@ class MarvelAPI : MarvelRepository {
                 return MovieModel(name: movie.name, key: movie.key, image: movie.image, trailer: movie.trailer, synopsis: movie.synopsis)
             }
             
-            self?.delegate?.didFetchMovies(movies: movies)
+            if let safeMovie = movies.first(where: {(movie) in movie.name == name}) {
+                self?.delegate?.didFetchMovies(movie: safeMovie)
+            }
         }
         task.resume()
     }

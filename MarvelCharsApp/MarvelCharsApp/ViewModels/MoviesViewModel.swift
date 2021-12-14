@@ -11,8 +11,6 @@ class MoviesViewModel {
     var refreshData: () -> ()
     var errorHandler: (Error) -> ()
 
-    private var movies: [MovieModel] = []
-    
     private var movie: MovieModel? {
         didSet {
             refreshData()
@@ -34,20 +32,18 @@ class MoviesViewModel {
         self.repository.setDelegate(delegate: self)
     }
     
-    func getAllMovies() {
-        repository.fetchMovieData()
+    func getMovie(byName name:String) {        
+        repository.fetchMovie(byName: name)
     }
     
-    func getMovie(byName name:String) {
-        if let safeMovie = self.movies.first(where: {(movie) in movie.name == name}) {
-            movie = safeMovie
-        }
+    func getMovieImage() -> String {
+        return movie?.image ?? ""
     }
 }
 
 extension MoviesViewModel: MarvelRepositoryDelegate {
-    func didFetchMovies(movies: [MovieModel]) {
-        print(movies)
+    func didFetchMovies(movie: MovieModel) {
+        self.movie = movie
     }
     
     func didFailFetching(error: Error) {

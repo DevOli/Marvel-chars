@@ -52,7 +52,7 @@ class SearchViewModel {
 }
 
 extension SearchViewModel: MarvelRepositoryDelegate {
-    func didFetchMovies(movies: [MovieModel]) {
+    func didFetchMovies(movie: MovieModel) {
 
     }
     

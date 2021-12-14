@@ -42,7 +42,7 @@ class SideMenuViewModel {
 }
 
 extension SideMenuViewModel: MarvelRepositoryDelegate {
-    func didFetchMovies(movies: [MovieModel]) {
+    func didFetchMovies(movie: MovieModel) {
         
     }
     

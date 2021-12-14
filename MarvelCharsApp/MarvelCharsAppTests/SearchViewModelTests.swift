@@ -78,4 +78,8 @@ class MockMarvelAPI: MarvelRepository {
         let categories = [CategoryModel(category: "CategoryTest", characters: [characterOne, characterTwo, characterThree])]
         self.delegate?.didFetchData(categories: categories)
     }
+    
+    func fetchMovie(byName: String) {
+        
+    }
 }
