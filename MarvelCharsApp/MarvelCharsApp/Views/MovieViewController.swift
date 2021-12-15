@@ -26,7 +26,6 @@ class MovieViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .black
         contentView.backgroundColor = .black
-        addGradientLayer()
         configureNavBar()
         
         if let key = movieKey {
@@ -37,7 +36,15 @@ class MovieViewController: UIViewController {
         webConfiguration.allowsInlineMediaPlayback = true
         webPlayer = WKWebView(frame: self.videoView.bounds, configuration: self.webConfiguration)
         webPlayer.backgroundColor = .primary_black
+        webPlayer.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         videoView.addSubview(self.webPlayer)
+        
+        //Add gradient to Image
+        let gradientView = GradientView(frame: mainImage.frame)
+        mainImage.addSubview(gradientView)
+        mainImage.bringSubviewToFront(gradientView)
+        gradientView.translatesAutoresizingMaskIntoConstraints = true
+        gradientView.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleLeftMargin, UIView.AutoresizingMask.flexibleRightMargin, UIView.AutoresizingMask.flexibleTopMargin, UIView.AutoresizingMask.flexibleBottomMargin]
         
     }
     
@@ -64,16 +71,6 @@ class MovieViewController: UIViewController {
         navigationItem.leftBarButtonItem = button
     }
     
-    func addGradientLayer() {
-        let gradient = CAGradientLayer()
-        gradient.frame = mainImage.bounds
-        let startColor = UIColor.clear.cgColor
-        let endColor = UIColor.black.cgColor
-        gradient.colors = [startColor, endColor]
-        gradient.locations = [0, 0.7]
-        mainImage.layer.insertSublayer(gradient, at: 0)
-    }
-    
     func playVideo(url: String) {
         DispatchQueue.main.async {
             guard let videoURL = URL(string: "\(url)?playsinline=1") else { return }
@@ -81,4 +78,5 @@ class MovieViewController: UIViewController {
             self.webPlayer.load(request)
         }
     }
+
 }
