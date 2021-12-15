@@ -12,7 +12,6 @@ class CharactersCollectionHeader: UICollectionReusableView {
   @IBOutlet weak var categoryTitleLabel: UILabel!
   override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
 }

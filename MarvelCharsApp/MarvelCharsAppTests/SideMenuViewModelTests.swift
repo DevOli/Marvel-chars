@@ -40,6 +40,7 @@ class SideMenuViewModelTests: XCTestCase {
         XCTAssertEqual(5, mockedDelegate.lastResponse?.count)
         XCTAssertEqual(0, mockedDelegate.errorCalls)
     }
+    
 }
 
 

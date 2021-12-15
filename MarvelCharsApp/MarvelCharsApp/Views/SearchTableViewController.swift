@@ -19,6 +19,8 @@ class SearchTableViewController: UITableViewController {
     
     private func initialConfiguration() {
         //Search UI configurations
+      searchController.searchBar.backgroundColor = UIColor.primary_silver
+      searchController.searchBar.barTintColor = UIColor.primary_silver
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search by character"

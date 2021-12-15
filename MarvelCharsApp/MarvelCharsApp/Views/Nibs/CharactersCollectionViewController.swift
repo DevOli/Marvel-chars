@@ -33,6 +33,7 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
     super.viewDidLoad()
     self.collectionView.register(UINib(nibName: self.collectionViewCellNibName, bundle: nil), forCellWithReuseIdentifier: self.cellReuseIdentifier)
     self.collectionView.register(UINib(nibName: self.collectionViewHeaderNibName, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: self.headerReuseIdentifier)
+    configureNavBar()
   }
   
   // MARK: UICollectionViewDataSource
@@ -51,6 +52,7 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
     }
     if let character = self.category?.getCharacter(at: indexPath.row) {
       let image = UIImage(named: character.imagePath)
+      cell.dropShadow(color: image?.averageColor ?? .clear)
       cell.characterImage.image = image?.roundedImage
       cell.characterNameLabel.text = character.name
       cell.characterAlterEgoLabel.text = character.alterEgo
@@ -78,7 +80,20 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
   // MARK: UICollectionViewDelegateFlowLayout
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
+      layout.sectionHeadersPinToVisibleBounds = true
+    }
     return CGSize(width: 150.0, height: 260.0)
+  }
+  
+  func configureNavBar() {
+    self.navigationController?.navigationBar.isTranslucent = true
+    let action = UIAction { UIAction in
+      self.navigationController?.popViewController(animated: true)
+    }
+    let button = UIBarButtonItem(title: "", image: UIImage(named: "back"), primaryAction: action, menu: nil)
+    button.tintColor = UIColor.primary_dark
+    navigationItem.leftBarButtonItem = button
   }
   
 }

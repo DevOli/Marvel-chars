@@ -3,8 +3,8 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,7 +25,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heroes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDn-Dw-BcX">
                         <rect key="frame" x="24" y="0.0" width="58" height="28"/>
                         <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="18"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" name="primary-red"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnR-pY-jaz">
@@ -40,7 +40,7 @@
                     </button>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="P2W-e2-t3Q">
                         <rect key="frame" x="0.0" y="44" width="320" height="270"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="primary-silver"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="270" id="BcP-Z6-GFa"/>
                         </constraints>
@@ -53,6 +53,7 @@
                         <cells/>
                     </collectionView>
                 </subviews>
+                <color key="backgroundColor" name="primary-silver"/>
                 <constraints>
                     <constraint firstItem="aDn-Dw-BcX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="NV9-5f-4az"/>
                     <constraint firstItem="aDn-Dw-BcX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="R2x-xX-jNO"/>
@@ -65,6 +66,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="primary-silver"/>
             <connections>
                 <outlet property="categoryNameLabel" destination="aDn-Dw-BcX" id="c98-N5-hew"/>
                 <outlet property="charactersCollectionView" destination="P2W-e2-t3Q" id="r5B-pa-mFK"/>
@@ -74,8 +76,11 @@
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="primary-red">
+            <color red="0.94901960784313721" green="0.14901960784313725" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary-silver">
+            <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
