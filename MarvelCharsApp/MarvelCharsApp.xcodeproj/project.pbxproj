@@ -88,6 +88,11 @@
 		CE2B85E3275AB5C60059DE45 /* AbilitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85E2275AB5C60059DE45 /* AbilitiesView.swift */; };
 		CE2B85E5275ABED70059DE45 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85E4275ABED70059DE45 /* TextHelper.swift */; };
 		CE3AA2E4275C27C00006931F /* UIFontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3AA2E3275C27C00006931F /* UIFontHelper.swift */; };
+		CE58DECB27694A9900FD976A /* MovieModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58DECA27694A9900FD976A /* MovieModelTests.swift */; };
+		CE58DECC27694AB300FD976A /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7150EF2767A7F9004F8115 /* MoviesViewModel.swift */; };
+		CE58DECD27694ACC00FD976A /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7150EF2767A7F9004F8115 /* MoviesViewModel.swift */; };
+		CE58DECF27694E2500FD976A /* MoviesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58DECE27694E2500FD976A /* MoviesViewModelTests.swift */; };
+		CE58DED1276953CE00FD976A /* MockMarvelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58DED0276953CE00FD976A /* MockMarvelAPI.swift */; };
 		CE59ECF4275FBADB00C2B527 /* UIButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59ECF3275FBADB00C2B527 /* UIButtonHelper.swift */; };
 		CE59ECF8275FF2FB00C2B527 /* CategoryButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59ECF7275FF2FB00C2B527 /* CategoryButtonCollectionViewCell.swift */; };
 		CE59ECF927601C6D00C2B527 /* ResourceNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE835E9D275A5AC300B6105C /* ResourceNames.swift */; };
@@ -203,6 +208,9 @@
 		CE2B85E2275AB5C60059DE45 /* AbilitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilitiesView.swift; sourceTree = "<group>"; };
 		CE2B85E4275ABED70059DE45 /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
 		CE3AA2E3275C27C00006931F /* UIFontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontHelper.swift; sourceTree = "<group>"; };
+		CE58DECA27694A9900FD976A /* MovieModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModelTests.swift; sourceTree = "<group>"; };
+		CE58DECE27694E2500FD976A /* MoviesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModelTests.swift; sourceTree = "<group>"; };
+		CE58DED0276953CE00FD976A /* MockMarvelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMarvelAPI.swift; sourceTree = "<group>"; };
 		CE59ECF3275FBADB00C2B527 /* UIButtonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonHelper.swift; sourceTree = "<group>"; };
 		CE59ECF7275FF2FB00C2B527 /* CategoryButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE61C5FD275665B20024F244 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
@@ -325,6 +333,9 @@
 				84E54D07275734AC00A21EDA /* CategoryModelTest.swift */,
 				84E54D092757428D00A21EDA /* CharacterModelTest.swift */,
 				CE2B85B9275829C50059DE45 /* SideMenuViewModelTests.swift */,
+				CE58DECA27694A9900FD976A /* MovieModelTests.swift */,
+				CE58DECE27694E2500FD976A /* MoviesViewModelTests.swift */,
+				CE58DED0276953CE00FD976A /* MockMarvelAPI.swift */,
 			);
 			path = MarvelCharsAppTests;
 			sourceTree = "<group>";
@@ -765,13 +776,16 @@
 				CEAED4EF275DA68900319BF6 /* UIColorHelper.swift in Sources */,
 				CE7150F92767D89F004F8115 /* MovieModel.swift in Sources */,
 				84C7D0F6275DC202000BC67C /* CategoryRowCell.swift in Sources */,
+				CE58DECC27694AB300FD976A /* MoviesViewModel.swift in Sources */,
 				CEAED4EA275DA53700319BF6 /* AbilitiesView.swift in Sources */,
+				CE58DED1276953CE00FD976A /* MockMarvelAPI.swift in Sources */,
 				84645F7F274E9E1B001A997A /* MarvelAPI.swift in Sources */,
 				CE2B85C22758BBBF0059DE45 /* SideMenuController.swift in Sources */,
 				CEAED4F0275DA69C00319BF6 /* AbilityProgressBar.swift in Sources */,
 				848A27AC274D5079000CDBCE /* MarvelCharsAppTests.swift in Sources */,
 				CE59ECF927601C6D00C2B527 /* ResourceNames.swift in Sources */,
 				CE2B85BA275829C50059DE45 /* SideMenuViewModelTests.swift in Sources */,
+				CE58DECF27694E2500FD976A /* MoviesViewModelTests.swift in Sources */,
 				848A27CF274D8C86000CDBCE /* HomeViewModel.swift in Sources */,
 				CEA064B9276003AA0059852D /* MovieSectionView.swift in Sources */,
 				84C7D0F8275DC20F000BC67C /* CharactersCollectionHeader.swift in Sources */,
@@ -784,6 +798,7 @@
 				CE2B85BF275830490059DE45 /* MarvelRepository.swift in Sources */,
 				CE7150F42767AF86004F8115 /* MovieViewController.swift in Sources */,
 				846B9982274FC1DE0055F2A6 /* CategoryModel.swift in Sources */,
+				CE58DECB27694A9900FD976A /* MovieModelTests.swift in Sources */,
 				84C7D0FA275DC22E000BC67C /* CharacterPortraitCell.swift in Sources */,
 				84E54D0A2757428D00A21EDA /* CharacterModelTest.swift in Sources */,
 				CEAED4EE275DA64700319BF6 /* TextHelper.swift in Sources */,
@@ -824,6 +839,7 @@
 				84E54D03275731FF00A21EDA /* CharacterModel.swift in Sources */,
 				8489D27D275940CD00F57F15 /* MarvelRepository.swift in Sources */,
 				84E54D042757320D00A21EDA /* CategoryModel.swift in Sources */,
+				CE58DECD27694ACC00FD976A /* MoviesViewModel.swift in Sources */,
 				848A27CC274D8BBC000CDBCE /* DetailsViewController.swift in Sources */,
 				CEAED4F3275DA6F800319BF6 /* UIFontHelper.swift in Sources */,
 				848A27D0274D8C86000CDBCE /* HomeViewModel.swift in Sources */,

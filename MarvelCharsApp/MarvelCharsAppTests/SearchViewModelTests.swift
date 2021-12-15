@@ -61,25 +61,3 @@ class SearchViewModelTests: XCTestCase {
         XCTAssertEqual(3, count)
     }
 }
-
-class MockMarvelAPI: MarvelRepository {
-    
-    var delegate: MarvelRepositoryDelegate?
-    
-    func setDelegate(delegate: MarvelRepositoryDelegate) {
-        self.delegate = delegate
-    }
-    
-    let characterOne = CharacterModel(name: "SpidermanTest", alterEgo: "AlterEgoTest", imagePath: "", biography: "", birth: "", weight: 0, weightUnit: "", height: 0, heightUnit: "", universe: "", force: 0, intelligence: 0, agility: 0, endurance: 0, velocity: 0, movies: [])
-    let characterTwo = CharacterModel(name: "IronManTest", alterEgo: "AlterEgoTest", imagePath: "", biography: "", birth: "", weight: 0, weightUnit: "", height: 0, heightUnit: "", universe: "", force: 0, intelligence: 0, agility: 0, endurance: 0, velocity: 0, movies: [])
-    let characterThree = CharacterModel(name: "DeadPoolTest", alterEgo: "AlterEgoTest", imagePath: "", biography: "", birth: "", weight: 0, weightUnit: "", height: 0, heightUnit: "", universe: "", force: 0, intelligence: 0, agility: 0, endurance: 0, velocity: 0, movies: [])
-    
-    func fetchData() {
-        let categories = [CategoryModel(category: "CategoryTest", characters: [characterOne, characterTwo, characterThree])]
-        self.delegate?.didFetchData(categories: categories)
-    }
-    
-    func fetchMovie(byKey: String) {
-        
-    }
-}
