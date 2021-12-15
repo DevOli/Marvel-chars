@@ -29,16 +29,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="140" height="230"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDw-4D-e0e">
-                        <rect key="frame" x="12" y="198" width="110" height="20"/>
+                        <rect key="frame" x="12" y="198" width="120" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="110" id="W4G-ki-Hkn"/>
+                            <constraint firstAttribute="width" constant="120" id="W4G-ki-Hkn"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Gilroy-Heavy" family="Gilroy-Heavy" pointSize="20"/>
                         <color key="textColor" name="primary-white"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AlterEgo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufg-ap-qCy">
-                        <rect key="frame" x="10" y="186" width="39" height="10"/>
+                        <rect key="frame" x="12" y="186" width="39" height="10"/>
                         <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="10"/>
                         <color key="textColor" name="primary-white"/>
                         <nil key="highlightedColor"/>
@@ -53,7 +53,7 @@
                 <constraint firstAttribute="bottom" secondItem="2Pr-qO-OSF" secondAttribute="bottom" id="FFx-If-gbz"/>
                 <constraint firstItem="2Pr-qO-OSF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="LVZ-xc-bde"/>
                 <constraint firstItem="2Pr-qO-OSF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eT9-Lg-6E7"/>
-                <constraint firstItem="Ufg-ap-qCy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="nc5-vR-YNX"/>
+                <constraint firstItem="Ufg-ap-qCy" firstAttribute="leading" secondItem="mDw-4D-e0e" secondAttribute="leading" id="nc5-vR-YNX"/>
                 <constraint firstItem="mDw-4D-e0e" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="t1f-g8-oVE"/>
             </constraints>
             <connections>

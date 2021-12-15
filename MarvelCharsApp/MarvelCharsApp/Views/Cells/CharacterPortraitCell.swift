@@ -12,11 +12,18 @@ class CharacterPortraitCell: UICollectionViewCell {
   @IBOutlet weak var characterImage: UIImageView!
   @IBOutlet weak var characterNameLabel: UILabel!
   @IBOutlet weak var characterAlterEgoLabel: UILabel!
+  var onReuse: () -> Void = {}
   
   override func awakeFromNib() {
     super.awakeFromNib()
       characterNameLabel.font = UIFont.cardTitle()
       characterAlterEgoLabel.font = UIFont.cardSubtitle()
+  }
+  
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    onReuse()
+    characterImage.image = nil
   }
 
   func dropShadow(color: UIColor) {

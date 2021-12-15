@@ -13,7 +13,7 @@ class MarvelAPI : MarvelRepository {
         self.delegate = delegate
     }
     
-    private let baseURL = "https://619d463f131c600017088e71.mockapi.io/api/v1/characters"
+    private let baseURL = "https://619d463f131c600017088e71.mockapi.io/api/v1/test"
     var delegate: MarvelRepositoryDelegate?
 
     func fetchData() {

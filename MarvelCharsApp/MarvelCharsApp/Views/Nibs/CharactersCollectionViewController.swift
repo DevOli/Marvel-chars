@@ -11,6 +11,7 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
   
   var delegate: CharacterPortraitDelegate?
   var category: CategoryModel?
+  let loader = ImageLoader()
   
   private let collectionViewCellNibName = "CharacterPortraitCell"
   private let cellReuseIdentifier = "CharacterPortraitID"
@@ -51,11 +52,34 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
       return UICollectionViewCell()
     }
     if let character = self.category?.getCharacter(at: indexPath.row) {
-      let image = UIImage(named: character.imagePath)
-      cell.dropShadow(color: image?.averageColor ?? .clear)
-      cell.characterImage.image = image?.roundedImage
       cell.characterNameLabel.text = character.name
       cell.characterAlterEgoLabel.text = character.alterEgo
+      guard let url = URL(string: character.imagePath) else {
+        cell.characterImage.image = UIImage(systemName: "placeholdertext.fill")
+        return cell
+      }
+      // 1
+      let token = loader.loadImage(url) { result in
+        do {
+          // 2
+          let image = try result.get()
+          // 3
+          DispatchQueue.main.async {
+            //cell.dropShadow(color: image.averageColor ?? .clear)
+            cell.characterImage.image = image.roundedImage
+          }
+        } catch {
+          // 4
+          print(error)
+        }
+      }
+
+      // 5
+      cell.onReuse = {
+        if let token = token {
+          self.loader.cancelLoad(token)
+        }
+      }
     }
     return cell
   }
