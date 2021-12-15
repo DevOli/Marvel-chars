@@ -26,12 +26,16 @@ class SearchTableViewController: UITableViewController {
     }
 
     private func initialConfiguration() {
+        //Search UI configurations
+      searchController.searchBar.backgroundColor = UIColor.primarySilver
+      searchController.searchBar.barTintColor = UIColor.primarySilver
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Characters"
         searchController.searchBar.delegate = self
         searchController.searchBar.showsCancelButton = true
         tableView.tableHeaderView = searchController.searchBar
+      tableView.tableHeaderView?.backgroundColor = UIColor.primarySilver
         definesPresentationContext = true
         // Search VM configurations
         searchVm.getAllcharacters()

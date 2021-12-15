@@ -22,12 +22,12 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89g-Kd-aM6">
                     <rect key="frame" x="134.5" y="15" width="51" height="20"/>
                     <fontDescription key="fontDescription" name="Gilroy-SemiBold" family="Gilroy-SemiBold" pointSize="20"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" name="primary-white"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
-            <color key="backgroundColor" name="gradient-red-a"/>
+            <color key="backgroundColor" name="primary-red"/>
             <constraints>
                 <constraint firstItem="89g-Kd-aM6" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="Fdn-BP-Gh8"/>
                 <constraint firstItem="89g-Kd-aM6" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="sET-fV-gCO"/>
@@ -39,8 +39,11 @@
         </collectionReusableView>
     </objects>
     <resources>
-        <namedColor name="gradient-red-a">
-            <color red="0.92941176470588238" green="0.11372549019607843" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="primary-red">
+            <color red="0.94901960784313721" green="0.14901960784313725" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary-white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

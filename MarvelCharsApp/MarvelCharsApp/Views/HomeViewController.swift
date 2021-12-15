@@ -10,9 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
   var menu: SideMenuNavigationController?
-  let marvelLogo = UIImageView(image: UIImage(named: "marvel")?
-                                .tintedWithLinearGradientColors(colorsArr: [UIColor(named: "gradient-red-b")!.cgColor,
-                                                                            UIColor(named: "gradient-red-a")!.cgColor]))
+    let marvelLogo = UIImageView(image: UIImage(named: "marvel")?.tintedWithLinearGradientColors(colorsArr: [UIColor(named: "gradient-red-b")!.cgColor, UIColor(named: "gradient-red-a")!.cgColor]))
   var categoryButton: [(categoryName: String, colours: [UIColor])] = [
       (categoryName: "hero", colours: [.gradientBlueA, .gradientBlueB]),
       (categoryName: "villain", colours: [.gradientRedA, .gradientRedB]),

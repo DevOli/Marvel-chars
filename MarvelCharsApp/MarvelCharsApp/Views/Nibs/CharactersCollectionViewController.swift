@@ -29,11 +29,12 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
 
   override func viewDidLoad() {
     super.viewDidLoad()
-      self.collectionView.register(UINib(nibName: self.collectionViewCellNibName, bundle: nil),
-                                        forCellWithReuseIdentifier: self.cellReuseIdentifier)
+    self.collectionView.register(UINib(nibName: self.collectionViewCellNibName, bundle: nil),
+                                 forCellWithReuseIdentifier: self.cellReuseIdentifier)
     self.collectionView.register(UINib(nibName: self.collectionViewHeaderNibName, bundle: nil),
-                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                  withReuseIdentifier: self.headerReuseIdentifier)
+    configureNavBar()
   }
 
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -81,11 +82,21 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
     return UICollectionReusableView()
   }
 
-  // MARK: UICollectionViewDelegateFlowLayout
-
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+  // MARK: UICollectionViewDelegateFlowLayout 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
+      layout.sectionHeadersPinToVisibleBounds = true
+    }
     return CGSize(width: 150.0, height: 260.0)
+  }
+
+  func configureNavBar() {
+    self.navigationController?.navigationBar.isTranslucent = true
+    let action = UIAction { _ in
+      self.navigationController?.popViewController(animated: true)
+    }
+    let button = UIBarButtonItem(title: "", image: UIImage(named: "back"), primaryAction: action, menu: nil)
+    button.tintColor = UIColor.primaryDark
+    navigationItem.leftBarButtonItem = button
   }
 }
