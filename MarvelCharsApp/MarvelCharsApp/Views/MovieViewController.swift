@@ -36,6 +36,7 @@ class MovieViewController: UIViewController {
         webConfiguration.allowsInlineMediaPlayback = true
         webPlayer = WKWebView(frame: self.videoView.bounds, configuration: self.webConfiguration)
         webPlayer.backgroundColor = .primary_black
+        webPlayer.isOpaque = false
         webPlayer.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         videoView.addSubview(self.webPlayer)
         
