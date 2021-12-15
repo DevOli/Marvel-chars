@@ -1,4 +1,3 @@
-//
 //  ResourceName.swift
 //  MarvelCharsApp
 //

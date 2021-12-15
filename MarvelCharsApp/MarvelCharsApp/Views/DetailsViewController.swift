@@ -8,18 +8,16 @@
 import SwiftUI
 import UIKit
 
-class DetailsViewController: UIViewController {  
-    @IBOutlet weak var basicInfoView: UIView!
-    @IBOutlet weak var abilitiesView: UIView!    
-    @IBOutlet weak var stackView: UIStackView!
-    
+class DetailsViewController: UIViewController {
+    @IBOutlet var basicInfoView: UIView!
+    @IBOutlet var abilitiesView: UIView!
+    @IBOutlet var stackView: UIStackView!
     var character: CharacterModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
         configureNavBar()
-        
         if let safeCharacter = character {
             let contentView2 = BasicInfoView(character: safeCharacter)
             let childView2 = UIHostingController(rootView: contentView2)
@@ -28,7 +26,6 @@ class DetailsViewController: UIViewController {
             basicInfoView.addSubview(childView2.view)
             basicInfoView.addConstrained(subview: childView2.view)
             childView2.didMove(toParent: self)
-            
             let contentView = AbilitiesView(character: safeCharacter)
             let childView = UIHostingController(rootView: contentView)
             addChild(childView)
@@ -43,14 +40,11 @@ class DetailsViewController: UIViewController {
         stackView.addArrangedSubview(movieCustomView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
     }
-<<<<<<< HEAD
 
-=======
-    
     func configureNavBar() {
         self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.isTranslucent = true
-        let action = UIAction { UIAction in
+        let action = UIAction { _ in
             self.navigationController?.navigationBar.barStyle = .default
             self.navigationController?.popViewController(animated: true)
         }
@@ -58,9 +52,6 @@ class DetailsViewController: UIViewController {
         button.tintColor = UIColor.white
         navigationItem.leftBarButtonItem = button
     }
-    
->>>>>>> develop
-    // Set the status bar to black style with white icons
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.navigationBar.barStyle = .black

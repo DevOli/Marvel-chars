@@ -39,4 +39,4 @@ struct AbilitiesView: View {
             }.padding(.init(top: 10, leading: 25, bottom: 10, trailing: 40))
         }
     }
-} 
+}

@@ -95,4 +95,3 @@ extension CategoryRowCell: UICollectionViewDelegate {
     }
   }
 }
-
