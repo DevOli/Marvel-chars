@@ -16,6 +16,8 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
   private let collectionViewHeaderNibName = "CharactersCollectionHeader"
   private let headerReuseIdentifier = "CharacterCollectionReusableViewID"
 
+  var originalBackgroundColor: UIColor?
+
   func configure(category: CategoryModel?) {
     self.category = category
     refresh()
@@ -27,6 +29,16 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
     }
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    configureNavBar()
+  }
+
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    self.navigationController?.navigationBar.backgroundColor = self.originalBackgroundColor
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
     self.collectionView.register(UINib(nibName: self.collectionViewCellNibName, bundle: nil),
@@ -34,7 +46,6 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
     self.collectionView.register(UINib(nibName: self.collectionViewHeaderNibName, bundle: nil),
                                  forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                  withReuseIdentifier: self.headerReuseIdentifier)
-    configureNavBar()
   }
 
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -92,12 +103,10 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
   }
 
   func configureNavBar() {
-    let barTintColor = navigationController?.navigationBar.barTintColor
-    let backgroundColor = navigationController?.navigationBar.backgroundColor
+    originalBackgroundColor = navigationController?.navigationBar.backgroundColor
     self.navigationController?.navigationBar.isTranslucent = true
     let action = UIAction { _ in
-      self.navigationController?.navigationBar.barTintColor = barTintColor
-      self.navigationController?.navigationBar.backgroundColor = backgroundColor
+      self.navigationController?.navigationBar.backgroundColor = self.originalBackgroundColor
       self.navigationController?.popViewController(animated: true)
     }
     let button = UIBarButtonItem(title: "", image: UIImage(named: "back"), primaryAction: action, menu: nil)
@@ -112,12 +121,13 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
   override func scrollViewDidScroll(_ scrollView: UIScrollView) {
     let topHeight = navigationController?.navigationBar.frame.maxY ?? 0
 
-    if (scrollView.contentOffset.y <= -topHeight) {
+    if scrollView.contentOffset.y <= -topHeight {
       navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.primaryWhite]
       navigationItem.leftBarButtonItem?.tintColor = .primaryWhite
     }
 
-    if (scrollView.contentOffset.y > -topHeight && scrollView.contentOffset.y < (scrollView.contentSize.height - scrollView.frame.size.height)) {
+    if scrollView.contentOffset.y > -topHeight
+      && scrollView.contentOffset.y < (scrollView.contentSize.height - scrollView.frame.size.height) {
       navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.primaryRed]
       navigationItem.leftBarButtonItem?.tintColor = .primaryRed
     }

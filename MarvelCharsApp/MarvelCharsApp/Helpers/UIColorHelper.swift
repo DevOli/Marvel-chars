@@ -23,7 +23,7 @@ extension UIColor {
   static let primaryGrey = UIColor(named: "primary-grey") ?? .gray
   static let primaryRed = UIColor(named: "primary-red") ?? .red
   static let primarySilver = UIColor(named: "primary-silver") ?? .white
-  static let primaryWhite: UIColor = UIColor(named: "primary-white") ?? .white
+  static let primaryWhite = UIColor(named: "primary-white") ?? .white
     convenience init(rgb: Int) {
       self.init(
         red: (rgb >> 16) & 0xFF,

@@ -1,4 +1,4 @@
-//  UIView.swift
+//  UIViewHelper.swift
 //  MarvelCharsApp
 //
 //  Created by User on 3/12/21.

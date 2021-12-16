@@ -47,7 +47,7 @@ extension UIImage {
 
     guard let filter = CIFilter(name: "CIAreaAverage",
                                 parameters: [kCIInputImageKey: inputImage,
-                                kCIInputExtentKey: extentVector]) else { return nil }
+                                             kCIInputExtentKey: extentVector]) else { return nil }
     guard let outputImage = filter.outputImage else { return nil }
 
     var bitmap = [UInt8](repeating: 0, count: 4)

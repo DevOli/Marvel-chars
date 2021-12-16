@@ -1,4 +1,4 @@
-// CategoryElement.swift
+// MarvelAPIModel.swift
 // To parse the JSON, add this file to your project and do:
 // 
 //   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)

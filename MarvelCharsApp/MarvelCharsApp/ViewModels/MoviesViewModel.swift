@@ -13,14 +13,14 @@ class MoviesViewModel {
     var movie: MovieModel?
 
     init() {
-        refreshData = { movieModel -> Void in }
-        errorHandler = { (error: Error) -> Void in }
+        refreshData = { _ -> Void in }
+        errorHandler = { (_: Error) -> Void in }
         repository = MarvelAPI()
         repository.setDelegate(forMovie: self)
     }
 
     init(repository: MarvelRepository, refreshData: @escaping (MovieModel) -> Void,
-        errorHandler: @escaping (Error) -> Void) {
+         errorHandler: @escaping (Error) -> Void) {
         self.refreshData = refreshData
         self.errorHandler = errorHandler
         self.repository = repository

@@ -54,8 +54,7 @@ class MarvelAPI: MarvelRepository {
             return
         }
         let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: urlSafe) {
-            [weak self] (data: Data?, _: URLResponse?, _: Error?) in
+        let task = session.dataTask(with: urlSafe) { [weak self] (data: Data?, _: URLResponse?, _: Error?) in
             let decoder = JSONDecoder()
             guard let safeData = data else {
                 return
@@ -73,7 +72,7 @@ class MarvelAPI: MarvelRepository {
                                   synopsis: movie.synopsis ?? "")
             }
 
-            if let safeMovie = movies.first( where: { movie in movie.key == key}) {
+            if let safeMovie = movies.first( where: { movie in movie.key == key }) {
                 self?.movieDelegate?.didFetchMovies(movie: safeMovie)
             }
         }
