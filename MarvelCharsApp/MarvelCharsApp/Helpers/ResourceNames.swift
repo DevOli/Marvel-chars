@@ -17,4 +17,5 @@ struct ResourceName {
   static let characterCollectionViewCellNibName = "CharacterPortraitCell"
   static let characterCellReuseIdentifier = "CharacterPortraitID"
   static let categoryButtonCollectionViewCell = "CategoryButtonCollectionViewCell"
+  static let movieViewControllerNibName = "MovieViewController"
 }

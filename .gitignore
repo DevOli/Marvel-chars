@@ -97,3 +97,5 @@ iOSInjectionProject/
 # SwiftLint configuration files
 .pre-commit-config.yaml
 
+# Code Coverage xml
+sonarqube-generic-coverage.xml

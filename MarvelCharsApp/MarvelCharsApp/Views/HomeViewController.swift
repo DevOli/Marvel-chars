@@ -97,6 +97,14 @@ extension HomeViewController: UITableViewDelegate {
 }
 
 extension HomeViewController: HomeViewModelDelegate {
+  func onFetchDataFail() {
+      let alertController = UIAlertController(title: "Error", message: "We are unable to get character information.", preferredStyle: .alert)
+      let okAction = UIAlertAction(title: "Ok", style: .default)
+      alertController.addAction(okAction)
+      
+      self.present(alertController, animated: true, completion: nil)
+  }
+    
   func onFetchDataSuccessfully(categories: [CategoryModel]) {
     refresh()
   }

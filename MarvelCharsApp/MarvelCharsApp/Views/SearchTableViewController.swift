@@ -15,6 +15,7 @@ class SearchTableViewController: UITableViewController {
         super.viewDidLoad()
         initialConfiguration()
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -31,11 +32,13 @@ class SearchTableViewController: UITableViewController {
       searchController.searchBar.barTintColor = UIColor.primarySilver
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Characters"
-        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Search by character"
+        searchController.searchBar.delegate = self;
         searchController.searchBar.showsCancelButton = true
-        tableView.tableHeaderView = searchController.searchBar
-      tableView.tableHeaderView?.backgroundColor = UIColor.primarySilver
+        searchController.hidesNavigationBarDuringPresentation = false
+        navigationItem.searchController = searchController
+        navigationItem.hidesBackButton = true
+        navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
         // Search VM configurations
         searchVm.getAllcharacters()
