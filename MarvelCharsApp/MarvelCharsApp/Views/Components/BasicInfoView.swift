@@ -20,7 +20,7 @@ struct BasicInfoView: View {
             case .failure:
               Image(systemName: "photo")
             @unknown default:
-              // Handler for future cases that might be added
+              // TODO: Handler for future cases that might be added
               EmptyView()
             }
           }

@@ -25,7 +25,7 @@ class UIImageLoader {
           completionHandler()
         }
       } catch {
-        // handle the error
+        // TODO: error handler
       }
     }
 

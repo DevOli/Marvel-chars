@@ -25,8 +25,7 @@ class ImageLoader {
         return
       }
       guard let error = error else {
-        // without an image or an error, we'll just ignore this for now
-        // you could add your own special error cases for this scenario
+        // TODO: error handler
         return
       }
       guard (error as NSError).code == NSURLErrorCancelled else {
