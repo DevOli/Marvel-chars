@@ -10,16 +10,27 @@ struct BasicInfoView: View {
     var character: CharacterModel
     let year = Calendar.current.component(.year, from: Date())
     var body: some View {
-        ZStack {
-            Image("\(character.imagePath)").resizable().scaledToFill().edgesIgnoringSafeArea(.all)
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top).clipped()
-            Rectangle().foregroundColor(.clear).background(LinearGradient(gradient:
-                                                                            Gradient(colors: [.clear, .black]),
-                                                                          startPoint: .top, endPoint: .bottom))
-            Rectangle().foregroundColor(.clear).background(LinearGradient(gradient:
-                                                                            Gradient(colors: [.clear, .black]),
-                                                                          startPoint: .top, endPoint: .bottomTrailing))
-             VStack(alignment: .leading) {
+        ZStack(alignment: .topLeading) {
+          AsyncImage(url: URL(string: character.imagePath)) { phase in
+            switch phase {
+            case .empty:
+              ProgressView()
+            case .success(let image):
+              image.resizable()
+            case .failure:
+              Image(systemName: "photo")
+            @unknown default:
+              // TODO: Handler for future cases that might be added
+              EmptyView()
+            }
+          }
+            Rectangle().foregroundColor(.clear)
+            .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]),
+                                       startPoint: .top, endPoint: .bottom))
+            Rectangle().foregroundColor(.clear)
+            .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]),
+                                       startPoint: .top, endPoint: .bottomTrailing))
+            VStack(alignment: .leading) {
                     Spacer()
                     Text("\(character.alterEgo)")
                         .foregroundColor(Color(UIColor.primaryWhite))
@@ -63,7 +74,7 @@ struct BasicInfoView: View {
                         .foregroundColor(Color(UIColor.primaryWhite))
                         .font(Font(UIFont.description() as
                                    CTFont)).padding(.init(top: 20, leading: 25, bottom: 0, trailing: 25))
-             }.padding(.init(top: 0, leading: 0, bottom: 15, trailing: 0))
+            }.padding(.init(top: 0, leading: 0, bottom: 15, trailing: 0))
         }
     }
 }

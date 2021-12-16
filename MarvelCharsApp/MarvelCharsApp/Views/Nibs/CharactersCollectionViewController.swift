@@ -63,11 +63,16 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
       return UICollectionViewCell()
     }
     if let character = self.category?.getCharacter(at: indexPath.row) {
-      let image = UIImage(named: character.imagePath)
-      cell.dropShadow(color: image?.averageColor ?? .clear)
-      cell.characterImage.image = image?.roundedImage
       cell.characterNameLabel.text = character.name
       cell.characterAlterEgoLabel.text = character.alterEgo
+      guard let url = URL(string: character.imagePath) else {
+        cell.characterImage.image = UIImage(systemName: "placeholdertext.fill")
+        return cell
+      }
+      cell.characterImage.loadImage(at: url) {
+        cell.characterImage.image = cell.characterImage.image?.roundedImage
+        cell.dropShadow(color: cell.characterImage.image?.averageColor ?? .clear)
+      }
     }
     return cell
   }

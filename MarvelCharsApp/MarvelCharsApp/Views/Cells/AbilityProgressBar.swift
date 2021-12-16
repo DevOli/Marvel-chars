@@ -21,7 +21,7 @@ struct AbilityProgressBar: View {
                     path.addLine(to: CGPoint(x: geometry.size.width, y: geometry.size.height / 2))
                 }
                 .stroke(style: StrokeStyle( lineWidth: 12, dash: [2, 7]))
-                .foregroundColor(Color(UIColor.primaryGrey))
+                .foregroundColor(Color(UIColor.gray))
             }
 
             GeometryReader { geometry in

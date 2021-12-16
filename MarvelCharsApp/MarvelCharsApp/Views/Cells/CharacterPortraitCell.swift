@@ -18,6 +18,11 @@ class CharacterPortraitCell: UICollectionViewCell {
       characterAlterEgoLabel.font = UIFont.cardSubtitle()
   }
 
+  override func prepareForReuse() {
+    self.characterImage.image = nil
+    self.characterImage.cancelImageLoad()
+  }
+
   func dropShadow(color: UIColor) {
     layer.masksToBounds = false
     layer.shadowColor = color.cgColor
