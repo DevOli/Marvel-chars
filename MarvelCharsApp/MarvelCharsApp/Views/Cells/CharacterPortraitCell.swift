@@ -21,9 +21,8 @@ class CharacterPortraitCell: UICollectionViewCell {
   }
   
   override func prepareForReuse() {
-    super.prepareForReuse()
-    onReuse()
-    characterImage.image = nil
+    self.characterImage.image = nil
+    self.characterImage.cancelImageLoad()
   }
 
   func dropShadow(color: UIColor) {

@@ -13,7 +13,19 @@ struct BasicInfoView: View {
   
     var body: some View {
         ZStack(alignment: .topLeading) {
-            Image("\(character.imagePath)").resizable().scaledToFit().edgesIgnoringSafeArea(.all)
+          AsyncImage(url: URL(string: character.imagePath)) { phase in
+            switch phase {
+            case .empty:
+              ProgressView()
+            case .success(let image):
+              image.resizable()
+            case .failure:
+              Image(systemName: "photo")
+            @unknown default:
+              // Handler for future cases that might be added
+              EmptyView()
+            }
+          }
             Rectangle().foregroundColor(.clear).background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
             Rectangle().foregroundColor(.clear).background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottomTrailing))
             VStack(alignment: .leading) {

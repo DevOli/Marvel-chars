@@ -24,6 +24,12 @@
 		846B998727503A740055F2A6 /* CharacterPortraitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846B998527503A740055F2A6 /* CharacterPortraitCell.xib */; };
 		846B998C27517D5E0055F2A6 /* CategoryRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B998A27517D5E0055F2A6 /* CategoryRowCell.swift */; };
 		846B998D27517D5E0055F2A6 /* CategoryRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846B998B27517D5E0055F2A6 /* CategoryRowCell.xib */; };
+		8473CC97276B6C3700EB3AEF /* UIImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473CC96276B6C3700EB3AEF /* UIImageLoader.swift */; };
+		8473CC98276B6C3700EB3AEF /* UIImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473CC96276B6C3700EB3AEF /* UIImageLoader.swift */; };
+		8473CC99276B6C3700EB3AEF /* UIImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473CC96276B6C3700EB3AEF /* UIImageLoader.swift */; };
+		8473CC9B276B6D0900EB3AEF /* UIImageViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473CC9A276B6D0900EB3AEF /* UIImageViewHelper.swift */; };
+		8473CC9C276B6D0900EB3AEF /* UIImageViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473CC9A276B6D0900EB3AEF /* UIImageViewHelper.swift */; };
+		8473CC9D276B6D0900EB3AEF /* UIImageViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473CC9A276B6D0900EB3AEF /* UIImageViewHelper.swift */; };
 		8489D27D275940CD00F57F15 /* MarvelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B85B7275829310059DE45 /* MarvelRepository.swift */; };
 		848A2795274D5077000CDBCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A2794274D5077000CDBCE /* AppDelegate.swift */; };
 		848A2797274D5077000CDBCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A2796274D5077000CDBCE /* SceneDelegate.swift */; };
@@ -151,6 +157,8 @@
 		846B998527503A740055F2A6 /* CharacterPortraitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterPortraitCell.xib; sourceTree = "<group>"; };
 		846B998A27517D5E0055F2A6 /* CategoryRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRowCell.swift; sourceTree = "<group>"; };
 		846B998B27517D5E0055F2A6 /* CategoryRowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryRowCell.xib; sourceTree = "<group>"; };
+		8473CC96276B6C3700EB3AEF /* UIImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageLoader.swift; sourceTree = "<group>"; };
+		8473CC9A276B6D0900EB3AEF /* UIImageViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewHelper.swift; sourceTree = "<group>"; };
 		848A2791274D5077000CDBCE /* MarvelCharsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelCharsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848A2794274D5077000CDBCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848A2796274D5077000CDBCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -388,6 +396,8 @@
 				CE2B85BD27582A660059DE45 /* UIImageHelper.swift */,
 				CE835E9D275A5AC300B6105C /* ResourceNames.swift */,
 				840476D3276A4368004AA7F2 /* ImageLoader.swift */,
+				8473CC96276B6C3700EB3AEF /* UIImageLoader.swift */,
+				8473CC9A276B6D0900EB3AEF /* UIImageViewHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -720,12 +730,14 @@
 				CE2B85BC27582A2A0059DE45 /* SideMenuViewModel.swift in Sources */,
 				84645F7E274E9E1B001A997A /* MarvelAPI.swift in Sources */,
 				846B998C27517D5E0055F2A6 /* CategoryRowCell.swift in Sources */,
+				8473CC9B276B6D0900EB3AEF /* UIImageViewHelper.swift in Sources */,
 				CE2B85E0275AB4710059DE45 /* UIViewHelper.swift in Sources */,
 				846B998627503A740055F2A6 /* CharacterPortraitCell.swift in Sources */,
 				CE2B85E5275ABED70059DE45 /* TextHelper.swift in Sources */,
 				CE2B85B6275828E30059DE45 /* SideMenuController.swift in Sources */,
 				CE2B85DE275AA69C0059DE45 /* AbilityProgressBar.swift in Sources */,
 				848A27CA274D8BBC000CDBCE /* DetailsViewController.swift in Sources */,
+				8473CC97276B6C3700EB3AEF /* UIImageLoader.swift in Sources */,
 				CE2B85B8275829310059DE45 /* MarvelRepository.swift in Sources */,
 				C0CD394C2761A79F000226BE /* BasicInfoView.swift in Sources */,
 				CE2B85E3275AB5C60059DE45 /* AbilitiesView.swift in Sources */,
@@ -756,9 +768,11 @@
 				CEAED4F0275DA69C00319BF6 /* AbilityProgressBar.swift in Sources */,
 				848A27AC274D5079000CDBCE /* MarvelCharsAppTests.swift in Sources */,
 				CE59ECF927601C6D00C2B527 /* ResourceNames.swift in Sources */,
+				8473CC9C276B6D0900EB3AEF /* UIImageViewHelper.swift in Sources */,
 				CE2B85BA275829C50059DE45 /* SideMenuViewModelTests.swift in Sources */,
 				848A27CF274D8C86000CDBCE /* HomeViewModel.swift in Sources */,
 				CEA064B9276003AA0059852D /* MovieSectionView.swift in Sources */,
+				8473CC98276B6C3700EB3AEF /* UIImageLoader.swift in Sources */,
 				84C7D0F8275DC20F000BC67C /* CharactersCollectionHeader.swift in Sources */,
 				84645F82274E9E53001A997A /* MarvelAPIModel.swift in Sources */,
 				84E54D08275734AC00A21EDA /* CategoryModelTest.swift in Sources */,
@@ -788,6 +802,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C7D0FB275DC22E000BC67C /* CharacterPortraitCell.swift in Sources */,
+				8473CC9D276B6D0900EB3AEF /* UIImageViewHelper.swift in Sources */,
 				CEAED4F5275DA79F00319BF6 /* TextHelper.swift in Sources */,
 				CEAED4F4275DA70800319BF6 /* AbilityProgressBar.swift in Sources */,
 				CEA064BA276003AA0059852D /* MovieSectionView.swift in Sources */,
@@ -807,6 +822,7 @@
 				CEAED4EB275DA53A00319BF6 /* AbilitiesView.swift in Sources */,
 				84E54D03275731FF00A21EDA /* CharacterModel.swift in Sources */,
 				8489D27D275940CD00F57F15 /* MarvelRepository.swift in Sources */,
+				8473CC99276B6C3700EB3AEF /* UIImageLoader.swift in Sources */,
 				84E54D042757320D00A21EDA /* CategoryModel.swift in Sources */,
 				848A27CC274D8BBC000CDBCE /* DetailsViewController.swift in Sources */,
 				CEAED4F3275DA6F800319BF6 /* UIFontHelper.swift in Sources */,

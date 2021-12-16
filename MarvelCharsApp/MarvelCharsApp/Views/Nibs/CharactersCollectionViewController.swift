@@ -11,7 +11,6 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
   
   var delegate: CharacterPortraitDelegate?
   var category: CategoryModel?
-  let loader = ImageLoader()
   
   private let collectionViewCellNibName = "CharacterPortraitCell"
   private let cellReuseIdentifier = "CharacterPortraitID"
@@ -58,27 +57,9 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
         cell.characterImage.image = UIImage(systemName: "placeholdertext.fill")
         return cell
       }
-      // 1
-      let token = loader.loadImage(url) { result in
-        do {
-          // 2
-          let image = try result.get()
-          // 3
-          DispatchQueue.main.async {
-            //cell.dropShadow(color: image.averageColor ?? .clear)
-            cell.characterImage.image = image.roundedImage
-          }
-        } catch {
-          // 4
-          print(error)
-        }
-      }
-
-      // 5
-      cell.onReuse = {
-        if let token = token {
-          self.loader.cancelLoad(token)
-        }
+      cell.characterImage.loadImage(at: url) {
+        cell.characterImage.image = cell.characterImage.image?.roundedImage
+        cell.dropShadow(color: cell.characterImage.image?.averageColor ?? .clear)
       }
     }
     return cell
