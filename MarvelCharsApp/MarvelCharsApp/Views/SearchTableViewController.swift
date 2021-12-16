@@ -17,28 +17,20 @@ class SearchTableViewController: UITableViewController {
         initialConfiguration()
     }
     
-    //Hide Navigation bar when view appears and show it when it disappear
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-    
     private func initialConfiguration() {
         //Search UI configurations
       searchController.searchBar.backgroundColor = UIColor.primary_silver
       searchController.searchBar.barTintColor = UIColor.primary_silver
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Characters"
+        searchController.searchBar.placeholder = "Search by character"
         searchController.searchBar.delegate = self;
         searchController.searchBar.showsCancelButton = true
-        tableView.tableHeaderView = searchController.searchBar
-      tableView.tableHeaderView?.backgroundColor = UIColor.primary_silver
+        searchController.hidesNavigationBarDuringPresentation = false
+        navigationItem.searchController = searchController
+        navigationItem.hidesBackButton = true
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
         definesPresentationContext = true
         // Search VM configurations
         searchVm.getAllcharacters()
