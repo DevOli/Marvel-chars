@@ -60,7 +60,7 @@ struct CharacterModel {
         self.velocity = velocity
         self.movies = movies
     }
-  
+
   func getMovieKeyFromURL(at index: Int) -> String? {
     if index < 0 || index >= movies.count || movies.isEmpty {
       return nil
@@ -75,5 +75,4 @@ struct CharacterModel {
     }
     return ""
   }
-  
 }

@@ -15,7 +15,7 @@ class UIImageLoader {
 
   private init() {}
 
-  func load(_ url: URL, for imageView: UIImageView, completionHandler: @escaping ()->Void) {
+  func load(_ url: URL, for imageView: UIImageView, completionHandler: @escaping () -> Void) {
     let token = imageLoader.loadImage(url) { result in
       defer { self.uuidMap.removeValue(forKey: imageView) }
       do {
@@ -40,5 +40,4 @@ class UIImageLoader {
       uuidMap.removeValue(forKey: imageView)
     }
   }
-  
 }

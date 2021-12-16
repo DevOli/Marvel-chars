@@ -17,7 +17,7 @@ class CharacterPortraitCell: UICollectionViewCell {
       characterNameLabel.font = UIFont.cardTitle()
       characterAlterEgoLabel.font = UIFont.cardSubtitle()
   }
-  
+
   override func prepareForReuse() {
     self.characterImage.image = nil
     self.characterImage.cancelImageLoad()

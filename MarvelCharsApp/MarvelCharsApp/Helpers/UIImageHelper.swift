@@ -46,8 +46,11 @@ extension UIImage {
           let height = Int(size.height)
           let totalPixels = width * height
           let colorSpace = CGColorSpaceCreateDeviceRGB()
-          let bitmapInfo: UInt32 = CGBitmapInfo.byteOrder32Little.rawValue | CGImageAlphaInfo.premultipliedFirst.rawValue
-          guard let context = CGContext(data: nil, width: width, height: height, bitsPerComponent: 8, bytesPerRow: width * 4, space: colorSpace, bitmapInfo: bitmapInfo) else { return nil }
+          let bitmapInfo: UInt32 = CGBitmapInfo.byteOrder32Little.rawValue
+                                  | CGImageAlphaInfo.premultipliedFirst.rawValue
+          guard let context = CGContext(data: nil, width: width, height: height,
+                                        bitsPerComponent: 8, bytesPerRow: width * 4, space: colorSpace,
+                                        bitmapInfo: bitmapInfo) else { return nil }
 
           context.draw(cgImage, in: CGRect(origin: .zero, size: size))
 
@@ -57,26 +60,24 @@ extension UIImage {
           var totalRed = 0
           var totalBlue = 0
           var totalGreen = 0
-          
-          for x in 0 ..< width {
-              for y in 0 ..< height {
-                  let pixel = pointer[(y * width) + x]
-                  let r = red(for: pixel)
-                  let g = green(for: pixel)
-                  let b = blue(for: pixel)
-                  totalRed += Int(r)
-                  totalBlue += Int(b)
-                  totalGreen += Int(g)
+          for axisX in 0 ..< width {
+              for axisY in 0 ..< height {
+                  let pixel = pointer[(axisY * width) + axisX]
+                  let red = red(for: pixel)
+                  let green = green(for: pixel)
+                  let blue = blue(for: pixel)
+                  totalRed += Int(red)
+                  totalBlue += Int(blue)
+                  totalGreen += Int(green)
               }
           }
-          
-          let averageRed: CGFloat = CGFloat(totalRed) / CGFloat(totalPixels)
-          let averageGreen: CGFloat = CGFloat(totalGreen) / CGFloat(totalPixels)
-          let averageBlue: CGFloat = CGFloat(totalBlue) / CGFloat(totalPixels)
+          let averageRed = CGFloat(totalRed) / CGFloat(totalPixels)
+          let averageGreen = CGFloat(totalGreen) / CGFloat(totalPixels)
+          let averageBlue = CGFloat(totalBlue) / CGFloat(totalPixels)
 
           return UIColor(red: averageRed / 255.0, green: averageGreen / 255.0, blue: averageBlue / 255.0, alpha: 1.0)
       }
-      
+
       private func red(for pixelData: UInt32) -> UInt8 {
           return UInt8((pixelData >> 16) & 255)
       }

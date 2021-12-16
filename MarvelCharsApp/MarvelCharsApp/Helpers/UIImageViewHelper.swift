@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 extension UIImageView {
-  func loadImage(at url: URL, completionHandler: @escaping ()->Void) {
+  func loadImage(at url: URL, completionHandler: @escaping () -> Void) {
     UIImageLoader.loader.load(url, for: self, completionHandler: completionHandler)
   }
 

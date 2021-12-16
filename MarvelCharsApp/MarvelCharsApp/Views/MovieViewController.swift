@@ -53,7 +53,7 @@ class MovieViewController: UIViewController {
     private func loadMovieInfo(movie: MovieModel) {
         DispatchQueue.main.async { [weak self] in
             if let url = URL(string: movie.image) {
-              self?.mainImage.loadImage(at: url){}
+              self?.mainImage.loadImage(at: url) {}
             } else {
               self?.mainImage.image = UIImage(systemName: "placeholdertext.fill")
             }

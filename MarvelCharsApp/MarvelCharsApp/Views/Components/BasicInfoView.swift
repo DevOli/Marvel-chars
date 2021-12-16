@@ -24,8 +24,12 @@ struct BasicInfoView: View {
               EmptyView()
             }
           }
-            Rectangle().foregroundColor(.clear).background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom))
-            Rectangle().foregroundColor(.clear).background(LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottomTrailing))
+            Rectangle().foregroundColor(.clear)
+            .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]),
+                                       startPoint: .top, endPoint: .bottom))
+            Rectangle().foregroundColor(.clear)
+            .background(LinearGradient(gradient: Gradient(colors: [.clear, .black]),
+                                       startPoint: .top, endPoint: .bottomTrailing))
             VStack(alignment: .leading) {
                     Spacer()
                     Text("\(character.alterEgo)")
@@ -70,7 +74,7 @@ struct BasicInfoView: View {
                         .foregroundColor(Color(UIColor.primaryWhite))
                         .font(Font(UIFont.description() as
                                    CTFont)).padding(.init(top: 20, leading: 25, bottom: 0, trailing: 25))
-             }.padding(.init(top: 0, leading: 0, bottom: 15, trailing: 0))
+            }.padding(.init(top: 0, leading: 0, bottom: 15, trailing: 0))
         }
     }
 }
