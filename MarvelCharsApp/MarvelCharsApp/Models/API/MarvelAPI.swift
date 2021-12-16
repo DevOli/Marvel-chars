@@ -22,7 +22,7 @@ class MarvelAPI : MarvelRepository {
     var movieDelegate: MarvelMoviesDelegate?
 
     func fetchData() {
-        let urlString = baseURL + "characters"
+        let urlString = baseURL + "test"
         let url = URL(string: urlString)
         guard let urlSafe = url else {
             return
@@ -50,7 +50,7 @@ class MarvelAPI : MarvelRepository {
     }
     
     func fetchMovie(byKey key: String) {
-        let urlString = baseURL + "movies"
+        let urlString = baseURL + "moviestest"
         let url = URL(string: urlString)
         guard let urlSafe = url else {
             return

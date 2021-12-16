@@ -51,7 +51,11 @@ class MovieViewController: UIViewController {
     
     private func loadMovieInfo(movie: MovieModel) {
         DispatchQueue.main.async { [weak self] in
-            self?.mainImage.image = UIImage(named: movie.image)
+            if let url = URL(string: movie.image) {
+              self?.mainImage.loadImage(at: url){}
+            } else {
+              self?.mainImage.image = UIImage(systemName: "placeholdertext.fill")
+            }
             self?.titleLabel.text = movie.name
             self?.synopsisLabel.text = movie.synopsis
             

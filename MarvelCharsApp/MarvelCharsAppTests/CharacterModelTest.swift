@@ -31,5 +31,16 @@ class CharacterModelTest: XCTestCase {
     XCTAssertEqual(character.intelligence, 90)
     XCTAssertEqual(character.movies[0], "avengers")
   }
+  
+  func testGetMovieKeyCorrectly() throws {
+    let character = CharacterModel(name: "SpiderMan", alterEgo: "Peter Parker", imagePath: "spidey.png", biography: "bio", birth: "01-01-2000", weight: 70.0, weightUnit: "kg", height: 170.0, heightUnit: "meters", universe: "Earth 616", force: 100, intelligence: 90, agility: 80, endurance: 70, velocity: 60, movies: ["https://i.bb.com/QWERTY/avengers-3.png", "https://i.bb.com/QWERTY/spider-man-homecoming.png"])
+    let movieKey = character.getMovieKeyFromURL(at: 0)
+    XCTAssertEqual(movieKey, "avengers-3")
+  }
+  
+  func testGetMovieKeyReturnsNilWhenIndexOutOfRange() throws {
+    let character = CharacterModel(name: "SpiderMan", alterEgo: "Peter Parker", imagePath: "spidey.png", biography: "bio", birth: "01-01-2000", weight: 70.0, weightUnit: "kg", height: 170.0, heightUnit: "meters", universe: "Earth 616", force: 100, intelligence: 90, agility: 80, endurance: 70, velocity: 60, movies: ["https://i.bb.com/QWERTY/avengers-3.png", "https://i.bb.com/QWERTY/spider-man-homecoming.png"])
+    XCTAssertNil(character.getMovieKeyFromURL(at: 10))
+  }
 
 }

@@ -54,4 +54,20 @@ struct CharacterModel {
         self.velocity = velocity
         self.movies = movies
     }
+  
+  func getMovieKeyFromURL(at index: Int) -> String? {
+    if index < 0 || index >= movies.count || movies.isEmpty {
+      return nil
+    }
+    let movie = self.movies[index]
+    let array = movie.split(separator: "/")
+    if let imageName = array.last {
+      let newArray = imageName.split(separator: ".")
+      if let movieKey = newArray.first {
+        return String(movieKey)
+      }
+    }
+    return ""
+  }
+  
 }

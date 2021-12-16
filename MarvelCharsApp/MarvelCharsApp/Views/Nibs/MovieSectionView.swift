@@ -63,12 +63,17 @@ extension MovieSectionView: UICollectionViewDataSource {
         guard let cell = moviesCollection.dequeueReusableCell(withReuseIdentifier: self.cellReuseIdentifier, for: indexPath) as? CharacterPortraitCell else {
             return UICollectionViewCell()
         }
-        
-        guard let movie = self.character?.movies[indexPath.row] else { return UICollectionViewCell() }
-        let image = UIImage(named: movie)
-        cell.characterImage.image = image?.roundedImage
-        cell.characterNameLabel.text = ""
-        cell.characterAlterEgoLabel.text = ""
+        if let movie = self.character?.movies[indexPath.row] {
+          cell.characterNameLabel.text = ""
+          cell.characterAlterEgoLabel.text = ""
+          guard let url = URL(string: movie) else {
+            cell.characterImage.image = UIImage(systemName: "placeholdertext.fill")
+            return cell
+          }
+          cell.characterImage.loadImage(at: url) {
+            cell.characterImage.image = cell.characterImage.image?.roundedImage
+          }
+        }
         return cell
     }
     
@@ -76,8 +81,8 @@ extension MovieSectionView: UICollectionViewDataSource {
 
 extension MovieSectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let movie = self.character?.movies[indexPath.row] {
-            self.delegate?.onTappedMovie(movieName: movie)
+        if let movieKey = self.character?.getMovieKeyFromURL(at: indexPath.row) {
+            self.delegate?.onTappedMovie(movieName: movieKey)
         }
     }
 }
