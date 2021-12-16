@@ -9,6 +9,7 @@ import Foundation
 
 protocol HomeViewModelDelegate {
   func onFetchDataSuccessfully(categories: [CategoryModel])
+  func onFetchDataFail()
 }
 
 class HomeViewModel {
@@ -41,9 +42,9 @@ class HomeViewModel {
   
 }
 
-extension HomeViewModel: MarvelRepositoryDelegate {
+extension HomeViewModel: MarvelRepositoryDelegate {   
   func didFailFetching(error: Error) {
-    print(error)
+      self.delegate?.onFetchDataFail()
   }
   
   func didFetchData(categories: [CategoryModel]) {

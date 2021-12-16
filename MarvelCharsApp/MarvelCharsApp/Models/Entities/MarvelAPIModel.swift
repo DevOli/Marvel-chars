@@ -78,3 +78,12 @@ enum Universe: String, Codable {
 
 typealias Category = [CategoryElement]
 
+// MARK: - Movie
+struct Movie: Codable {
+    let name, key, image: String?
+    let trailer: String?
+    let synopsis: String?
+}
+
+typealias Movies = [Movie]
+
