@@ -19,15 +19,14 @@ class SearchTableViewController: UITableViewController {
     
     private func initialConfiguration() {
         //Search UI configurations
-      searchController.searchBar.backgroundColor = UIColor.primary_silver
-      searchController.searchBar.barTintColor = UIColor.primary_silver
+        searchController.searchBar.backgroundColor = UIColor.primary_silver
+        searchController.searchBar.barTintColor = UIColor.primary_silver
         searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search by character"
         searchController.searchBar.delegate = self;
         searchController.searchBar.showsCancelButton = true
         searchController.hidesNavigationBarDuringPresentation = false
-        navigationItem.searchController = searchController
+        self.navigationItem.titleView = searchController.searchBar
         navigationItem.hidesBackButton = true
         navigationItem.hidesSearchBarWhenScrolling = false
         
