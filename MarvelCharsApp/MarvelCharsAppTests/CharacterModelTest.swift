@@ -19,15 +19,20 @@ class CharacterModelTest: XCTestCase {
     }
 
   func testSetPropertiesCorrectlyWithCharacterStruct() throws {
-    let characteristics = Caracteristics("01-01-2000", Eight(70.0, .kg), Eight(170.0, .meters), .earth616)
+    let characteristics = Caracteristics("01-01-2000", Eight(70.0, .kilograms), Eight(170.0, .meters), .earth616)
     let abilities = Abilities(100, 90, 80, 70, 60)
-    let character = CharacterModel(character: Character("SpiderMan", "Peter Parker", "spidey.png", "bio", characteristics, abilities, ["avengers","homecoming"]))
+    let character = CharacterModel(character: Character("SpiderMan", "Peter Parker", "spidey.png", "bio",
+                                                        characteristics, abilities, ["avengers", "homecoming"]))
     XCTAssertEqual(character.intelligence, 90)
     XCTAssertEqual(character.movies[0], "avengers")
   }
-  
+
   func testSetPropertiesCorrectly() throws {
-    let character = CharacterModel(name: "SpiderMan", alterEgo: "Peter Parker", imagePath: "spidey.png", biography: "bio", birth: "01-01-2000", weight: 70.0, weightUnit: "kg", height: 170.0, heightUnit: "meters", universe: "Earth 616", force: 100, intelligence: 90, agility: 80, endurance: 70, velocity: 60, movies: ["avengers", "homecoming"])
+    let character = CharacterModel(name: "SpiderMan", alterEgo: "Peter Parker", imagePath: "spidey.png",
+                                   biography: "bio", birth: "01-01-2000", weight: 70.0, weightUnit: "kg",
+                                   height: 170.0, heightUnit: "meters", universe: "Earth 616", force: 100,
+                                   intelligence: 90, agility: 80, endurance: 70, velocity: 60,
+                                   movies: ["avengers", "homecoming"])
     XCTAssertEqual(character.intelligence, 90)
     XCTAssertEqual(character.movies[0], "avengers")
   }

@@ -1,5 +1,4 @@
-//
-//  Identifiers.swift
+//  ResourceName.swift
 //  MarvelCharsApp
 //
 //  Created by User on 12/3/21.

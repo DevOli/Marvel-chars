@@ -1,4 +1,3 @@
-//
 //  UIViewHelper.swift
 //  MarvelCharsApp
 //

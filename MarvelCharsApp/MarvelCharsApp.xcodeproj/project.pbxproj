@@ -76,6 +76,7 @@
 		C017B7AC2755A413002A8E3F /* gilroy-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C017B7A62755A3FF002A8E3F /* gilroy-medium.ttf */; };
 		C017B7AD2755A416002A8E3F /* gilroy-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C017B7A92755A3FF002A8E3F /* gilroy-regular.ttf */; };
 		C017B7AE2755A418002A8E3F /* gilroy-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C017B7A72755A3FF002A8E3F /* gilroy-semibold.ttf */; };
+		C03EDDD9276BB16C00871B6F /* MockMarvelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58DED0276953CE00FD976A /* MockMarvelAPI.swift */; };
 		C0CD394C2761A79F000226BE /* BasicInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD394B2761A79F000226BE /* BasicInfoView.swift */; };
 		C0F3906C2762575E00DEADF4 /* BasicInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD394B2761A79F000226BE /* BasicInfoView.swift */; };
 		C0F3906D2762575E00DEADF4 /* BasicInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD394B2761A79F000226BE /* BasicInfoView.swift */; };
@@ -501,6 +502,7 @@
 				848A278E274D5077000CDBCE /* Frameworks */,
 				848A278F274D5077000CDBCE /* Resources */,
 				E88D05E371C7C7FB4B139204 /* [CP] Embed Pods Frameworks */,
+				C0CD394D2761E21E000226BE /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -675,6 +677,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarvelCharsApp-MarvelCharsAppUITests/Pods-MarvelCharsApp-MarvelCharsAppUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C0CD394D2761E21E000226BE /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		D23F039A3C353B24420A1FF1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -750,6 +770,7 @@
 				CE7150F02767A7F9004F8115 /* MoviesViewModel.swift in Sources */,
 				848A2795274D5077000CDBCE /* AppDelegate.swift in Sources */,
 				848A2797274D5077000CDBCE /* SceneDelegate.swift in Sources */,
+				C03EDDD9276BB16C00871B6F /* MockMarvelAPI.swift in Sources */,
 				CE835E9E275A5AC300B6105C /* ResourceNames.swift in Sources */,
 				CE59ECF4275FBADB00C2B527 /* UIButtonHelper.swift in Sources */,
 				848A27CE274D8C86000CDBCE /* HomeViewModel.swift in Sources */,

@@ -19,7 +19,7 @@ class CategoryModelTest: XCTestCase {
     }
 
   func testSetPropertiesCorrectly() throws {
-    let characteristics = Caracteristics("01-01-2000", Eight(70.0, .kg), Eight(170.0, .meters), .earth616)
+    let characteristics = Caracteristics("01-01-2000", Eight(70.0, .kilograms), Eight(170.0, .meters), .earth616)
     let abilities = Abilities(100, 90, 80, 70, 60)
     let category = CategoryModel(category: "Heroes", characters: [
       CharacterModel(character: Character("SpiderMan", "Peter Parker", "spidey.png", "bio", characteristics, abilities, ["avengers","homecoming"])),
@@ -36,7 +36,7 @@ class CategoryModelTest: XCTestCase {
   }
   
   func testReturnsCharactersCountWhenSet() throws {
-    let characteristics = Caracteristics("01-01-2000", Eight(70.0, .kg), Eight(170.0, .meters), .earth616)
+    let characteristics = Caracteristics("01-01-2000", Eight(70.0, .kilograms), Eight(170.0, .meters), .earth616)
     let abilities = Abilities(100, 90, 80, 70, 60)
     let category = CategoryModel(category: "Heroes", characters: [
       CharacterModel(character: Character("SpiderMan", "Peter Parker", "spidey.png", "bio", characteristics, abilities, ["avengers","homecoming"])),
@@ -51,7 +51,7 @@ class CategoryModelTest: XCTestCase {
   }
   
   func testGetCharacterCorrectly() throws {
-    let characteristics = Caracteristics("01-01-2000", Eight(70.0, .kg), Eight(170.0, .meters), .earth616)
+    let characteristics = Caracteristics("01-01-2000", Eight(70.0, .kilograms), Eight(170.0, .meters), .earth616)
     let abilities = Abilities(100, 90, 80, 70, 60)
     let category = CategoryModel(category: "Heroes", characters: [
       CharacterModel(character: Character("SpiderMan", "Peter Parker", "spidey.png", "bio", characteristics, abilities, ["avengers","homecoming"])),
@@ -67,7 +67,7 @@ class CategoryModelTest: XCTestCase {
   }
   
   func testGetCharacterReturnsNilWhenIndexOutOfRange() throws {
-    let characteristics = Caracteristics("01-01-2000", Eight(70.0, .kg), Eight(170.0, .meters), .earth616)
+    let characteristics = Caracteristics("01-01-2000", Eight(70.0, .kilograms), Eight(170.0, .meters), .earth616)
     let abilities = Abilities(100, 90, 80, 70, 60)
     let category = CategoryModel(category: "Heroes", characters: [
       CharacterModel(character: Character("SpiderMan", "Peter Parker", "spidey.png", "bio", characteristics, abilities, ["avengers","homecoming"])),

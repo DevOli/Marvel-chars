@@ -8,5 +8,5 @@
 import UIKit
 
 class CategoryButtonCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var categoryButton: UIButton!
+    @IBOutlet var categoryButton: UIButton!
 }

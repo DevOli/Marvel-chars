@@ -1,4 +1,3 @@
-//
 //  TextHelper.swift
 //  MarvelCharsApp
 //
@@ -10,7 +9,7 @@ import SwiftUI
 
 extension Text {
     func abilitiesStyles() -> some View {
-        self.foregroundColor(Color(UIColor.primary_white))
+        self.foregroundColor(Color(UIColor.primaryWhite))
             .frame(width: 110, alignment: .leading)
             .font(Font(UIFont.ability() as CTFont))
     }

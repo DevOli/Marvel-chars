@@ -94,5 +94,8 @@ iOSInjectionProject/
 .DS_Store
 .DS_Store?
 
+# SwiftLint configuration files
+.pre-commit-config.yaml
+
 # Code Coverage xml
 sonarqube-generic-coverage.xml

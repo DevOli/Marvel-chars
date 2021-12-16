@@ -8,12 +8,10 @@
 import UIKit
 
 class CharacterPortraitCell: UICollectionViewCell {
-  
-  @IBOutlet weak var characterImage: UIImageView!
-  @IBOutlet weak var characterNameLabel: UILabel!
-  @IBOutlet weak var characterAlterEgoLabel: UILabel!
-  var onReuse: () -> Void = {}
-  
+  @IBOutlet var characterImage: UIImageView!
+  @IBOutlet var characterNameLabel: UILabel!
+  @IBOutlet var characterAlterEgoLabel: UILabel!
+
   override func awakeFromNib() {
     super.awakeFromNib()
       characterNameLabel.font = UIFont.cardTitle()
