@@ -37,7 +37,7 @@ class DetailsViewController: UIViewController {
 
         let movieCustomView = MovieSectionView(character: character, frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         movieCustomView.delegate = self
-        
+
         stackView.addArrangedSubview(movieCustomView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -53,16 +53,12 @@ class DetailsViewController: UIViewController {
         button.tintColor = UIColor.white
         navigationItem.leftBarButtonItem = button
     }
-    //Func a remover
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        navigationController?.navigationBar.barStyle = .black
 }
 
 extension DetailsViewController: MoviePortraitDelegate {
     func onTappedMovie(movieName: String) {
-        let vc = MovieViewController(nibName: ResourceName.movieViewControllerNibName, bundle: nil)
-        vc.movieKey = movieName
-        self.navigationController?.pushViewController(vc, animated: true)
-    }     
+        let viewC = MovieViewController(nibName: ResourceName.movieViewControllerNibName, bundle: nil)
+        viewC.movieKey = movieName
+        self.navigationController?.pushViewController(viewC, animated: true)
+    }
 }

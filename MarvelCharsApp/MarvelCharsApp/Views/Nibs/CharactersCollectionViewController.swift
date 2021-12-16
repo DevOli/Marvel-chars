@@ -82,8 +82,9 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
   }
 
   // MARK: UICollectionViewDelegateFlowLayout
-  
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+  func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      sizeForItemAt indexPath: IndexPath) -> CGSize {
     if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
       layout.sectionHeadersPinToVisibleBounds = true
     }
@@ -100,27 +101,25 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
       self.navigationController?.popViewController(animated: true)
     }
     let button = UIBarButtonItem(title: "", image: UIImage(named: "back"), primaryAction: action, menu: nil)
-    button.tintColor = UIColor.primary_white
+    button.tintColor = UIColor.primaryWhite
     navigationItem.leftBarButtonItem = button
 
     self.title = self.category?.category
-    navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.primary_white]
-    navigationController?.navigationBar.backgroundColor = UIColor.primary_red
-
+    navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.primaryWhite]
+    navigationController?.navigationBar.backgroundColor = UIColor.primaryRed
   }
 
   override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-    let TopHeight = navigationController?.navigationBar.frame.maxY ?? 0
+    let topHeight = navigationController?.navigationBar.frame.maxY ?? 0
 
-    if (scrollView.contentOffset.y <= -TopHeight){
-      navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.primary_white]
-      navigationItem.leftBarButtonItem?.tintColor = .primary_white
+    if (scrollView.contentOffset.y <= -topHeight) {
+      navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.primaryWhite]
+      navigationItem.leftBarButtonItem?.tintColor = .primaryWhite
     }
 
-    if (scrollView.contentOffset.y > -TopHeight && scrollView.contentOffset.y < (scrollView.contentSize.height - scrollView.frame.size.height)){
-      navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.primary_red]
-      navigationItem.leftBarButtonItem?.tintColor = .primary_red
+    if (scrollView.contentOffset.y > -topHeight && scrollView.contentOffset.y < (scrollView.contentSize.height - scrollView.frame.size.height)) {
+      navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.primaryRed]
+      navigationItem.leftBarButtonItem?.tintColor = .primaryRed
     }
   }
 }

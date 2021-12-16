@@ -40,7 +40,7 @@ class HomeViewModel {
   }
 }
 
-extension HomeViewModel: MarvelRepositoryDelegate {   
+extension HomeViewModel: MarvelRepositoryDelegate {
   func didFailFetching(error: Error) {
       self.delegate?.onFetchDataFail()
   }

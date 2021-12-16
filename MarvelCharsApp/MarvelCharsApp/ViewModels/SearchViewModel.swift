@@ -61,5 +61,4 @@ extension SearchViewModel: MarvelRepositoryDelegate {
         }
         searchedItems = allCharacters
     }
-    
 }

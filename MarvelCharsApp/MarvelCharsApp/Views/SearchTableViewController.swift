@@ -16,25 +16,12 @@ class SearchTableViewController: UITableViewController {
         initialConfiguration()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-
     private func initialConfiguration() {
-        //Search UI configurations
         searchController.searchBar.backgroundColor = UIColor.primarySilver
         searchController.searchBar.barTintColor = UIColor.primarySilver
-        searchController.searchBar.backgroundColor = UIColor.primary_silver
-        searchController.searchBar.barTintColor = UIColor.primary_silver
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search by character"
-        searchController.searchBar.delegate = self;
+        searchController.searchBar.delegate = self
         searchController.searchBar.showsCancelButton = true
         searchController.hidesNavigationBarDuringPresentation = false
         self.navigationItem.titleView = searchController.searchBar

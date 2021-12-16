@@ -70,7 +70,11 @@ struct BasicInfoView: View {
 
 struct BasicInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        BasicInfoView(character: CharacterModel(name: "Spiderman", alterEgo: "Peter Parker", imagePath: "spider-man", biography: "This is a test Bio", birth: "1990", weight: 78, weightUnit: "kg", height: 1.8, heightUnit: "meters", universe: "earth 616", force: 70, intelligence: 65, agility: 90, endurance: 60, velocity: 80, movies: [
+        BasicInfoView(character: CharacterModel(name: "Spiderman", alterEgo: "Peter Parker",
+                                                imagePath: "spider-man", biography: "This is a test Bio",
+                                                birth: "1990", weight: 78, weightUnit: "kg", height: 1.8,
+                                                heightUnit: "meters", universe: "earth 616", force: 70,
+                                                intelligence: 65, agility: 90, endurance: 60, velocity: 80, movies: [
             "captain-america-3",
             "spider-man-homecoming",
             "avengers-3",
@@ -78,7 +82,7 @@ struct BasicInfoView_Previews: PreviewProvider {
             "spider-man-far-from-home",
             "spider-man-1",
             "spider-man-2",
-            "spider-man-3"
-        ]))
+            "spider-man-3"]
+        ))
     }
 }

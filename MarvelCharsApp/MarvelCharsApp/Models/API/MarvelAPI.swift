@@ -7,19 +7,19 @@
 
 import Foundation
 
-class MarvelAPI : MarvelRepository {
+class MarvelAPI: MarvelRepository {
     func setDelegate(forMovie: MarvelMoviesDelegate) {
         self.movieDelegate = forMovie
     }
-    
+
     func setDelegate(delegate: MarvelRepositoryDelegate) {
         self.delegate = delegate
     }
-    
+
     private let baseURL = "https://619d463f131c600017088e71.mockapi.io/api/v1/"
-    
+
     weak var delegate: MarvelRepositoryDelegate?
-    var movieDelegate: MarvelMoviesDelegate?
+    weak var movieDelegate: MarvelMoviesDelegate?
 
     func fetchData() {
         let urlString = baseURL + "characters"
@@ -46,7 +46,7 @@ class MarvelAPI : MarvelRepository {
         }
         task.resume()
     }
-   
+
     func fetchMovie(byKey key: String) {
         let urlString = baseURL + "movies"
         let url = URL(string: urlString)
@@ -55,8 +55,7 @@ class MarvelAPI : MarvelRepository {
         }
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: urlSafe) {
-            [weak self]
-            (data: Data?, response: URLResponse?, error: Error?) in
+            [weak self] (data: Data?, _: URLResponse?, _: Error?) in
             let decoder = JSONDecoder()
             guard let safeData = data else {
                 return
@@ -65,7 +64,7 @@ class MarvelAPI : MarvelRepository {
             guard let results = marvelAPI else {
                 return
             }
-            
+
             let movies: [MovieModel] = results.map { movie in
                 return MovieModel(name: movie.name ?? "",
                                   key: movie.key ?? "",
@@ -73,15 +72,15 @@ class MarvelAPI : MarvelRepository {
                                   trailer: movie.trailer ?? "",
                                   synopsis: movie.synopsis ?? "")
             }
-            
-            if let safeMovie = movies.first(where: {(movie) in movie.key == key}) {
+
+            if let safeMovie = movies.first( where: { movie in movie.key == key}) {
                 self?.movieDelegate?.didFetchMovies(movie: safeMovie)
             }
         }
         task.resume()
     }
-    
-    func getCharactersFrom(category: [Character]) -> [CharacterModel]{
+
+    func getCharactersFrom(category: [Character]) -> [CharacterModel] {
         var characters: [CharacterModel] = []
         for character in category {
             characters.append(CharacterModel(character: character))

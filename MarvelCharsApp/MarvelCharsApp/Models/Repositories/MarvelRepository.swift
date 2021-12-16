@@ -17,9 +17,7 @@ protocol MarvelRepositoryDelegate: AnyObject {
     func didFailFetching(error: Error)
 }
 
-protocol MarvelMoviesDelegate {
+protocol MarvelMoviesDelegate: AnyObject {
     func didFetchMovies(movie: MovieModel)
     func didFailFetching(error: Error)
 }
-
-

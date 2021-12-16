@@ -10,7 +10,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
   var menu: SideMenuNavigationController?
-    let marvelLogo = UIImageView(image: UIImage(named: "marvel")?.tintedWithLinearGradientColors(colorsArr: [UIColor(named: "gradient-red-b")!.cgColor, UIColor(named: "gradient-red-a")!.cgColor]))
+    let marvelLogo = UIImageView(image: UIImage(named: "marvel")?.tintedWithLinearGradientColors(colorsArr:
+                                                [UIColor(named: "gradient-red-b")!.cgColor,
+                                                 UIColor(named: "gradient-red-a")!.cgColor]))
   var categoryButton: [(categoryName: String, colours: [UIColor])] = [
       (categoryName: "hero", colours: [.gradientBlueA, .gradientBlueB]),
       (categoryName: "villain", colours: [.gradientRedA, .gradientRedB]),
@@ -98,13 +100,14 @@ extension HomeViewController: UITableViewDelegate {
 
 extension HomeViewController: HomeViewModelDelegate {
   func onFetchDataFail() {
-      let alertController = UIAlertController(title: "Error", message: "We are unable to get character information.", preferredStyle: .alert)
+      let alertController = UIAlertController(title: "Error",
+                                              message: "We are unable to get character information.",
+                                              preferredStyle: .alert)
       let okAction = UIAlertAction(title: "Ok", style: .default)
       alertController.addAction(okAction)
-      
       self.present(alertController, animated: true, completion: nil)
   }
-    
+
   func onFetchDataSuccessfully(categories: [CategoryModel]) {
     refresh()
   }
