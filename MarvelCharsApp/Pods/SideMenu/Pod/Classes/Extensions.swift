@@ -12,10 +12,10 @@ extension NSObject: InitializableClass {}
 internal extension UIView {
 
     @discardableResult func untransformed(_ block: () -> CGFloat) -> CGFloat {
-        let t = transform
+        let transf = transform
         transform = .identity
         let value = block()
-        transform = t
+        transform = transf
         return value
     }
 
@@ -31,16 +31,15 @@ internal extension UIView {
     }
 
     static func animationsEnabled(_ enabled: Bool = true, _ block: () -> Void) {
-        let a = areAnimationsEnabled
+        let areAnimationEn = areAnimationsEnabled
         setAnimationsEnabled(enabled)
         block()
-        setAnimationsEnabled(a)
+        setAnimationsEnabled(areAnimationEn)
     }
 }
 
 internal extension UIViewController {
 
-    // View controller actively displayed in that layer. It may not be visible if it's presenting another view controller.
     var activeViewController: UIViewController {
         switch self {
         case let navigationController as UINavigationController:

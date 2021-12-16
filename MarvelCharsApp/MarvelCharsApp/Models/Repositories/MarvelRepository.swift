@@ -12,14 +12,12 @@ protocol MarvelRepository {
     func setDelegate(delegate: MarvelRepositoryDelegate)
     func setDelegate(forMovie: MarvelMoviesDelegate)
 }
-protocol MarvelRepositoryDelegate {
+protocol MarvelRepositoryDelegate: AnyObject {
     func didFetchData(categories: [CategoryModel])
     func didFailFetching(error: Error)
 }
 
-protocol MarvelMoviesDelegate {
+protocol MarvelMoviesDelegate: AnyObject {
     func didFetchMovies(movie: MovieModel)
     func didFailFetching(error: Error)
 }
-
-

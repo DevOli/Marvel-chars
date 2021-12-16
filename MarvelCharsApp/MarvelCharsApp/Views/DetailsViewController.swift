@@ -5,22 +5,19 @@
 //  Created by admin on 11/23/21.
 //
 
-import UIKit
 import SwiftUI
+import UIKit
 
 class DetailsViewController: UIViewController {
-  
-    @IBOutlet weak var basicInfoView: UIView!
-    @IBOutlet weak var abilitiesView: UIView!    
-    @IBOutlet weak var stackView: UIStackView!
-    
+    @IBOutlet var basicInfoView: UIView!
+    @IBOutlet var abilitiesView: UIView!
+    @IBOutlet var stackView: UIStackView!
     var character: CharacterModel?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
         configureNavBar()
-        
         if let safeCharacter = character {
             let contentView2 = BasicInfoView(character: safeCharacter)
             let childView2 = UIHostingController(rootView: contentView2)
@@ -29,7 +26,6 @@ class DetailsViewController: UIViewController {
             basicInfoView.addSubview(childView2.view)
             basicInfoView.addConstrained(subview: childView2.view)
             childView2.didMove(toParent: self)
-            
             let contentView = AbilitiesView(character: safeCharacter)
             let childView = UIHostingController(rootView: contentView)
             addChild(childView)
@@ -38,19 +34,18 @@ class DetailsViewController: UIViewController {
             abilitiesView.addConstrained(subview: childView.view)
             childView.didMove(toParent: self)
         }
-        
+
         let movieCustomView = MovieSectionView(character: character, frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         movieCustomView.delegate = self
-        
+
         stackView.addArrangedSubview(movieCustomView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        
     }
-    
+
     func configureNavBar() {
         self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.isTranslucent = true
-        let action = UIAction { UIAction in
+        let action = UIAction { _ in
             self.navigationController?.navigationBar.barStyle = .default
             self.navigationController?.popViewController(animated: true)
         }
@@ -62,9 +57,8 @@ class DetailsViewController: UIViewController {
 
 extension DetailsViewController: MoviePortraitDelegate {
     func onTappedMovie(movieName: String) {
-        let vc = MovieViewController(nibName: ResourceName.movieViewControllerNibName, bundle: nil)
-        vc.movieKey = movieName
-        self.navigationController?.pushViewController(vc, animated: true)
+        let viewC = MovieViewController(nibName: ResourceName.movieViewControllerNibName, bundle: nil)
+        viewC.movieKey = movieName
+        self.navigationController?.pushViewController(viewC, animated: true)
     }
-        
 }
