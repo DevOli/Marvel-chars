@@ -17,6 +17,8 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
   private let collectionViewHeaderNibName = "CharactersCollectionHeader"
   private let headerReuseIdentifier = "CharacterCollectionReusableViewID"
   
+  var originalBackgroundColor: UIColor?
+    
   func configure(category: CategoryModel?){
     self.category = category
     refresh()
@@ -28,12 +30,19 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
       self?.collectionView.reloadData()
     }
   }
-  
+    
+  override func viewWillAppear(_ animated: Bool) {
+    configureNavBar()
+  }
+    
+  override func viewWillDisappear(_ animated: Bool) {
+    self.navigationController?.navigationBar.backgroundColor = self.originalBackgroundColor
+  }
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     self.collectionView.register(UINib(nibName: self.collectionViewCellNibName, bundle: nil), forCellWithReuseIdentifier: self.cellReuseIdentifier)
     self.collectionView.register(UINib(nibName: self.collectionViewHeaderNibName, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: self.headerReuseIdentifier)
-    configureNavBar()
   }
   
   // MARK: UICollectionViewDataSource
@@ -79,12 +88,10 @@ class CharactersCollectionViewController: UICollectionViewController, UICollecti
   }
   
   func configureNavBar() {
-    let barTintColor = navigationController?.navigationBar.barTintColor
-    let backgroundColor = navigationController?.navigationBar.backgroundColor
+    originalBackgroundColor = navigationController?.navigationBar.backgroundColor
     self.navigationController?.navigationBar.isTranslucent = true
     let action = UIAction { UIAction in
-      self.navigationController?.navigationBar.barTintColor = barTintColor
-      self.navigationController?.navigationBar.backgroundColor = backgroundColor
+      self.navigationController?.navigationBar.backgroundColor = self.originalBackgroundColor
       self.navigationController?.popViewController(animated: true)
     }
     let button = UIBarButtonItem(title: "", image: UIImage(named: "back"), primaryAction: action, menu: nil)
