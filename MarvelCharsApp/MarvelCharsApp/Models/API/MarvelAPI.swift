@@ -8,6 +8,9 @@
 import Foundation
 
 class MarvelAPI : MarvelRepository {
+    func setDelegate(forMovie: MarvelMoviesDelegate) {
+        self.movieDelegate = forMovie
+    }
     
     func setDelegate(delegate: MarvelRepositoryDelegate) {
         self.delegate = delegate
@@ -16,6 +19,7 @@ class MarvelAPI : MarvelRepository {
     private let baseURL = "https://619d463f131c600017088e71.mockapi.io/api/v1/"
     
     var delegate: MarvelRepositoryDelegate?
+    var movieDelegate: MarvelMoviesDelegate?
 
     func fetchData() {
         let urlString = baseURL + "characters"
@@ -73,7 +77,7 @@ class MarvelAPI : MarvelRepository {
             }
             
             if let safeMovie = movies.first(where: {(movie) in movie.key == key}) {
-                self?.delegate?.didFetchMovies(movie: safeMovie)
+                self?.movieDelegate?.didFetchMovies(movie: safeMovie)
             }
         }
         task.resume()

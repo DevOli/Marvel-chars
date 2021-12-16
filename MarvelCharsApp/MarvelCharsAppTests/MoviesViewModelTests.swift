@@ -54,7 +54,7 @@ class MoviesViewModelTests: XCTestCase {
         movieVM.errorHandler(error)
         
         XCTAssertNotNil(movieVM.errorHandler, "Exists error handler")
-        XCTAssertNotNil(movieVM.refreshData, "Exists succes handler")
+        XCTAssertNotNil(movieVM.refreshData, "Exists success handler")
     }
 
 }

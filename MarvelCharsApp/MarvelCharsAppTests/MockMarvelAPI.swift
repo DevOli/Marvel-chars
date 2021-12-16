@@ -7,11 +7,18 @@
 
 import Foundation
 class MockMarvelAPI: MarvelRepository {
+
+    
     
     var delegate: MarvelRepositoryDelegate?
+    var movieDelegate: MarvelMoviesDelegate?
     
     func setDelegate(delegate: MarvelRepositoryDelegate) {
         self.delegate = delegate
+    }
+    
+    func setDelegate(forMovie: MarvelMoviesDelegate) {
+        self.movieDelegate = forMovie
     }
     
     let characterOne = CharacterModel(name: "SpidermanTest", alterEgo: "AlterEgoTest", imagePath: "", biography: "", birth: "", weight: 0, weightUnit: "", height: 0, heightUnit: "", universe: "", force: 0, intelligence: 0, agility: 0, endurance: 0, velocity: 0, movies: [])
@@ -32,10 +39,10 @@ class MockMarvelAPI: MarvelRepository {
         let movies = [mockedMovieOne, mockedMovieTwo]
 
         if let mockedMovie = movies.filter({ $0.key == byKey }).first {
-            self.delegate?.didFetchMovies(movie: mockedMovie)
+            self.movieDelegate?.didFetchMovies(movie: mockedMovie)
         } else {
             let error = CustomError.testError(message: "Fetch Data failed")
-            self.delegate?.didFailFetching(error: error)
+            self.movieDelegate?.didFailFetching(error: error)
         }
     }
     

@@ -16,7 +16,7 @@ class MoviesViewModel {
         refreshData = { (MovieModel) -> () in }
         errorHandler = { (error: Error) -> () in }
         repository = MarvelAPI()
-        repository.setDelegate(delegate: self)
+        repository.setDelegate(forMovie: self)
     }
     
     init(repository: MarvelRepository, refreshData: @escaping (MovieModel) -> Void, errorHandler: @escaping (Error) ->Void) {
@@ -24,7 +24,7 @@ class MoviesViewModel {
         self.errorHandler = errorHandler
         
         self.repository = repository
-        self.repository.setDelegate(delegate: self)
+        self.repository.setDelegate(forMovie: self)
     }
     
     func getMovie(byKey key:String) {
@@ -32,7 +32,7 @@ class MoviesViewModel {
     }
 }
 
-extension MoviesViewModel: MarvelRepositoryDelegate {
+extension MoviesViewModel: MarvelMoviesDelegate {
     func didFetchMovies(movie: MovieModel) {
         var embedMovie = movie
         embedMovie.embedUrlTrailer()
@@ -42,9 +42,5 @@ extension MoviesViewModel: MarvelRepositoryDelegate {
     
     func didFailFetching(error: Error) {
         errorHandler(error)
-    }
-    
-    func didFetchData(categories: [CategoryModel]) {
-
     }
 }

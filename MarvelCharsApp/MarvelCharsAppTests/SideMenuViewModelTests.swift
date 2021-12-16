@@ -53,6 +53,10 @@ class MockedMarvelRepository : MarvelRepository {
         
     }
     
+    func setDelegate(forMovie: MarvelMoviesDelegate) {
+        
+    }
+    
     func fetchData() {
         callsCount+=1
         fetchSuccessfully()

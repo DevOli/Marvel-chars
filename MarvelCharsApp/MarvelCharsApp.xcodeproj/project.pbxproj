@@ -37,9 +37,6 @@
 		848A27CE274D8C86000CDBCE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A27CD274D8C86000CDBCE /* HomeViewModel.swift */; };
 		848A27CF274D8C86000CDBCE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A27CD274D8C86000CDBCE /* HomeViewModel.swift */; };
 		848A27D0274D8C86000CDBCE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A27CD274D8C86000CDBCE /* HomeViewModel.swift */; };
-		848A27D2274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A27D1274D8CA3000CDBCE /* DetailsViewModel.swift */; };
-		848A27D3274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A27D1274D8CA3000CDBCE /* DetailsViewModel.swift */; };
-		848A27D4274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A27D1274D8CA3000CDBCE /* DetailsViewModel.swift */; };
 		84C7D0F6275DC202000BC67C /* CategoryRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B998A27517D5E0055F2A6 /* CategoryRowCell.swift */; };
 		84C7D0F7275DC202000BC67C /* CategoryRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B998A27517D5E0055F2A6 /* CategoryRowCell.swift */; };
 		84C7D0F8275DC20F000BC67C /* CharactersCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC6828275AC410009B9CAD /* CharactersCollectionHeader.swift */; };
@@ -179,7 +176,6 @@
 		848A27B7274D5079000CDBCE /* MarvelCharsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		848A27C9274D8BBC000CDBCE /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		848A27CD274D8C86000CDBCE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		848A27D1274D8CA3000CDBCE /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		84DC6828275AC410009B9CAD /* CharactersCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCollectionHeader.swift; sourceTree = "<group>"; };
 		84DC6829275AC410009B9CAD /* CharactersCollectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersCollectionHeader.xib; sourceTree = "<group>"; };
 		84E54CFF275727CB00A21EDA /* UIColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHelper.swift; sourceTree = "<group>"; };
@@ -384,7 +380,6 @@
 			children = (
 				CE0A1146275099660064AA4B /* SearchViewModel.swift */,
 				848A27CD274D8C86000CDBCE /* HomeViewModel.swift */,
-				848A27D1274D8CA3000CDBCE /* DetailsViewModel.swift */,
 				CE2B85BB27582A2A0059DE45 /* SideMenuViewModel.swift */,
 				CE7150EF2767A7F9004F8115 /* MoviesViewModel.swift */,
 			);
@@ -762,7 +757,6 @@
 				CE2B85E3275AB5C60059DE45 /* AbilitiesView.swift in Sources */,
 				84645F84274EC15A001A997A /* CharacterModel.swift in Sources */,
 				CE0A11492750997E0064AA4B /* SearchTableViewController.swift in Sources */,
-				848A27D2274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */,
 				CE7150EE2767A16F004F8115 /* MovieModel.swift in Sources */,
 				84DC682A275AC410009B9CAD /* CharactersCollectionHeader.swift in Sources */,
 				CE6C3BB5276A4197005F271B /* GradientView.swift in Sources */,
@@ -811,7 +805,6 @@
 				CEAED4EE275DA64700319BF6 /* TextHelper.swift in Sources */,
 				84645F85274EC15A001A997A /* CharacterModel.swift in Sources */,
 				CEAED4ED275DA64400319BF6 /* UIFontHelper.swift in Sources */,
-				848A27D3274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */,
 				CEAED4EC275DA63D00319BF6 /* UIViewHelper.swift in Sources */,
 				CE7FFE78275ABDF500147FE6 /* SearchViewModel.swift in Sources */,
 				CE61C5FE275665B20024F244 /* SearchViewModelTests.swift in Sources */,
@@ -835,7 +828,6 @@
 				84C7D0FD275DC27E000BC67C /* UIImageHelper.swift in Sources */,
 				CEAED4F1275DA6DD00319BF6 /* UIViewHelper.swift in Sources */,
 				848A27B8274D5079000CDBCE /* MarvelCharsAppUITestsLaunchTests.swift in Sources */,
-				848A27D4274D8CA3000CDBCE /* DetailsViewModel.swift in Sources */,
 				84C7D0F9275DC20F000BC67C /* CharactersCollectionHeader.swift in Sources */,
 				84C7D0F7275DC202000BC67C /* CategoryRowCell.swift in Sources */,
 				84DC6822275A4FA4009B9CAD /* CharactersCollectionViewController.swift in Sources */,
