@@ -1,6 +1,6 @@
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// CategoryElement.swift
 // To parse the JSON, add this file to your project and do:
-//
+// 
 //   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
 
 import Foundation
@@ -17,8 +17,10 @@ struct Character: Codable {
   let caracteristics: Caracteristics
   let abilities: Abilities
   let movies: [String]
-  
-  init(_ name: String, _ alterEgo: String, _ imagePath: String, _ biography: String, _ caracteristics: Caracteristics, _ abilities: Abilities, _ movies: [String]) {
+
+  init(_ name: String, _ alterEgo: String, _ imagePath: String,
+       _ biography: String, _ caracteristics: Caracteristics,
+       _ abilities: Abilities, _ movies: [String]) {
     self.name = name
     self.alterEgo = alterEgo
     self.imagePath = imagePath
@@ -33,8 +35,8 @@ struct Character: Codable {
 struct Abilities: Codable {
   let force, intelligence, agility, endurance: Int
   let velocity: Int
-  
-  init(_ force: Int, _ intelligence: Int, _ agility: Int, _ endurance: Int, _ velocity: Int){
+
+  init(_ force: Int, _ intelligence: Int, _ agility: Int, _ endurance: Int, _ velocity: Int) {
     self.force = force
     self.intelligence = intelligence
     self.agility = agility
@@ -48,7 +50,7 @@ struct Caracteristics: Codable {
   let birth: String
   let weight, height: Eight
   let universe: Universe
-  init(_ birth: String, _ weight: Eight, _ height: Eight, _ universe: Universe){
+  init(_ birth: String, _ weight: Eight, _ height: Eight, _ universe: Universe) {
     self.birth = birth
     self.weight = weight
     self.height = height
@@ -60,7 +62,7 @@ struct Caracteristics: Codable {
 struct Eight: Codable {
   let value: Double
   let unity: Unity
-  
+
   init(_ value: Double, _ unity: Unity) {
     self.value = value
     self.unity = unity
@@ -68,7 +70,7 @@ struct Eight: Codable {
 }
 
 enum Unity: String, Codable {
-  case kg = "kg"
+  case kilograms = "kg"
   case meters = "meters"
 }
 
@@ -86,4 +88,3 @@ struct Movie: Codable {
 }
 
 typealias Movies = [Movie]
-

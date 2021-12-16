@@ -4,10 +4,9 @@
 //
 //  Created by admin on 11/24/21.
 //
- 
+
 import Foundation
 struct CharacterModel {
-    
     let name: String
     let alterEgo: String
     let imagePath: String
@@ -24,16 +23,23 @@ struct CharacterModel {
     let endurance: Int
     let velocity: Int
     let movies: [String]
-    
-    init(character: Character){
+
+    init(character: Character) {
         self.init(name: character.name, alterEgo: character.alterEgo, imagePath: character.imagePath,
-                  biography: character.biography, birth: character.caracteristics.birth, weight: character.caracteristics.weight.value,
-                  weightUnit: character.caracteristics.weight.unity.rawValue, height: character.caracteristics.height.value,
-                  heightUnit: character.caracteristics.height.unity.rawValue, universe: character.caracteristics.universe.rawValue,
-                  force: character.abilities.force, intelligence: character.abilities.intelligence, agility: character.abilities.agility,
-                  endurance: character.abilities.endurance, velocity: character.abilities.velocity, movies: character.movies)
+                  biography: character.biography, birth: character.caracteristics.birth,
+                  weight: character.caracteristics.weight.value,
+                  weightUnit: character.caracteristics.weight.unity.rawValue,
+                  height: character.caracteristics.height.value,
+                  heightUnit: character.caracteristics.height.unity.rawValue,
+                  universe: character.caracteristics.universe.rawValue,
+                  force: character.abilities.force,
+                  intelligence: character.abilities.intelligence,
+                  agility: character.abilities.agility,
+                  endurance: character.abilities.endurance,
+                  velocity: character.abilities.velocity,
+                  movies: character.movies)
     }
-    
+
     init(name: String, alterEgo: String, imagePath: String, biography: String, birth: String, weight: Double,
          weightUnit: String, height: Double, heightUnit: String, universe: String, force: Int,
          intelligence: Int, agility: Int, endurance: Int, velocity: Int, movies: [String]) {

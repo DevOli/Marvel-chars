@@ -8,10 +8,8 @@
 import UIKit
 
 class CharactersCollectionHeader: UICollectionReusableView {
-
-  @IBOutlet weak var categoryTitleLabel: UILabel!
+  @IBOutlet var categoryTitleLabel: UILabel!
   override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
 }

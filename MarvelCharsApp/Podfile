@@ -6,6 +6,7 @@ target 'MarvelCharsApp' do
   use_frameworks!
 
   # Pods for MarvelCharsApp
+  pod 'SwiftLint'
 
   target 'MarvelCharsAppTests' do
     inherit! :search_paths

@@ -8,52 +8,56 @@
 import Foundation
 import UIKit
 
-extension UIImage{
-  
+extension UIImage {
   func tintedWithLinearGradientColors(colorsArr: [CGColor]) -> UIImage {
-    UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale);
+    UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
     guard let context = UIGraphicsGetCurrentContext() else {
       return UIImage()
     }
     context.translateBy(x: 0, y: self.size.height)
     context.scaleBy(x: 1, y: -1)
-    
+
     context.setBlendMode(.normal)
     let rect = CGRect.init(x: 0, y: 0, width: size.width, height: size.height)
-    
-    // Create gradient
     let colors = colorsArr as CFArray
     let space = CGColorSpaceCreateDeviceRGB()
     let gradient = CGGradient(colorsSpace: space, colors: colors, locations: nil)
-    
-    // Apply gradient
+
     context.clip(to: rect, mask: self.cgImage!)
-    context.drawLinearGradient(gradient!, start: CGPoint(x: 0, y: 0), end: CGPoint(x: 0, y: self.size.height), options: .drawsAfterEndLocation)
+    context.drawLinearGradient(gradient!, start: CGPoint(x: 0, y: 0),
+                               end: CGPoint(x: 0, y: self.size.height), options: .drawsAfterEndLocation)
     let gradientImage = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
-    
+
     return gradientImage!
   }
-  
-  var roundedImage: UIImage{
+
+  var roundedImage: UIImage {
     let rect = CGRect(origin: CGPoint(x: 0, y: 0), size: self.size)
     UIGraphicsBeginImageContextWithOptions(self.size, false, 1)
     UIBezierPath(roundedRect: rect, cornerRadius: 60).addClip()
     self.draw(in: rect)
     return UIGraphicsGetImageFromCurrentImageContext()!
   }
-    
   var averageColor: UIColor? {
     guard let inputImage = CIImage(image: self) else { return nil }
-    let extentVector = CIVector(x: inputImage.extent.origin.x, y: inputImage.extent.origin.y, z: inputImage.extent.size.width, w: inputImage.extent.size.height)
+    let extentVector = CIVector(x: inputImage.extent.origin.x,
+                                y: inputImage.extent.origin.y,
+                                z: inputImage.extent.size.width, w: inputImage.extent.size.height)
 
-    guard let filter = CIFilter(name: "CIAreaAverage", parameters: [kCIInputImageKey: inputImage, kCIInputExtentKey: extentVector]) else { return nil }
+    guard let filter = CIFilter(name: "CIAreaAverage",
+                                parameters: [kCIInputImageKey: inputImage,
+                                kCIInputExtentKey: extentVector]) else { return nil }
     guard let outputImage = filter.outputImage else { return nil }
 
     var bitmap = [UInt8](repeating: 0, count: 4)
     let context = CIContext(options: [.workingColorSpace: kCFNull as Any])
-    context.render(outputImage, toBitmap: &bitmap, rowBytes: 4, bounds: CGRect(x: 0, y: 0, width: 1, height: 1), format: .RGBA8, colorSpace: nil)
+    context.render(outputImage, toBitmap: &bitmap, rowBytes: 4,
+                   bounds: CGRect(x: 0, y: 0, width: 1, height: 1), format: .RGBA8, colorSpace: nil)
 
-    return UIColor(red: CGFloat(bitmap[0]) / 255, green: CGFloat(bitmap[1]) / 255, blue: CGFloat(bitmap[2]) / 255, alpha: CGFloat(bitmap[3]) / 255)
+    return UIColor(red: CGFloat(bitmap[0]) / 255,
+                   green: CGFloat(bitmap[1]) / 255,
+                   blue: CGFloat(bitmap[2]) / 255,
+                   alpha: CGFloat(bitmap[3]) / 255)
   }
 }

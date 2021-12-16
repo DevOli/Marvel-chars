@@ -7,63 +7,61 @@
 
 import UIKit
 
-protocol CharacterPortraitDelegate {
+protocol CharacterPortraitDelegate: AnyObject {
   func onTappedCharacter(character: CharacterModel)
   func showCategoryView(category: CategoryModel)
 }
 
 class CategoryRowCell: UITableViewCell {
-  
-  @IBOutlet weak var categoryNameLabel: UILabel!
-  @IBOutlet weak var charactersCollectionView: UICollectionView!
-  @IBOutlet weak var seeAllButton: UIButton!
-  
-  var delegate: CharacterPortraitDelegate?
+  @IBOutlet var categoryNameLabel: UILabel!
+  @IBOutlet var charactersCollectionView: UICollectionView!
+  @IBOutlet var seeAllButton: UIButton!
+
+  weak var delegate: CharacterPortraitDelegate?
   var category: CategoryModel?
-  
+
   private let collectionViewCellNibName = "CharacterPortraitCell"
   private let cellReuseIdentifier = "CharacterPortraitID"
-  
-  func configure(category: CategoryModel?){
+
+  func configure(category: CategoryModel?) {
     self.category = category
     self.categoryNameLabel.text = category?.category
     refresh()
   }
-  
+
   override func awakeFromNib() {
     super.awakeFromNib()
     self.selectionStyle = .none
-    
-    charactersCollectionView.register(UINib(nibName: self.collectionViewCellNibName, bundle: nil), forCellWithReuseIdentifier: self.cellReuseIdentifier)
+
+    charactersCollectionView.register(UINib(nibName: self.collectionViewCellNibName,
+                                            bundle: nil), forCellWithReuseIdentifier: self.cellReuseIdentifier)
     charactersCollectionView.dataSource = self
     charactersCollectionView.delegate = self
-    
-    categoryNameLabel.textColor = UIColor.primary_red
+
+    categoryNameLabel.textColor = UIColor.primaryRed
     categoryNameLabel.font = UIFont.sectionTitle()
-    seeAllButton.titleLabel?.textColor = UIColor.primary_grey
-    seeAllButton.titleLabel?.tintColor = UIColor.primary_grey
+    seeAllButton.titleLabel?.textColor = UIColor.primaryGrey
+    seeAllButton.titleLabel?.tintColor = UIColor.primaryGrey
     seeAllButton.titleLabel?.font = UIFont.description()
   }
-  
+
   override func layoutSubviews() {
     super.layoutSubviews()
-    
+
     contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0))
   }
-  
+
   @IBAction func onSeeAllButtonTapped(_ sender: UIButton) {
     if let category = self.category {
       self.delegate?.showCategoryView(category: category)
     }
   }
-  
+
   private func refresh() {
-    DispatchQueue.main.async {
-      [weak self] in
+    DispatchQueue.main.async { [weak self] in
       self?.charactersCollectionView.reloadData()
     }
   }
-  
 }
 
 extension CategoryRowCell: UICollectionViewDataSource {
@@ -73,9 +71,10 @@ extension CategoryRowCell: UICollectionViewDataSource {
     }
     return 0
   }
-  
+
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = charactersCollectionView.dequeueReusableCell(withReuseIdentifier: self.cellReuseIdentifier, for: indexPath) as? CharacterPortraitCell else {
+    guard let cell = charactersCollectionView.dequeueReusableCell(withReuseIdentifier: self.cellReuseIdentifier,
+                                                                  for: indexPath) as? CharacterPortraitCell else {
       return UICollectionViewCell()
     }
     if let character = self.category?.getCharacter(at: indexPath.row) {
@@ -87,7 +86,6 @@ extension CategoryRowCell: UICollectionViewDataSource {
     }
     return cell
   }
-  
 }
 
 extension CategoryRowCell: UICollectionViewDelegate {
@@ -97,4 +95,3 @@ extension CategoryRowCell: UICollectionViewDelegate {
     }
   }
 }
-

@@ -8,28 +8,25 @@
 import UIKit
 
 class SearchTableViewController: UITableViewController {
-    
     let searchVm = SearchViewModel()
     let searchController = UISearchController(searchResultsController: nil)
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         initialConfiguration()
     }
-    
+
     private func initialConfiguration() {
-        //Search UI configurations
-        searchController.searchBar.backgroundColor = UIColor.primary_silver
-        searchController.searchBar.barTintColor = UIColor.primary_silver
+        searchController.searchBar.backgroundColor = UIColor.primarySilver
+        searchController.searchBar.barTintColor = UIColor.primarySilver
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search by character"
-        searchController.searchBar.delegate = self;
+        searchController.searchBar.delegate = self
         searchController.searchBar.showsCancelButton = true
         searchController.hidesNavigationBarDuringPresentation = false
         self.navigationItem.titleView = searchController.searchBar
         navigationItem.hidesBackButton = true
         navigationItem.hidesSearchBarWhenScrolling = false
-        
         definesPresentationContext = true
         // Search VM configurations
         searchVm.getAllcharacters()
@@ -40,7 +37,7 @@ class SearchTableViewController: UITableViewController {
             }
         }
     }
-    
+
     private func assignClosureToViewModel() {
         searchVm.refreshData = {
             DispatchQueue.main.async { [weak self] in
@@ -48,28 +45,24 @@ class SearchTableViewController: UITableViewController {
             }
         }
     }
-    
-    // MARK: - Table view data sourc
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchVm.count()
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ResourceName.searchNameCell, for: indexPath)
         let character = searchVm.get(byIndex: indexPath.row)
         cell.textLabel?.text = character.name
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = UIStoryboard(name: ResourceName.mainStoryBoardName, bundle: nil)
+        if let viewC = UIStoryboard(name: ResourceName.mainStoryBoardName, bundle: nil)
             .instantiateViewController(withIdentifier: ResourceName.detailsViewController) as? DetailsViewController {
-            vc.character = searchVm.get(byIndex: indexPath.row)
-            self.navigationController?.pushViewController(vc, animated: true)
+            viewC.character = searchVm.get(byIndex: indexPath.row)
+            self.navigationController?.pushViewController(viewC, animated: true)
         }
     }
-    
 }
 
 // MARK: - Search Results Update
@@ -86,7 +79,6 @@ extension SearchTableViewController: UISearchResultsUpdating {
 
 extension SearchTableViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
         searchBar.text = ""
         // Go to home
         self.navigationController?.popViewController(animated: true)

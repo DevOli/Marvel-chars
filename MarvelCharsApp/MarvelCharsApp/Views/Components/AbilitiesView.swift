@@ -14,7 +14,7 @@ struct AbilitiesView: View {
             Color(.black)
             VStack(alignment: .leading, spacing: 30) {
                 Text("Abilities")
-                    .foregroundColor(Color(UIColor.primary_white))
+                    .foregroundColor(Color(UIColor.primaryWhite))
                     .font(Font(UIFont.sectionTitle() as CTFont))
                 HStack {
                     Text("Force").abilitiesStyles()
@@ -39,4 +39,4 @@ struct AbilitiesView: View {
             }.padding(.init(top: 10, leading: 25, bottom: 10, trailing: 40))
         }
     }
-} 
+}
